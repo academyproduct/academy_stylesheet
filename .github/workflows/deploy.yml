@@ -1,0 +1,27 @@
+name: Deploy CSS to S3
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-2
+          role-to-assume: arn:aws:iam::587375966843:role/GithubActionsDeployRole
+      
+      - name: Upload CSS to S3
+        run: |
+          aws s3 cp ./academy_stylesheet_2024.css s3://academyproduct/OEX/CSS/academy_stylesheet_2024.css \
+          --cache-control "public, max-age=300" \
+          --content-type "text/css"
