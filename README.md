@@ -1,84 +1,151 @@
-# Academy Stylesheet Repo
+# Team CSS Workflow
 
-**Important note:**
-Always start new work by pulling the latest main branch, then create a new branch from there.
+This repo holds our shared CSS. Each teammate works on their own branch named after their first name (e.g., daniel, lisa, robert) and opens a Pull Request (PR) to merge changes into main.
 
-**Branch Name Examples:**
-- john-button-fix
-- jane-new-accordion
----
+Replace the placeholders below:
+REPO_URL → the HTTPS URL of this repo (https://github.com/academyproduct/academy_stylesheet.git)
+RELATIVE_PATH_TO_CSS → path to the CSS file (e.g., assets/styles.css)
 
-\
-These are steps to modify academy_stylesheet_2024.css
+0. What you’ll need (once)
 
-## 1. Build & test your CSS changes
+   - A GitHub account
+   - Git installed on your computer
+   - Visual Studio Code (VS Code)
+   - (Recommended) Sign into GitHub inside VS Code
 
-1. Start in OEX Authoring, keeping all new CSS inside a `<style>` block.
+1. Create a GitHub account
 
-2. Use **View Live** to make sure new styles work as expected.
+   - Go to github.com and create an account (use your work email).
+   - Verify your email.
 
-3. Test the styles/components in our prod **ZZ - Live Testing** course.
+2. Install Git
+   Windows - Download and install: https://git-scm.com/download/win - Accept defaults. If asked about a default editor, choose VS Code.
+   macOS - Install via Homebrew: - Or download from https://git-scm.com/download/mac.
+   Verify
+   git --version
 
-4. Open the course in an incognito window with a student account to confirm:
+3. Configure Git (work identity)
+   Set your name and work email so commits are attributed correctly.
+   git config --global user.name "Your Name"git config --global user.email "you@your-work-email.com"git config --global init.defaultBranch main
+   You can check at any time:
+   git config --global --list
 
-    - Functionality works
+4. Install VS Code & sign in to GitHub (recommended) - Download VS Code: https://code.visualstudio.com/ - Open VS Code → bottom-left Accounts icon → Sign in to GitHub - Install these extensions (open VS Code → Extensions):
+   GitHub Pull Requests and Issues (official)
+   GitLens (optional but helpful)
+   Signing in lets VS Code handle GitHub authentication in the background.
+   If you’re prompted for a username/password on push, use your GitHub username and a Personal Access Token (PAT). VS Code can also open a browser to authenticate.
 
-    - Layout looks good on both desktop and mobile
+5. First-time: clone the repo
+   You only do this once per computer.
+   Option A: VS Code (easiest) 1. Ctrl/Cmd + Shift + P → type “Git: Clone” → Enter. 2. Paste https://github.com/academyproduct/academy_stylesheet.git and select a local folder. 3. When VS Code asks, click Open the cloned repo.
+   Option B: Command line
+   cd path/to/your/projects
+   git clone REPO_URLcd REPO_FOLDER
+   code .
 
-    - For mobile, use BrowserStack (or your own device).
+6. Create your branch (first name)
+   Naming convention: lowercase first name (no spaces). Example: daniel
+   From VS Code terminal (or any terminal opened in the repo folder): # Make sure you're on main and up to dategit checkout main
+   git pull origin main # Create and switch to your branchgit checkout -b yourfirstname # Publish your branch to GitHub and set upstreamgit push -u origin yourfirstname
+   **YOU WILL ONLY WORK ON YOUR BRANCH. We’ll merge via Pull Requests.**
 
+7. Make your change (CSS)
 
+   1. Open the CSS file: academy_stylesheet_2024.css
+   2. Edit as needed.
+   3. Save.
 
-## 2. Create a Git branch
+8. Commit and push your change
+   You can use the VS Code terminal or Source Control panel (left sidebar):
+   Terminal (easiest)
+   git status
+   git add academy_stylesheet_2024.css
+   git commit -m "Short message: what you changed"
+   git push -u origin your_name
+   VS Code UI
+   Source Control → + (stage) your changed file(s)
+   Enter a commit message (short but clear)
+   Click Commit, then Sync/Push
 
-We use branches so multiple people can work at once without overwriting each other.
+9. Open a Pull Request (PR) 1. In GitHub, you’ll see a prompt: “Compare & pull request” for your branch → click it. 2. Title: short summary (e.g., “Update button styles”) 3. Description: what changed and why (mention any related tickets). 4. Click Create pull request. 5. Request a reviewer if needed.
+   **The PR will be reviewed. If approved, it’s merged into main.**
 
-Run these commands in your terminal, or VS Code:
+10. Keep your branch up to date (important!)
+    **Before you start work each day (and before opening a PR), update your branch:**
 
-1. Make sure you are on main and up to date
-    - `git checkout main`
-    - `git pull origin main`
+# Get the latest from the servergit fetch origin
 
-2. Create your own branch (replace "yourname-feature" with something descriptive)
-    - `git checkout -b yourname-feature`
+# Update local maingit checkout main
 
-## 3. Make your stylesheet edits
+    git pull origin main
 
-1. Open academy_stylesheet_2024.css in VS Code.
+11. Pull the latest changes (ongoing)
+    Whenever you just need the latest main locally:
+    git checkout main
+    git pull origin main
+    If you already cloned earlier and just want the newest changes in your working branch:
+    git fetch origin
+    git checkout yourfirstname
+    git rebase main
+    git push --force-with-lease
 
-2. Add your changes.
+12. Daily workflow (cheat sheet)
+    Here are the following daily steps simplified: 1. Update your local .css file daily:
+    git pull origin main 2. Edit academy_stylesheet_2024.css as needed → save the file when done 3. Commit and push you changes to Github:
+    git add academy_stylesheet_2024.css
+    git commit -m "Message explaining the changes you made"
+    git push -u origin your_name 4. Open PR in GitHub → request review → address feedback → merge
 
-3. Save the file.
+13. Branch naming & commit message tips
+    Branch: first-name only (e.g., daniel) for this project.
+    Commit messages:
+    Imperative voice: “Change button hover color”
+    Small, focused changes are easier to review.
 
-## 4. Commit your changes in terminal of the correct folder
-1. (if needed) `cd ~/Desktop/folder_path..`
-2. `git add academy_stylesheet_2024.css`
-3. `git commit -m "changes description here"`
+14. Troubleshooting
+    I get a 403 or permission error when pushing - Make sure you were added as a collaborator to the repo or have access via your team. - Confirm you cloned with the HTTPS URL and you’re signed into GitHub in VS Code. - Try re-authenticating: In VS Code, sign out/in of GitHub. - Or set a Personal Access Token and use it in place of a password when prompted.
+    It keeps asking for a password - Use GitHub authentication via VS Code’s GitHub sign-in. - If using command line, create a Personal Access Token (PAT) and paste it when prompted.
+    Wrong email/name on commits
+    git config --global user.name "Correct Name"
+    git config --global user.email "you@your-work-email.com"
+    Stuck in a merge or rebase
+    VS Code will show conflicts in the editor. Choose the correct lines, save, then:
+    I don’t see my branch on GitHub
+    git push -u origin yourfirstname
 
-## 5. Push your branch to GitHub
+15. Quick commands reference
 
-`git push origin yourname-feature`
+# One-time setup after clonegit checkout -b yourfirstname
 
-## 6. Open a Pull Request (PR)
+    git push -u origin yourfirstname
 
-1. Go to our repo on GitHub.
+# Daily updategit checkout main
 
-2. Select “Compare & pull request”
+    git pull origin main
+    git checkout yourfirstname
+    git rebase main
 
-3. Add a short description of your changes.
+# Make changegit add RELATIVE_PATH_TO_CSS
 
-4. Request a reviewer.
+    git commit -m "Describe your change"
+    git push
 
-5. Submit the PR.
+    git rebase --abort# orgit merge --abort
+    git add academy_stylesheet_2024.css
 
-## 7. Teammate reviews and merges
-This will merge the branch over to main, the main branch will then automatically push to s3 and reflect the updates.
+    git rebase --continue   # or: git merge --continue
 
-## 8. Verify
-Once merge and deployment are successful a message will be sent out confirming.\
+    git commit --amend --reset-author
+    git push --force-with-lease
 
-To see the changes you will need to:
-- remove the original `<style>` block containing your code.
-- clear your browser cache.
-- refresh the page.
+    git add academy_stylesheet_2024.css
+    git commit -m "Describe your change"
+    git push
 
+    git checkout main
+    git pull origin main
+    git checkout yourfirstname
+    git rebase main
+
+    brew install git
