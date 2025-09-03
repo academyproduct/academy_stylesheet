@@ -36,7 +36,7 @@ Each time you make updates run this sequence into VS terminal (exclude '<', '>')
 ## Open a Pull Request
 Navigate to https://github.com/academyproduct/academy_stylesheet/branches
 - Select your \<branch-name>
-- Select 'Compare and Submit Pull Request'
+- Select 'Compare and Pull Request'
 - Submit the Pull Request
 
 The change will need to get reviewed and merged by a team member. Once it has been merged the classes in the stylesheet will apply to OEX.
