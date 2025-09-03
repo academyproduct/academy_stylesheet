@@ -172,7 +172,6 @@ h6.styleFix {
 .noteAlert {
 	padding: 1.5em;
 	background-color: #fafafa;
-	text-align: center;
 	vertical-align: middle;
 	border: 1px solid #ced5d6;
 	border-radius: 2px;
@@ -2976,8 +2975,7 @@ button.toolTip-button:hover {
 
 /* || VIDEO BLOCKS */
 
-.noteAlert.video-sections :is(h1, h2, h3, h4, h5, h6),
-.noteAlert.video-sections p {
+.noteAlert.video-sections :is(h1, h2, h3, h4, h5, h6) {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
