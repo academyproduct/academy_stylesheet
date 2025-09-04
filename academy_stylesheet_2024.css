@@ -3019,7 +3019,6 @@ button.toolTip-button:hover {
 	top: 50%;
 	transform: translateY(-50%) rotate(0deg);
 	transition: transform 0.3s ease;
-	font-size: 1rem;
 	color: #163f6c;
 }
 
