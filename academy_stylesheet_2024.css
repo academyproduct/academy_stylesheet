@@ -3002,7 +3002,6 @@ button.toolTip-button:hover {
 	padding-right: 2rem;
 	/* space for arrow */
 	font-weight: bold;
-	font-size: 1.2rem;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -3020,7 +3019,6 @@ button.toolTip-button:hover {
 	top: 50%;
 	transform: translateY(-50%) rotate(0deg);
 	transition: transform 0.3s ease;
-	font-size: 1rem;
 	color: #163f6c;
 }
 
