@@ -1121,6 +1121,54 @@ ol.fill-list {
 	}
 }
 
+
+/* Alternative and Adjustable card image flex box: */
+
+.card-image_adjustable {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5em;
+}
+
+@media only screen and (max-width: 700px) {
+	.card-image_adjustable {
+		flex-direction: column;
+	}
+}
+
+.card-image_adj-img {
+	flex: 1;
+	margin: 1em;
+	align-content: center;
+}
+
+.card-image_adj-img img {
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.card-image_adj-content {
+	align-content: center;
+	flex: 3;
+}
+
+.card-image_adjustable.xsmall .card-image_adj-content {
+	flex: 4
+}
+
+.card-image_adjustable.small .card-image_adj-content {
+	flex: 3
+}
+
+.card-image_adjustable.medium .card-image_adj-content {
+	flex: 2
+}
+
+.card-image_adjustable.large .card-image_adj-content {
+	flex: 1
+}
+
 /* || IMAGE SECTION */
 
 /* used in Bio image lists, this style is otherwise old */
