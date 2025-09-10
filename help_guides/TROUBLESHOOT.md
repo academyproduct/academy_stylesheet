@@ -38,3 +38,15 @@ You should be set to following the most current version of main again. You'll ne
 ---
 &nbsp;
 
+>  ! [rejected]        Josh -> Josh (non-fast-forward)\
+error: failed to push some refs to 'https://github.com/academyproduct/academy_stylesheet.git'\
+hint: Updates were rejected because the tip of your current branch is behind\
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.\
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Remote branch needs to be deleted
+
+&nbsp;
+---
+&nbsp;

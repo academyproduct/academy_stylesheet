@@ -3089,6 +3089,18 @@ button.toolTip-button:hover {
 	color: white;
 }
 
+/* use this with icons */
+  .accordion-academy.no_fill summary:hover {
+    background-color: transparent;
+  }
+  .accordion-academy.no_fill summary:hover::after {
+    color: #0e1934;
+  }
+  .accordion-academy.no_fill details:hover, 
+  .accordion-academy.no_fill details:focus-within {
+   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+  }
+
 /* || KEYTERMS TOOLTIP */
 
 /* Keyterm trigger */
