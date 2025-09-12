@@ -1623,25 +1623,33 @@ ol.fill-list {
 	}
 }
 
-.leftStrokeCallout-alt .xsmall-padding {
-	border-left: 0.5em solid #003057;
-	padding: 1em 1em;
-	margin-bottom: 1.5em;
-}
+/* Version that allows to adjust the padding */
 
-.leftStrokeCallout-alt .small-padding {
-	border-left: 0.5em solid #003057;
-	padding: 1.5em 2em;
-	margin-bottom: 1.5em;
-}
-
-.leftStrokeCallout-alt .medium-padding {
+.leftStrokeCallout-alt {
 	border-left: 0.5em solid #003057;
 	padding: 2em 3em;
 	margin-bottom: 1.5em;
 }
 
-.leftStrokeCallout-alt .large-padding {
+.leftStrokeCallout-alt.xsmall-padding {
+	border-left: 0.5em solid #003057;
+	padding: 1em 1em;
+	margin-bottom: 1.5em;
+}
+
+.leftStrokeCallout-alt.small-padding {
+	border-left: 0.5em solid #003057;
+	padding: 1.5em 2em;
+	margin-bottom: 1.5em;
+}
+
+.leftStrokeCallout-alt.medium-padding {
+	border-left: 0.5em solid #003057;
+	padding: 2em 3em;
+	margin-bottom: 1.5em;
+}
+
+.leftStrokeCallout-alt.large-padding {
 	border-left: 0.5em solid #003057;
 	padding: 4em 5em;
 	margin-bottom: 1.5em;
