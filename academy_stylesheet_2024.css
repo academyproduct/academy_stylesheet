@@ -1136,14 +1136,14 @@ ol.fill-list {
 	}
 }
 
+.card-card-image_adjustable-img.square img {
+	aspect-ratio: 1/1;
+}
+
 .card-image_adj-img {
 	flex: 1;
 	margin: 1em;
 	align-content: center;
-}
-
-.card-image_adj-img.square img {
-	aspect-ratio: 1/1;
 }
 
 .card-image_adj-img img {
@@ -2066,7 +2066,7 @@ figcaption {
 .span__33,
 .span__40,
 .span__50,
-span__60,
+.span__60,
 .span__70 {
 	width: 100%;
 }
@@ -2279,6 +2279,46 @@ span__60,
 		align-items: center;
 	}
 }
+
+
+/* Flex Cards with Images */
+.flex-img-card-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .flex-img-card {
+    flex: 1;
+    padding: 1em;
+    border-radius: 4px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .flex-img-card h1,
+  .flex-img-card h2,
+  .flex-img-card h3,
+  .flex-img-card h4,
+  .flex-img-card h5 {
+    margin: 1em auto !important;
+  }
+
+  @media (max-width: 800px) {
+    .flex-img-card-container {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    .flex-img-card {
+      width: 100%;
+    }
+  }
 
 /* || BOOSTER SECTION */
 
