@@ -1142,8 +1142,11 @@ ol.fill-list {
 	align-content: center;
 }
 
-.card-image_adj-img img {
+.card-image_adj-img.square img {
 	aspect-ratio: 1/1;
+}
+
+.card-image_adj-img img {
 	object-fit: cover;
 	border-radius: 5px;
 }
