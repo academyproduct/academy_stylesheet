@@ -27,7 +27,7 @@ Each time you make updates run this sequence into VS terminal (exclude '<', '>')
 
 ## Save and Commit Changes
 **After saving, run this sequence into terminal:**\
-`git add academy_stylesheet.css`\
+`git add academy_stylesheet_2024.css`\
 `git commit -m "<summarize-your-changes-here>"`\
 `git push origin <branch-name>`
 
