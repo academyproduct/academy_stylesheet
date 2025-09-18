@@ -1202,9 +1202,10 @@ ol.fill-list {
 	gap: 1.5em;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 767px) {
 	.card-image_adjustable {
 		flex-direction: column;
+		gap: 0
 	}
 }
 
@@ -2350,6 +2351,62 @@ figcaption {
 		flex-direction: column;
 		align-items: center;
 	}
+}
+
+
+/* Responsive Circle Cards + Adjustable */
+
+.adj-3-circ-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: row;
+}
+
+.adj-3-circ-img-container > div {
+    width: 25%;
+    height: auto;
+}
+
+.adj-3-circ-img img {
+	border-radius: 50%; 
+}
+
+.adj-3-circ-img.small {
+    width: 15%; 
+}
+
+.adj-3-circ-img.medium {
+    width: 25%; 
+}
+
+.adj-3-circ-img.large {
+    width: 30%; 
+}
+
+@media screen and (max-width: 767px) {
+
+	.adj-3-circ-img-container {
+      flex-direction: column; 
+    }
+
+    .adj-3-circ-img.small {
+      width: 25%; 
+    }
+
+    .adj-3-circ-img.medium {
+      width: 40%; 
+    }
+
+    .adj-3-circ-img.large {
+      width: 50%; 
+    }
+    
+    .adj-3-circ-img.mobile-display-none {
+      display: none;
+    }
+
 }
 
 
