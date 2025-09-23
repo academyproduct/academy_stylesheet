@@ -3313,13 +3313,14 @@ button.toolTip-button:hover {
 
 /* Keyterm trigger */
 .keyterms-tooltip {
-	position: relative;
-	display: inline-block;
-	border-bottom: 1px dotted #333;
-	cursor: help;
-	font-weight: bold;
-	isolation: isolate; /* contain stacking within the trigger */
-	z-index: 1;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #333;
+    background-color: #e1f4ed;
+    cursor: help;
+    font-weight: bold;
+    isolation: isolate; /* contain stacking within the trigger */
+    z-index: 1;
 
 	/* Consistent spacing between trigger and tooltip in all directions */
 	--kt-gap: 10px; /* adjust once to tune gaps everywhere */
@@ -3334,7 +3335,7 @@ button.toolTip-button:hover {
 
 /* Hover background */
 .keyterms-tooltip:hover {
-	background-color: #e1f4ed;
+	background-color: #ace8cf;
 }
 
 /* Tooltip panel (base) */
@@ -3477,3 +3478,5 @@ button.toolTip-button:hover {
 	border-width: var(--kt-arrow);
 	border-color: transparent #333 transparent transparent; /* ◄ */
 }
+
+
