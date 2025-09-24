@@ -40,7 +40,11 @@ Section Contents:
   Accordion,
   Video Blocks,
   Academy Accordion,
-  Keyterms Tooltip
+  Keyterms Tooltip,
+  Compare Cards,
+  Vertical Timeline,
+  Bar Chart,
+  Diverging Bar Chart
 
   Course Specific Contents:
   Orientation,
@@ -3480,3 +3484,396 @@ button.toolTip-button:hover {
 }
 
 
+/* || COMPARE CARDS */
+
+/* Compare Cards 2 columns */
+.duo-card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .duo-card-div {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.04);
+    
+  }
+
+  .duo-card-div p {
+    margin: 1rem 1rem 0 !important;
+  }
+
+  #duo-div1 {
+    border: 1px solid #d7e2ea;
+  }
+
+  #duo-div1 img {
+    transform: scaleX(-1);
+  }
+
+  #duo-div2 {
+    border: 1px solid #d7e2ea;
+  }
+
+  @media screen and (max-width: 750px) {
+    .duo-card-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1rem;
+      align-items: center;
+    }
+
+    .duo-card-div {
+      max-width: 80%;
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .duo-card-wrapper {
+    	padding: 0;
+    }
+    .duo-card-div {
+      max-width: 100%;
+    }
+  }
+
+
+  /* Compare Cards 3 columns */
+    .trio-card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .trio-card-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   /* align everything to the left */
+    text-align: left;          /* left-align text */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.04);
+    border: 1px solid #d7e2ea;
+  }
+
+  .trio-card-div img {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .trio-card-div h4 {
+    margin: 0.5rem 0;
+  }
+
+  .trio-card-div p {
+    margin: 1rem 0 0 !important;
+  }
+
+  /* Bullet lists */
+  .trio-card-div ul {
+    margin: 1rem 0 0;
+    padding-left: 1.25rem;   /* normal indentation */
+    list-style-position: outside;
+    width: 100%;
+  }
+
+  .trio-card-div ul li {
+    text-align: left;
+  }
+
+  /* Tablet breakpoint: 2 columns */
+  @media screen and (max-width: 920px) {
+    .trio-card-wrapper {
+      grid-template-columns: 1fr 1fr;
+      padding: 0 1rem;
+    }
+  }
+
+  /* Mobile breakpoint: 1 column */
+  @media screen and (max-width: 690px) {
+    .trio-card-wrapper {
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
+
+    .trio-card-div {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .trio-card-div {
+      max-width: 100%;
+    }
+  }
+
+
+  /* || VERTICAL TIMELINE */
+
+    /* -----------------------------
+     Palette
+     ----------------------------- */
+  .simpleVertical-timeline-wrap {
+    --svt-bg:#f5f8fa;       /* Lightest background for cards */
+    --svt-line:#c9d6e3;     /* Line color */
+    --svt-border:#d6e1ec;   /* Border color for cards */
+    --svt-blue:#2F7EBE;     /* Accent blue for circle borders */
+    max-width:820px; 
+    margin:24px auto; 
+    padding:0 16px;
+  }
+
+  .simpleVertical-timeline-title { margin:0 0 4px 0; }
+  .simpleVertical-timeline-kicker { margin:0 0 16px 0; }
+
+  /* -----------------------------
+     Table reset (remove borders/spacings)
+     ----------------------------- */
+  .simpleVertical-timeline-table {
+    width:100%;
+    border-collapse:collapse !important;
+    border-spacing:0 !important;
+    border:none !important;
+  }
+
+  .simpleVertical-timeline-table tr,
+  .simpleVertical-timeline-table td,
+  .simpleVertical-timeline-table th {
+    border:none !important;
+    outline:none !important;
+    box-shadow:none !important;
+  }
+
+  /* -----------------------------
+     Columns
+     ----------------------------- */
+  .simpleVertical-timeline-year {
+    width:100px;
+    vertical-align:top; 
+    padding-top:1em;
+    font-weight:bold;           /* bold years */
+  }
+
+  .simpleVertical-timeline-line {
+    width:40px; 
+    position:relative; 
+    vertical-align:top;
+  }
+
+  /* Vertical line */
+  .simpleVertical-timeline-line::before {
+    content:"";
+    position:absolute; top:0; bottom:0; left:50%;
+    transform:translateX(-50%);
+    width:2px; background:var(--svt-line);
+  }
+
+  /* Circle dot */
+  .simpleVertical-timeline-line::after {
+    content:"";
+    position:absolute; top:15px; left:50%;
+    transform:translateX(-50%);
+    width:10px; height:10px;
+    border-radius:50%;
+    background:#fff;
+    border:2px solid var(--svt-blue);   /* blue border */
+  }
+
+  /* -----------------------------
+     Cards
+     ----------------------------- */
+  .simpleVertical-timeline-card {
+    background:var(--svt-bg); 
+    border:1px solid var(--svt-border);
+    border-radius:10px; 
+    padding:12px 14px;
+  }
+
+  .simpleVertical-timeline-card-title { 
+    margin:0 0 6px 0; 
+    font-weight:bold;            /* bold titles */
+  }
+
+  .simpleVertical-timeline-card-text { margin:0; }
+  .simpleVertical-timeline-note { margin-top:6px; font-size:0.9em; }
+
+
+    /* || BAR CHART */
+
+	/* Screen-reader helper: visually hide, keep readable by AT */
+    .barChart-academy .sr-only {
+      position: absolute !important; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* Chart container: set a max width and center it */
+    .barChart-academy .chart { max-width: 820px; margin: 1rem auto; }
+
+    /* One “row” (label | track | percent) */
+    .barChart-academy .row {
+      --val: 0;           /* EDIT per row: numeric percent value (e.g., 43 for 43%) */
+      --bar: #6695CB;     /* EDIT per row (optional): bar color */
+      --delay: 0s;        /* EDIT per row (optional): animation delay (e.g., .15s) */
+
+      display: grid;
+      grid-template-columns: auto 1fr auto;  /* label | bar | % */
+      grid-template-areas: "label track pct";
+      align-items: center;
+      gap: .75rem;
+      margin: .6rem 0;
+    }
+
+    /* Place each cell into the grid areas */
+    .barChart-academy .label { grid-area: label; white-space: nowrap; }
+    .barChart-academy .pct   { grid-area: pct; font-variant-numeric: tabular-nums; }
+
+    /* Track behind the animated bar */
+    .barChart-academy .track {
+      grid-area: track;
+      border: 1px solid #D2E4EE; /* Track stroke */
+      height: 2rem;              /* EDIT to change bar thickness */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Keyboard focus ring on the track for accessibility */
+    .barChart-academy .track:focus-visible {
+      outline: 3px solid #163F6C; /* Dark Blue */
+      outline-offset: 2px;
+    }
+
+    /* The animated foreground bar */
+    .barChart-academy .bar {
+      background: var(--bar);                 /* Color from row variable */
+      width: 0%;                              /* Start collapsed */
+      height: 100%;
+      display: block;
+      animation: bc-grow 1.2s ease-out forwards; /* EDIT 1.2s to change speed */
+      animation-delay: var(--delay);          /* Per-row delay */
+    }
+
+    /* Grow bar to the % width (val%) */
+    @keyframes bc-grow { to { width: calc(var(--val) * 1%); } }
+
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .barChart-academy .bar { animation: none; width: calc(var(--val) * 1%); }
+    }
+
+    /* Mobile: stack label above the bar, keep % on the right */
+    @media (max-width: 540px) {
+      .barChart-academy .row {
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+          "label label"
+          "track pct";
+        gap: .5rem .75rem;
+      }
+      .barChart-academy .label { white-space: normal; }
+    }
+
+
+	/* || DIVERGING BAR CHART */
+
+	/* Screen-reader helper: visually hidden but accessible */
+    .divergingChart .sr-only {
+      position: absolute !important; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* Chart container */
+    .divergingChart .chart { max-width: 900px; margin: 1rem auto; }
+
+    /* Center small network headings */
+    .divergingChart h5 { text-align: center; margin: .25rem 0 .25rem; }
+
+    /* One network row = Obama label | diverging bar track | Romney label */
+    .divergingChart .row {
+      display: grid;
+      grid-template-columns: auto minmax(240px, 1fr) auto; /* left label | track | right label */
+      align-items: center;
+      gap: .75rem;
+      margin: .9rem 0;
+
+      /* Compute bar widths from minutes (set per row inline) */
+      --left-pct:  calc((var(--obama)  / var(--max-obama))  * 50%); /* Obama side */
+      --right-pct: calc((var(--romney) / var(--max-romney)) * 50%); /* Romney side */
+    }
+
+    .divergingChart .label-left,
+    .divergingChart .label-right {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* The bar track (center line divides the two candidates) */
+    .divergingChart .track {
+      position: relative;
+      height: 2rem;        /* EDIT to change bar thickness */
+      background: transparent;
+      overflow: hidden;
+    }
+
+    /* Center axis line */
+    .divergingChart .track::before {
+      content: "";
+      position: absolute; inset: 0 auto 0 50%;
+      width: 1px; background: #163F6C33; /* faint dark blue line */
+      pointer-events: none;
+    }
+
+    /* Keyboard focus ring */
+    .divergingChart .track:focus-visible {
+      outline: 3px solid #163F6C;
+      outline-offset: 2px;
+    }
+
+    /* The bars: start at width 0, grow out from the center */
+    .divergingChart .bar {
+      position: absolute; top: 0; height: 100%; width: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: #ffffff; font-weight: 600; white-space: nowrap;
+      text-shadow: 0 1px 0 rgba(0,0,0,.25);  /* improve legibility */
+      overflow: hidden;
+    }
+    .divergingChart .bar.left  { right: 50%; background: #2F7EBE; } /* Obama color */
+    .divergingChart .bar.right { left:  50%; background: #CE6042; } /* Romney color */
+
+    /* Animate to the computed widths (speed = 1.1s; change as desired) */
+    .divergingChart .bar.left  { animation: grow-left  1.1s ease-out forwards; }
+    .divergingChart .bar.right { animation: grow-right 1.1s ease-out forwards; }
+    @keyframes grow-left  { to { width: var(--left-pct); } }
+    @keyframes grow-right { to { width: var(--right-pct); } }
+
+    /* Reduced motion: render bars at final widths immediately */
+    @media (prefers-reduced-motion: reduce) {
+      .divergingChart .bar { animation: none; }
+      .divergingChart .bar.left  { width: var(--left-pct); }
+      .divergingChart .bar.right { width: var(--right-pct); }
+    }
+
+    /* Mobile: stack left label, then track, then right label */
+    @media (max-width: 560px) {
+      .divergingChart .row {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "left"
+          "track"
+          "right";
+        gap: .4rem;
+      }
+      .divergingChart .label-left  { grid-area: left; }
+      .divergingChart .track       { grid-area: track; }
+      .divergingChart .label-right { grid-area: right; justify-self: end; }
+      .divergingChart .bar { font-size: .875rem; } /* slightly smaller text inside bars */
+    }
