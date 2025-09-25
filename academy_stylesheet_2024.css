@@ -801,6 +801,7 @@ button:hover:not(:disabled) {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	max-width: 216px;
 }
 
 /* || QUOTE SECTION */
