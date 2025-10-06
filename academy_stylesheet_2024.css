@@ -46,6 +46,7 @@ Section Contents:
   Vertical Timeline,
   Bar Chart,
   Diverging Bar Chart
+  Objectives
 
   Course Specific Contents:
   Orientation,
@@ -4017,3 +4018,81 @@ button.toolTip-button:hover {
     .divergingChart .label-right { grid-area: right; justify-self: end; }
     .divergingChart .bar { font-size: .875rem; } /* slightly smaller text inside bars */
   }
+
+
+
+/* || OBJECTIVES */
+
+  /* --- Objectives (Style 2) with image on the right --- */
+.objectives-style2 {
+  display: flex;
+  justify-content: left;
+  margin: 0 auto 1.5em auto;
+  border: 1px solid #f4f8fa;
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px #0e193415;
+  background: white;
+  overflow: hidden;
+}
+
+/* Left: content */
+.objectives-style2-content {
+  flex: 1 1 60%;
+  padding: 0rem 2rem;
+  min-width: 0; /* prevents overflow with long text */
+}
+
+.objectives-style2-content > h2 {
+  margin: 2rem 0 1rem 0;
+}
+
+/* Ordered list + rhythm */
+.objectives-style2-list {
+  --divider-inset: 2rem;
+  list-style: decimal;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--obj-gap);
+}
+
+.objectives-style2-list > li {
+  padding: 1rem 0.2rem;
+  border-bottom: 1px solid #D2E4EE;
+}
+
+/* Right: image */
+.objectives-style2-image {
+  flex: 0 0 40%;
+  max-width: 40%;
+  position: relative;
+}
+
+.objectives-style2-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops to fill the right panel nicely */
+}
+
+/* ---------- Mobile: image on TOP ---------- */
+@media (max-width: 700px) {
+  .objectives-style2 {
+    display: flex;              /* keep flex for ordering */
+    flex-direction: column;     /* stack vertically */
+  }
+  .objectives-style2-image {
+    order: -1;                  /* move image above content */
+    max-width: 100%;
+    width: 100%;
+    height: 180px;              /* banner feel; tweak as needed */
+  }
+  .objectives-style2-content {
+    padding: 1rem 1rem;
+  }
+  .objectives-style2-list {
+    --divider-inset: 1.25rem;
+  }
+}
