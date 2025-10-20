@@ -191,9 +191,22 @@ body {
 	margin-right: 0.75rem;
 }
 
-.botMargin20 {
+.botMargin16 {
+	margin-bottom: 1rem;
+}
+
+.botMargin24 {
 	margin-bottom: 1.5em;
 }
+
+.botMargin32 {
+	margin-bottom: 2rem;
+}
+
+.botMargin48 {
+	margin-bottom: 3rem;
+}
+
 
 /* || ALERTS SECTION */
 
