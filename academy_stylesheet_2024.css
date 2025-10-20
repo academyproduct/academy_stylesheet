@@ -47,6 +47,7 @@ Section Contents:
   Bar Chart,
   Diverging Bar Chart
   Objectives
+  Graph Interactive
 
   Course Specific Contents:
   Orientation,
@@ -4109,3 +4110,78 @@ button.toolTip-button:hover {
     --divider-inset: 1.25rem;
   }
 }
+
+
+
+/* || GRAPH INTERACTIVE */
+
+#wguGraph * { box-sizing: border-box; }
+
+  #wguGraph .wgg-app{
+    width:100%; max-width:1100px; margin:0 auto; display:grid; gap:16px;
+    grid-template-columns: 360px 1fr;
+  }
+  @media (max-width: 900px){
+    #wguGraph .wgg-app{ grid-template-columns: 1fr; }
+  }
+
+  #wguGraph .wgg-card{
+    background:var(--wgg-surface);
+    border:1px solid var(--wgg-subtle);
+    border-radius:12px; padding:16px;
+  }
+
+  #wguGraph .wgg-row{ display:grid; gap:8px; align-items:end }
+  #wguGraph .wgg-row-3{ grid-template-columns: 1fr 1fr auto }
+  #wguGraph .wgg-row-2{ grid-template-columns: 1fr 1fr }
+  #wguGraph .wgg-row + .wgg-row{ margin-top:8px }
+
+  #wguGraph input[type="text"], 
+  #wguGraph input[type="number"]{
+    width:100%; background:#fff; border:1px solid var(--wgg-subtle);
+    border-radius:8px; padding:10px 12px; min-width:0;
+  }
+  #wguGraph input:focus{ outline:2px solid var(--wgg-secondary); outline-offset:1px }
+  #wgg-label, #wgg-value { height:45px; }
+  #wguGraph input[type="number"]{-moz-appearance:textfield;}
+  #wguGraph input[type="number"]::-webkit-outer-spin-button,
+  #wguGraph input[type="number"]::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+
+  #wguGraph .wgg-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    background:var(--wgg-primary); border:1px solid var(--wgg-primary);
+    border-radius:8px; padding:10px 12px; cursor:pointer; user-select:none;
+  }
+  #wguGraph .wgg-btn.wgg-outline{
+    background:transparent; border:1px solid var(--wgg-primary);
+  }
+  #wguGraph .wgg-btn:focus{ outline:2px solid var(--wgg-secondary); outline-offset:2px }
+  #wguGraph .wgg-tools{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px }
+
+  #wguGraph .wgg-table{ width:100%; border-collapse:collapse; margin-top:8px }
+  #wguGraph .wgg-table th, 
+  #wguGraph .wgg-table td{ padding:8px 6px; border-bottom:1px dashed var(--wgg-subtle); text-align:left }
+  #wguGraph .wgg-table td:last-child{ text-align:right }
+
+  #wguGraph .wgg-chip{ padding:4px 8px; border-radius:999px; border:1px solid var(--wgg-subtle); background:#fff }
+  #wguGraph .wgg-note, #wguGraph .wgg-hint { opacity:.8 }
+  #wguGraph .wgg-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px }
+
+  #wguGraph #wgg-chart{ position:relative; inline-size:100%; block-size:min(65vh, 560px); background:#fff; border:1px solid var(--wgg-subtle); border-radius:12px; }
+  #wguGraph svg{ width:100%; height:100%; display:block; overflow:visible; }
+  #wguGraph .wgg-grid line{ stroke:var(--wgg-subtle); stroke-width:1; }
+
+  /* Line + points (now use overridable custom properties) */
+  #wguGraph .wgg-line  { fill:none; stroke:var(--wgg-line-color);  stroke-width:3; }
+  #wguGraph .wgg-point { stroke:#fff; stroke-width:2; fill:var(--wgg-point-fill); cursor:default }
+
+  /* Bars (now use overridable custom properties) */
+  #wguGraph .wgg-bar   { fill:var(--wgg-bar-fill); stroke:var(--wgg-bar-fill); }
+  #wguGraph .wgg-bar:hover{ filter:brightness(1.05); outline:1px solid var(--wgg-secondary); outline-offset:-1px; }
+
+  #wguGraph .wgg-tip{
+    position:absolute; pointer-events:none; background:#fff; border:1px solid var(--wgg-subtle); padding:6px 8px;
+    border-radius:8px; transform:translate(-50%,-120%); white-space:nowrap; opacity:0
+  }
+  #wguGraph .wgg-empty{ display:grid; place-items:center; height:100%; text-align:center; padding:12px; opacity:.8 }
+  #wguGraph .wgg-sr{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); border:0 }
