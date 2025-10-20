@@ -4115,7 +4115,15 @@ button.toolTip-button:hover {
 
 /* || GRAPH INTERACTIVE */
 
-#wguGraph * { box-sizing: border-box; }
+  #wguGraph {
+    --wgg-primary:   var(--acad-green3); /* default accent for buttons (light green) */
+    --wgg-secondary: var(--acad-green3); /* default secondary for bars and line (light green)  */
+    --wgg-tertiary:  var(--acad-blue2); /* default color for points (dark blue) */
+    --wgg-surface:   #f5f8fa; /* panel bg (lightest blue) */
+    --wgg-subtle:    #D2E4EE; /* borders, grid (light blue) */
+  }
+
+  #wguGraph * { box-sizing: border-box; }
 
   #wguGraph .wgg-app{
     width:100%; max-width:1100px; margin:0 auto; display:grid; gap:16px;
