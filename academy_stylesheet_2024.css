@@ -1665,6 +1665,11 @@ ol.fill-list {
 	max-width: 25%;
 }
 
+.card-iconText.size-30 .card-iconText-icon_wrapper {
+	flex-basis: 30%;
+	max-width: 30%;
+}
+
 .card-iconText.size-40 .card-iconText-icon_wrapper {
 	flex-basis: 40%;
 	max-width: 40%;
