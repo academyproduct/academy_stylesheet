@@ -2400,6 +2400,15 @@ figcaption {
 	overflow: hidden;
 }
 
+.image_card-container_wide {
+	flex: 1 1 250px;
+	margin: 0 0.625em 1.625em 0.625em;
+	box-shadow: 2px 2px 16px #f4f8fa;
+	border: 1px solid #d6e8f2;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
 .image_card-container#full_width {
 	flex: none;
 	min-width: none;
