@@ -192,20 +192,29 @@ body {
 	margin-right: 0.75rem;
 }
 
+/* || bottom margins */
+.botMargin0 {
+	margin-bottom: 0 !important;
+}
+
+.botMargin8 {
+	margin-bottom: .5rem !important;
+}
+
 .botMargin16 {
-	margin-bottom: 1rem;
+	margin-bottom: 1rem !important;
 }
 
 .botMargin24 {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5em !important;
 }
 
 .botMargin32 {
-	margin-bottom: 2rem;
+	margin-bottom: 2rem !important;
 }
 
 .botMargin48 {
-	margin-bottom: 3rem;
+	margin-bottom: 3rem !important;
 }
 
 
