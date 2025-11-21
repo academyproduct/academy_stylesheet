@@ -198,7 +198,7 @@ body {
 }
 
 .botMargin8 {
-	margin-bottom: .5rem !important;
+	margin-bottom: 0.5rem !important;
 }
 
 .botMargin16 {
@@ -216,7 +216,6 @@ body {
 .botMargin48 {
 	margin-bottom: 3rem !important;
 }
-
 
 /* || ALERTS SECTION */
 
@@ -1934,6 +1933,14 @@ ol.fill-list {
 	padding: 0.5em 1em 1.5em 1em;
 }
 
+/* Simple light blue text box */
+.blue-box {
+	width: 100%;
+	background-color: rgba(214, 232, 242, 0.205);
+	padding: 2rem;
+	border-radius: 8px;
+}
+
 /* || IMAGE SECTION */
 
 /* Image float left or right */
@@ -3445,179 +3452,190 @@ button.toolTip-button:hover {
 	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
 }
 
-
 /* || KEYTERMS TOOLTIP */
 
 /* Trigger */
 .keyterms-tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted #333;
-  background-color: #e1f4ed;       /* your current base bg */
-  cursor: help;
-  font-weight: bold;
-  isolation: isolate;              /* contain stacking within the trigger */
-  z-index: 1;
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted #333;
+	background-color: #e1f4ed; /* your current base bg */
+	cursor: help;
+	font-weight: bold;
+	isolation: isolate; /* contain stacking within the trigger */
+	z-index: 1;
 
-  /* Consistent spacing between trigger and tooltip in all directions */
-  --kt-gap: 10px;                  /* adjust once to tune gaps everywhere */
-  --kt-arrow: 5px;                 /* arrow triangle size (for reference) */
+	/* Consistent spacing between trigger and tooltip in all directions */
+	--kt-gap: 10px; /* adjust once to tune gaps everywhere */
+	--kt-arrow: 5px; /* arrow triangle size (for reference) */
 }
 
 /* Lift above neighbors while active */
 .keyterms-tooltip:hover,
 .keyterms-tooltip:focus-within {
-  z-index: 2147483647;             /* sit above surrounding text/content */
+	z-index: 2147483647; /* sit above surrounding text/content */
 }
 
 /* Hover background (keep your current color) */
 .keyterms-tooltip:hover {
-  background-color: #ace8cf;
+	background-color: #ace8cf;
 }
 
 /* Tooltip panel (desktop defaults) */
 .keyterms-tooltip .tooltiptext {
-  visibility: hidden;
-  width: 260px;                    /* fixed width on desktop */
-  max-width: 260px;
-  background-color: #333;
-  color: #fff;
-  font-weight: normal;
-  text-align: left;
-  border-radius: 6px;
-  padding: 8px 10px;
-  position: absolute;
-  z-index: 2147483646;             /* just beneath the active host */
-  line-height: 1.4;
-  box-sizing: border-box;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+	visibility: hidden;
+	width: 260px; /* fixed width on desktop */
+	max-width: 260px;
+	background-color: #333;
+	color: #fff;
+	font-weight: normal;
+	text-align: left;
+	border-radius: 6px;
+	padding: 8px 10px;
+	position: absolute;
+	z-index: 2147483646; /* just beneath the active host */
+	line-height: 1.4;
+	box-sizing: border-box;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 
-  /* Default to TOP placement with consistent gap */
-  left: 50%;
-  transform: translateX(-50%);
-  top: auto;
-  bottom: calc(100% + var(--kt-gap));
+	/* Default to TOP placement with consistent gap */
+	left: 50%;
+	transform: translateX(-50%);
+	top: auto;
+	bottom: calc(100% + var(--kt-gap));
 }
 
 /* Vertical arrow (top/bottom) */
 .keyterms-tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  margin-left: calc(-1 * var(--kt-arrow));
-  border-width: var(--kt-arrow);
-  border-style: solid;
-  /* Default (top placement): arrow points down from tooltip bottom */
-  top: 100%;
-  border-color: #333 transparent transparent transparent;
+	content: "";
+	position: absolute;
+	left: 50%;
+	margin-left: calc(-1 * var(--kt-arrow));
+	border-width: var(--kt-arrow);
+	border-style: solid;
+	/* Default (top placement): arrow points down from tooltip bottom */
+	top: 100%;
+	border-color: #333 transparent transparent transparent;
 }
 
 /* Horizontal arrow (left/right) off by default */
 .keyterms-tooltip .tooltiptext::before {
-  content: "";
-  position: absolute;
-  border-width: 0; /* off unless left/right */
-  border-style: solid;
+	content: "";
+	position: absolute;
+	border-width: 0; /* off unless left/right */
+	border-style: solid;
 }
 
 /* Show on hover/focus */
 .keyterms-tooltip:hover .tooltiptext,
 .keyterms-tooltip:focus-within .tooltiptext {
-  visibility: visible;
+	visibility: visible;
 }
 
 /* Keyboard focus affordance */
-.keyterms-tooltip[tabindex] { outline: none; }
-.keyterms-tooltip:focus { outline: 2px dashed #4387ee; outline-offset: 2px; }
+.keyterms-tooltip[tabindex] {
+	outline: none;
+}
+.keyterms-tooltip:focus {
+	outline: 2px dashed #4387ee;
+	outline-offset: 2px;
+}
 
 /* ====== Orientation Overrides ====== */
 
 /* TOP: tooltip above term, arrow down */
 .keyterms-tooltip.tt-top .tooltiptext {
-  bottom: calc(100% + var(--kt-gap));
-  top: auto;
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
+	bottom: calc(100% + var(--kt-gap));
+	top: auto;
+	left: 50%;
+	right: auto;
+	transform: translateX(-50%);
 }
 .keyterms-tooltip.tt-top .tooltiptext::after {
-  top: 100%;
-  bottom: auto;
-  left: 50%;
-  margin-left: calc(-1 * var(--kt-arrow));
-  border-width: var(--kt-arrow);
-  border-color: #333 transparent transparent transparent; /* down arrow */
+	top: 100%;
+	bottom: auto;
+	left: 50%;
+	margin-left: calc(-1 * var(--kt-arrow));
+	border-width: var(--kt-arrow);
+	border-color: #333 transparent transparent transparent; /* down arrow */
 }
-.keyterms-tooltip.tt-top .tooltiptext::before { border-width: 0; }
+.keyterms-tooltip.tt-top .tooltiptext::before {
+	border-width: 0;
+}
 
 /* BOTTOM: tooltip below term, arrow up */
 .keyterms-tooltip.tt-bottom .tooltiptext {
-  top: calc(100% + var(--kt-gap));
-  bottom: auto;
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
+	top: calc(100% + var(--kt-gap));
+	bottom: auto;
+	left: 50%;
+	right: auto;
+	transform: translateX(-50%);
 }
 .keyterms-tooltip.tt-bottom .tooltiptext::after {
-  bottom: 100%;
-  top: auto;
-  left: 50%;
-  margin-left: calc(-1 * var(--kt-arrow));
-  border-width: var(--kt-arrow);
-  border-color: transparent transparent #333 transparent; /* up arrow */
+	bottom: 100%;
+	top: auto;
+	left: 50%;
+	margin-left: calc(-1 * var(--kt-arrow));
+	border-width: var(--kt-arrow);
+	border-color: transparent transparent #333 transparent; /* up arrow */
 }
-.keyterms-tooltip.tt-bottom .tooltiptext::before { border-width: 0; }
+.keyterms-tooltip.tt-bottom .tooltiptext::before {
+	border-width: 0;
+}
 
 /* LEFT: tooltip to the left (arrow ► on tooltip’s right edge) */
 .keyterms-tooltip.tt-left .tooltiptext {
-  top: 50%;
-  bottom: auto;
-  right: calc(100% + var(--kt-gap));
-  left: auto;
-  transform: translateY(-50%);
+	top: 50%;
+	bottom: auto;
+	right: calc(100% + var(--kt-gap));
+	left: auto;
+	transform: translateY(-50%);
 }
 /* hide vertical arrow; show horizontal right-pointing arrow */
-.keyterms-tooltip.tt-left .tooltiptext::after { border-width: 0; }
+.keyterms-tooltip.tt-left .tooltiptext::after {
+	border-width: 0;
+}
 .keyterms-tooltip.tt-left .tooltiptext::before {
-  top: 50%;
-  right: calc(-1 * var(--kt-arrow) * 2);
-  left: auto;
-  transform: translateY(-50%);
-  border-width: var(--kt-arrow);
-  border-color: transparent transparent transparent #333; /* ► */
+	top: 50%;
+	right: calc(-1 * var(--kt-arrow) * 2);
+	left: auto;
+	transform: translateY(-50%);
+	border-width: var(--kt-arrow);
+	border-color: transparent transparent transparent #333; /* ► */
 }
 
 /* RIGHT: tooltip to the right (arrow ◄ on tooltip’s left edge) */
 .keyterms-tooltip.tt-right .tooltiptext {
-  top: 50%;
-  bottom: auto;
-  left: calc(100% + var(--kt-gap));
-  right: auto;
-  transform: translateY(-50%);
+	top: 50%;
+	bottom: auto;
+	left: calc(100% + var(--kt-gap));
+	right: auto;
+	transform: translateY(-50%);
 }
 /* hide vertical arrow; show horizontal left-pointing arrow */
-.keyterms-tooltip.tt-right .tooltiptext::after { border-width: 0; }
+.keyterms-tooltip.tt-right .tooltiptext::after {
+	border-width: 0;
+}
 .keyterms-tooltip.tt-right .tooltiptext::before {
-  top: 50%;
-  left: calc(-1 * var(--kt-arrow) * 2);
-  right: auto;
-  transform: translateY(-50%);
-  border-width: var(--kt-arrow);
-  border-color: transparent #333 transparent transparent; /* ◄ */
+	top: 50%;
+	left: calc(-1 * var(--kt-arrow) * 2);
+	right: auto;
+	transform: translateY(-50%);
+	border-width: var(--kt-arrow);
+	border-color: transparent #333 transparent transparent; /* ◄ */
 }
 
 /* ====== Mobile overrides (≤ 768px): responsive width & nicer wrapping ====== */
 @media (max-width: 768px) {
-  .keyterms-tooltip .tooltiptext {
-    width: auto;  /* allow responsive sizing */
-    min-width: min(220px, calc(100vw - 2*var(--kt-gap)));
-    max-width: min(360px, calc(100vw - 2*var(--kt-gap)));
-    overflow-wrap: break-word;  /* break only when needed */
-    word-break: normal;
-    hyphens: auto;
-  }
+	.keyterms-tooltip .tooltiptext {
+		width: auto; /* allow responsive sizing */
+		min-width: min(220px, calc(100vw - 2 * var(--kt-gap)));
+		max-width: min(360px, calc(100vw - 2 * var(--kt-gap)));
+		overflow-wrap: break-word; /* break only when needed */
+		word-break: normal;
+		hyphens: auto;
+	}
 }
-
 
 /* || COMPARE CARDS */
 
@@ -3952,409 +3970,458 @@ button.toolTip-button:hover {
 	}
 }
 
-
 /* || DIVERGING BAR CHART */
 
 /* Screen-reader helper: visually hidden but accessible */
-  .divergingChart .sr-only {
-    position: absolute !important; width: 1px; height: 1px;
-    padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
-    white-space: nowrap; border: 0;
-  }
+.divergingChart .sr-only {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
 
-  /* Chart container */
-  .divergingChart .chart { max-width: 900px; margin: 1rem auto; }
+/* Chart container */
+.divergingChart .chart {
+	max-width: 900px;
+	margin: 1rem auto;
+}
 
-  /* Center small section headings */
-  .divergingChart h5 { text-align: center; margin: .25rem 0 .25rem; }
+/* Center small section headings */
+.divergingChart h5 {
+	text-align: center;
+	margin: 0.25rem 0 0.25rem;
+}
 
-  /* One row = Left label | diverging bar track | Right label */
-  .divergingChart .row {
-    display: grid;
-    grid-template-columns: auto minmax(240px, 1fr) auto; /* left label | track | right label */
-    align-items: center;
-    gap: .75rem;
-    margin: .9rem 0;
+/* One row = Left label | diverging bar track | Right label */
+.divergingChart .row {
+	display: grid;
+	grid-template-columns: auto minmax(240px, 1fr) auto; /* left label | track | right label */
+	align-items: center;
+	gap: 0.75rem;
+	margin: 0.9rem 0;
 
-    /* Compute bar widths from minutes (set per row inline) */
-    --left-pct:  calc((var(--left)  / var(--max-left))  * 50%);  /* left side */
-    --right-pct: calc((var(--right) / var(--max-right)) * 50%);  /* right side */
-  }
+	/* Compute bar widths from minutes (set per row inline) */
+	--left-pct: calc((var(--left) / var(--max-left)) * 50%); /* left side */
+	--right-pct: calc((var(--right) / var(--max-right)) * 50%); /* right side */
+}
 
-  .divergingChart .label-left,
-  .divergingChart .label-right {
-    white-space: nowrap;
-    font-variant-numeric: tabular-nums;
-  }
+.divergingChart .label-left,
+.divergingChart .label-right {
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
 
-  /* The bar track (center line divides the two sides) */
-  .divergingChart .track {
-    position: relative;
-    height: 2rem;        /* EDIT to change bar thickness */
-    background: transparent;
-    overflow: hidden;
-  }
+/* The bar track (center line divides the two sides) */
+.divergingChart .track {
+	position: relative;
+	height: 2rem; /* EDIT to change bar thickness */
+	background: transparent;
+	overflow: hidden;
+}
 
-  /* Center axis line */
-  .divergingChart .track::before {
-    content: "";
-    position: absolute; inset: 0 auto 0 50%;
-    width: 1px; background: #163F6C33; /* faint dark blue line */
-    pointer-events: none;
-  }
+/* Center axis line */
+.divergingChart .track::before {
+	content: "";
+	position: absolute;
+	inset: 0 auto 0 50%;
+	width: 1px;
+	background: #163f6c33; /* faint dark blue line */
+	pointer-events: none;
+}
 
-  /* Keyboard focus ring */
-  .divergingChart .track:focus-visible {
-    outline: 3px solid #163F6C;
-    outline-offset: 2px;
-  }
+/* Keyboard focus ring */
+.divergingChart .track:focus-visible {
+	outline: 3px solid #163f6c;
+	outline-offset: 2px;
+}
 
-  /* The bars: start at width 0, grow out from the center */
-  .divergingChart .bar {
-    position: absolute; top: 0; height: 100%; width: 0;
-    display: flex; align-items: center; justify-content: center;
-    color: #ffffff; font-weight: 600; white-space: nowrap;
-    text-shadow: 0 1px 0 rgba(0,0,0,.25);  /* improve legibility */
-    overflow: hidden;
-    /* Optional: ensure tiny bars still show at least a few characters */
-    /* min-width: 2.5ch; */
-  }
-  .divergingChart .bar.left  { right: 50%; background: #2F7EBE; } /* left color */
-  .divergingChart .bar.right { left:  50%; background: #CE6042; } /* right color */
+/* The bars: start at width 0, grow out from the center */
+.divergingChart .bar {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	font-weight: 600;
+	white-space: nowrap;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); /* improve legibility */
+	overflow: hidden;
+	/* Optional: ensure tiny bars still show at least a few characters */
+	/* min-width: 2.5ch; */
+}
+.divergingChart .bar.left {
+	right: 50%;
+	background: #2f7ebe;
+} /* left color */
+.divergingChart .bar.right {
+	left: 50%;
+	background: #ce6042;
+} /* right color */
 
-  /* Animate to the computed widths (speed = 1.1s; change as desired) */
-  .divergingChart .bar.left  { animation: grow-left  1.1s ease-out forwards; }
-  .divergingChart .bar.right { animation: grow-right 1.1s ease-out forwards; }
-  @keyframes grow-left  { to { width: var(--left-pct); } }
-  @keyframes grow-right { to { width: var(--right-pct); } }
+/* Animate to the computed widths (speed = 1.1s; change as desired) */
+.divergingChart .bar.left {
+	animation: grow-left 1.1s ease-out forwards;
+}
+.divergingChart .bar.right {
+	animation: grow-right 1.1s ease-out forwards;
+}
+@keyframes grow-left {
+	to {
+		width: var(--left-pct);
+	}
+}
+@keyframes grow-right {
+	to {
+		width: var(--right-pct);
+	}
+}
 
-  /* Reduced motion: render bars at final widths immediately */
-  @media (prefers-reduced-motion: reduce) {
-    .divergingChart .bar { animation: none; }
-    .divergingChart .bar.left  { width: var(--left-pct); }
-    .divergingChart .bar.right { width: var(--right-pct); }
-  }
+/* Reduced motion: render bars at final widths immediately */
+@media (prefers-reduced-motion: reduce) {
+	.divergingChart .bar {
+		animation: none;
+	}
+	.divergingChart .bar.left {
+		width: var(--left-pct);
+	}
+	.divergingChart .bar.right {
+		width: var(--right-pct);
+	}
+}
 
-  /* Mobile: stack left label, then track, then right label */
-  @media (max-width: 560px) {
-    .divergingChart .row {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "left"
-        "track"
-        "right";
-      gap: .4rem;
-    }
-    .divergingChart .label-left  { grid-area: left; }
-    .divergingChart .track       { grid-area: track; }
-    .divergingChart .label-right { grid-area: right; justify-self: end; }
-    .divergingChart .bar { font-size: .875rem; } /* slightly smaller text inside bars */
-  }
-
-
+/* Mobile: stack left label, then track, then right label */
+@media (max-width: 560px) {
+	.divergingChart .row {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"left"
+			"track"
+			"right";
+		gap: 0.4rem;
+	}
+	.divergingChart .label-left {
+		grid-area: left;
+	}
+	.divergingChart .track {
+		grid-area: track;
+	}
+	.divergingChart .label-right {
+		grid-area: right;
+		justify-self: end;
+	}
+	.divergingChart .bar {
+		font-size: 0.875rem;
+	} /* slightly smaller text inside bars */
+}
 
 /* || OBJECTIVES */
 
-  /* --- Objectives (Style 2) with image on the right --- */
+/* --- Objectives (Style 2) with image on the right --- */
 .objectives-style2 {
-  display: flex;
-  justify-content: left;
-  margin: 0 auto 1.5em auto;
-  border: 1px solid #f4f8fa;
-  border-radius: 4px;
-  box-shadow: 0px 8px 16px #0e193415;
-  background: white;
-  overflow: hidden;
+	display: flex;
+	justify-content: left;
+	margin: 0 auto 1.5em auto;
+	border: 1px solid #f4f8fa;
+	border-radius: 4px;
+	box-shadow: 0px 8px 16px #0e193415;
+	background: white;
+	overflow: hidden;
 }
 
 /* Left: content */
 .objectives-style2-content {
-  flex: 1 1 60%;
-  padding: 0rem 2rem;
-  min-width: 0; /* prevents overflow with long text */
+	flex: 1 1 60%;
+	padding: 0rem 2rem;
+	min-width: 0; /* prevents overflow with long text */
 }
 
 .objectives-style2-content > h2 {
-  margin: 2rem 0 1rem 0;
+	margin: 2rem 0 1rem 0;
 }
 
 /* Ordered list + rhythm */
 .objectives-style2-list {
-  --divider-inset: 2rem;
-  list-style: decimal;
-  list-style-position: inside;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--obj-gap);
+	--divider-inset: 2rem;
+	list-style: decimal;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--obj-gap);
 }
 
 .objectives-style2-list > li {
-  padding: 1rem 0.2rem;
-  border-bottom: 1px solid #D2E4EE;
+	padding: 1rem 0.2rem;
+	border-bottom: 1px solid #d2e4ee;
 }
 
 /* Right: image */
 .objectives-style2-image {
-  flex: 0 0 40%;
-  max-width: 40%;
-  position: relative;
+	flex: 0 0 40%;
+	max-width: 40%;
+	position: relative;
 }
 
 .objectives-style2-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* crops to fill the right panel nicely */
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* crops to fill the right panel nicely */
 }
 
 /* ---------- Mobile: image on TOP ---------- */
 @media (max-width: 700px) {
-  .objectives-style2 {
-    display: flex;              /* keep flex for ordering */
-    flex-direction: column;     /* stack vertically */
-  }
-  .objectives-style2-image {
-    order: -1;                  /* move image above content */
-    max-width: 100%;
-    width: 100%;
-    height: 180px;              /* banner feel; tweak as needed */
-  }
-  .objectives-style2-content {
-    padding: 1rem 1rem;
-  }
-  .objectives-style2-list {
-    --divider-inset: 1.25rem;
-  }
+	.objectives-style2 {
+		display: flex; /* keep flex for ordering */
+		flex-direction: column; /* stack vertically */
+	}
+	.objectives-style2-image {
+		order: -1; /* move image above content */
+		max-width: 100%;
+		width: 100%;
+		height: 180px; /* banner feel; tweak as needed */
+	}
+	.objectives-style2-content {
+		padding: 1rem 1rem;
+	}
+	.objectives-style2-list {
+		--divider-inset: 1.25rem;
+	}
 }
-
-
 
 /* || GRAPH INTERACTIVE */
 
 /* Theme palette (override per-instance if needed) */
 .wguGraphMultiple {
-  --wgg-primary: #78c0a7;
-  --wgg-secondary: #2f7ebe;
-  --wgg-surface: #f5f8fa;
-  --wgg-subtle: #d2e4ee;
-  --wgg-bar-0: var(--wgg-primary);
-  --wgg-bar-1: var(--wgg-secondary);
-  --wgg-line-0: var(--wgg-primary);
-  --wgg-line-1: var(--wgg-secondary);
+	--wgg-primary: #78c0a7;
+	--wgg-secondary: #2f7ebe;
+	--wgg-surface: #f5f8fa;
+	--wgg-subtle: #d2e4ee;
+	--wgg-bar-0: var(--wgg-primary);
+	--wgg-bar-1: var(--wgg-secondary);
+	--wgg-line-0: var(--wgg-primary);
+	--wgg-line-1: var(--wgg-secondary);
 }
 
 /* Contain styles to widget */
 .wguGraphMultiple * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* Two-column layout: controls (left) + chart (right) */
 .wguGraphMultiple .wgg-app {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  gap: 16px;
-  grid-template-columns: 360px 1fr;
+	width: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
+	display: grid;
+	gap: 16px;
+	grid-template-columns: 360px 1fr;
 }
 
 /* Stack on small screens */
 @media (max-width: 900px) {
-  .wguGraphMultiple .wgg-app {
-    grid-template-columns: 1fr;
-  }
+	.wguGraphMultiple .wgg-app {
+		grid-template-columns: 1fr;
+	}
 }
 
 /* Container that includes the graphs */
 .wguGraphMultiple .wgg-card {
-  background: var(--wgg-surface);
-  border: 1px solid var(--wgg-subtle);
-  border-radius: 12px;
-  padding: 16px;
+	background: var(--wgg-surface);
+	border: 1px solid var(--wgg-subtle);
+	border-radius: 12px;
+	padding: 16px;
 }
 .wguGraphMultiple .wgg-row {
-  display: grid;
-  gap: 8px;
-  align-items: end;
+	display: grid;
+	gap: 8px;
+	align-items: end;
 }
 .wguGraphMultiple .wgg-row-3 {
-  grid-template-columns: 1fr 1fr auto;
+	grid-template-columns: 1fr 1fr auto;
 }
 .wguGraphMultiple .wgg-row-2 {
-  grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 }
 .wguGraphMultiple .wgg-row-1 {
-  grid-template-columns: 1fr;
+	grid-template-columns: 1fr;
 }
 .wguGraphMultiple .wgg-row + .wgg-row {
-  margin-top: 8px;
+	margin-top: 8px;
 }
 
 /* Simple grid helpers for rows */
 .wguGraphMultiple input,
 .wguGraphMultiple select {
-  width: 100%;
-  background: #fff;
-  border: 1px solid var(--wgg-subtle);
-  border-radius: 8px;
-  padding: 10px 12px;
+	width: 100%;
+	background: #fff;
+	border: 1px solid var(--wgg-subtle);
+	border-radius: 8px;
+	padding: 10px 12px;
 }
 .wguGraphMultiple input:focus,
 .wguGraphMultiple select:focus {
-  outline: 2px solid var(--wgg-secondary);
-  outline-offset: 1px;
+	outline: 2px solid var(--wgg-secondary);
+	outline-offset: 1px;
 }
 
 /* Button styles (divs acting as buttons) */
 .wguGraphMultiple .wgg-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--wgg-primary);
-  border: 1px solid var(--wgg-primary);
-  border-radius: 8px;
-  padding: 10px 12px;
-  cursor: pointer;
-  user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--wgg-primary);
+	border: 1px solid var(--wgg-primary);
+	border-radius: 8px;
+	padding: 10px 12px;
+	cursor: pointer;
+	user-select: none;
 }
 .wguGraphMultiple .wgg-btn.wgg-outline {
-  background: transparent;
-  border: 1px solid var(--wgg-primary);
+	background: transparent;
+	border: 1px solid var(--wgg-primary);
 }
 
 /* Tool button row */
 .wguGraphMultiple .wgg-tools {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 8px;
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	margin-top: 8px;
 }
 
 /* Data table */
 .wguGraphMultiple .wgg-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 8px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 8px;
 }
 .wguGraphMultiple .wgg-table th,
 .wguGraphMultiple .wgg-table td {
-  padding: 8px 6px;
-  border-bottom: 1px dashed var(--wgg-subtle);
-  text-align: left;
+	padding: 8px 6px;
+	border-bottom: 1px dashed var(--wgg-subtle);
+	text-align: left;
 }
 .wguGraphMultiple .wgg-table td:last-child {
-  text-align: right;
+	text-align: right;
 }
 
 /* Heading chips and hint */
 .wguGraphMultiple .wgg-chip {
-  padding: 8px 20px;
-  border-radius: 12px;
-  border: 1px solid var(--wgg-subtle);
-  background: #fff;
+	padding: 8px 20px;
+	border-radius: 12px;
+	border: 1px solid var(--wgg-subtle);
+	background: #fff;
 }
 .wguGraphMultiple .wgg-note,
 .wguGraphMultiple .wgg-hint {
-  opacity: 0.8;
-  padding: 8px 0px;
+	opacity: 0.8;
+	padding: 8px 0px;
 }
 
 /* Chart container (SVG will stretch inside) */
 .wguGraphMultiple .wgg-chart {
-  position: relative;
-  inline-size: 100%;
-  block-size: min(70vh, 700px);
-  background: #fff;
-  border: 1px solid var(--wgg-subtle);
-  border-radius: 12px;
+	position: relative;
+	inline-size: 100%;
+	block-size: min(70vh, 700px);
+	background: #fff;
+	border: 1px solid var(--wgg-subtle);
+	border-radius: 12px;
 }
 .wguGraphMultiple svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: visible;
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: visible;
 }
 
 /* Grid line styling */
 .wguGraphMultiple .wgg-grid line {
-  stroke: var(--wgg-subtle);
-  stroke-width: 1;
+	stroke: var(--wgg-subtle);
+	stroke-width: 1;
 }
 
 /* Series styles */
 .wguGraphMultiple .wgg-line-0 {
-  fill: none;
-  stroke: var(--wgg-line-0);
-  stroke-width: 3;
+	fill: none;
+	stroke: var(--wgg-line-0);
+	stroke-width: 3;
 }
 .wguGraphMultiple .wgg-line-1 {
-  fill: none;
-  stroke: var(--wgg-line-1);
-  stroke-width: 3;
+	fill: none;
+	stroke: var(--wgg-line-1);
+	stroke-width: 3;
 }
 .wguGraphMultiple .wgg-point-0 {
-  stroke: #fff;
-  stroke-width: 2;
-  fill: var(--wgg-line-0);
+	stroke: #fff;
+	stroke-width: 2;
+	fill: var(--wgg-line-0);
 }
 .wguGraphMultiple .wgg-point-1 {
-  stroke: #fff;
-  stroke-width: 2;
-  fill: var(--wgg-line-1);
+	stroke: #fff;
+	stroke-width: 2;
+	fill: var(--wgg-line-1);
 }
 .wguGraphMultiple .wgg-bar-0 {
-  fill: var(--wgg-bar-0);
-  stroke: var(--wgg-bar-0);
+	fill: var(--wgg-bar-0);
+	stroke: var(--wgg-bar-0);
 }
 .wguGraphMultiple .wgg-bar-1 {
-  fill: var(--wgg-bar-1);
-  stroke: var(--wgg-bar-1);
+	fill: var(--wgg-bar-1);
+	stroke: var(--wgg-bar-1);
 }
 
 /* Tooltip bubble */
 .wguGraphMultiple .wgg-tip {
-  position: absolute;
-  pointer-events: none;
-  background: #fff;
-  border: 1px solid var(--wgg-subtle);
-  padding: 6px 8px;
-  border-radius: 8px;
-  transform: translate(-50%, -120%);
-  white-space: nowrap;
-  opacity: 0;
+	position: absolute;
+	pointer-events: none;
+	background: #fff;
+	border: 1px solid var(--wgg-subtle);
+	padding: 6px 8px;
+	border-radius: 8px;
+	transform: translate(-50%, -120%);
+	white-space: nowrap;
+	opacity: 0;
 }
 
 /* Legend row (mini legend) */
 .wguGraphMultiple .wgg-legend {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: -4px 0 8px 0;
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: -4px 0 8px 0;
 }
 .wguGraphMultiple .wgg-key {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
 }
 .wguGraphMultiple .wgg-swatch {
-  inline-size: 14px;
-  block-size: 14px;
-  border-radius: 3px;
-  border: 1px solid var(--wgg-subtle);
+	inline-size: 14px;
+	block-size: 14px;
+	border-radius: 3px;
+	border: 1px solid var(--wgg-subtle);
 }
 .wguGraphMultiple .wgg-swatch-0 {
-  background: var(--wgg-line-0);
+	background: var(--wgg-line-0);
 }
 .wguGraphMultiple .wgg-swatch-1 {
-  background: var(--wgg-line-1);
+	background: var(--wgg-line-1);
 }
 
 /* Disabled button state */
 .wguGraphMultiple .wgg-btn.is-disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none; /* blocks mouse clicks */
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none; /* blocks mouse clicks */
 }
