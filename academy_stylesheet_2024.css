@@ -2065,6 +2065,26 @@ figcaption {
 	text-align: left;
 }
 
+/* Activity Box */
+.activity-box {
+    box-shadow: 2px 2px 8px #0e193424;
+      margin: 1rem 0rem 2rem 0rem;
+}
+
+.activity-box-iframe {
+    padding: 2rem;
+}
+  
+
+  /* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+    .activity-box img {
+      height: 20px;
+      width: auto;
+    }
+}
+
+
 /* || LOTTIE IMAGE STYLING */
 
 .helpCheckHead_sm {
