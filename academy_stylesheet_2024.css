@@ -1496,6 +1496,8 @@ ol.fill-list {
 	width: 100%;
 	margin: 1rem auto;
 	overflow: hidden;
+	border: 1px solid #0e193415;
+	border-radius: 8px;
 }
 
 .image-card .image-div {
@@ -1562,13 +1564,11 @@ ol.fill-list {
 }
 
 .image-card.shadow_box {
-	border: 1px solid #f4f8fa;
 	box-shadow: 0px 8px 16px #0e193415;
-	border-radius: 10px;
 }
 
-.image-card.shadow_box .content-div,
-.image-card.shadow_box .image-cap {
+.image-card .content-div,
+.image-card .image-cap {
 	margin: 1rem 1.25rem 1.5rem;
 }
 
@@ -2067,23 +2067,21 @@ figcaption {
 
 /* Activity Box */
 .activity-box {
-    box-shadow: 2px 2px 8px #0e193424;
-      margin: 1rem 0rem 2rem 0rem;
+	box-shadow: 2px 2px 8px #0e193424;
+	margin: 1rem 0rem 2rem 0rem;
 }
 
 .activity-box-iframe {
-    padding: 2rem;
+	padding: 2rem;
 }
-  
 
-  /* Use a media query to add a break point at 800px: */
+/* Use a media query to add a break point at 800px: */
 @media screen and (max-width: 800px) {
-    .activity-box img {
-      height: 20px;
-      width: auto;
-    }
+	.activity-box img {
+		height: 20px;
+		width: auto;
+	}
 }
-
 
 /* || LOTTIE IMAGE STYLING */
 
@@ -2576,36 +2574,45 @@ figcaption {
 
 /* Flex Cards with Images */
 .flex-img-card-container {
+	/* no wrap = cards resizing until breakpoint */
 	display: flex;
 	flex-direction: row;
-	gap: 1em;
-	width: 100%;
+	gap: 1.5%; /* percent gap looks more fluid & reduces shrink of cards*/
 	margin: 0 auto 2rem;
+	width: 100%;
 }
 
 .flex-img-card {
-	flex: 1;
-	padding: 1em;
 	border-radius: 4px;
 	box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow: hidden;
 }
 
-.flex-img-card-ltBlu {
-	box-shadow: 2px 2px 16px #f4f8fa;
-    border: 1px solid #d6e8f2;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+.flex-img-card-radius8 {
+	/* border & shadow set to match the variable height image card */
+	border-radius: 8px;
+	box-shadow: 0px 8px 16px #0e193415;
+	border: 1px solid #0e193415;
+	display: flex;
+	/* does not align center */
+	flex-direction: column;
+	overflow: hidden;
 }
 
+/* putting content in two divs = simpler control over layout in card */
 .flex-img-card-image {
 	width: 100%;
-    margin: 0;
+	margin: 0;
 }
+
+.flex-img-card-image img {
+	width: 100%;
+	height: auto;
+}
+
 .flex-img-card-text {
 	padding: 1.2rem;
 }
@@ -2615,32 +2622,36 @@ figcaption {
 .flex-img-card h3,
 .flex-img-card h4,
 .flex-img-card h5 {
-	margin: 1em auto 0 !important; 
+	margin: 1em auto 0 !important;
 }
 
-@media (max-width: 825px) {
+@media (max-width: 800px) {
 	.flex-img-card-container {
+		/* forces cards into a col */
 		flex-wrap: wrap;
+		width: 100%;
+		gap: 1rem;
 	}
 }
 
+
 .textCard {
 	margin: 1em auto;
-    border-radius: 4px;
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
-    padding: 0.5em 1em 0.5em 1em;
+	border-radius: 4px;
+	box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+	padding: 0.5em 1em 0.5em 1em;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 1em;
-  }
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 1em;
+}
 
 /* Media Queries */
-@media  (max-width: 900px) {
-    .grid-container {
-      grid-template-columns: auto;
+@media (max-width: 900px) {
+	.grid-container {
+		grid-template-columns: auto;
 	}
 }
 
