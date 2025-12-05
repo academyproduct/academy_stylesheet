@@ -2579,8 +2579,8 @@ figcaption {
 	display: flex;
 	flex-direction: row;
 	gap: 1em;
-	flex-wrap: wrap;
 	width: 100%;
+	margin: 0 auto 2rem;
 }
 
 .flex-img-card {
@@ -2593,22 +2593,34 @@ figcaption {
 	align-items: center;
 }
 
+.flex-img-card-ltBlu {
+	box-shadow: 2px 2px 16px #f4f8fa;
+    border: 1px solid #d6e8f2;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-img-card-image {
+	width: 100%;
+    margin: 0;
+}
+.flex-img-card-text {
+	padding: 1.2rem;
+}
+
 .flex-img-card h1,
 .flex-img-card h2,
 .flex-img-card h3,
 .flex-img-card h4,
 .flex-img-card h5 {
-	margin: 1em auto !important;
+	margin: 1em auto 0 !important; 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 825px) {
 	.flex-img-card-container {
-		flex-direction: column;
-		flex-wrap: nowrap;
-	}
-
-	.flex-img-card {
-		width: 100%;
+		flex-wrap: wrap;
 	}
 }
 
