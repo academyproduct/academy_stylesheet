@@ -2589,6 +2589,7 @@ figcaption {
 	flex-direction: column;
 	align-items: center;
 	overflow: hidden;
+	padding: 1.2rem
 }
 
 .flex-img-card-radius8 {
