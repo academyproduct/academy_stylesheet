@@ -2641,6 +2641,19 @@ figcaption {
 	padding: 0.5em 1em 0.5em 1em;
 }
 
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 1em;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+	.grid-container {
+		grid-template-columns: auto;
+	}
+}
+
 /* || BOOSTER SECTION */
 
 .service_booster {
