@@ -490,6 +490,121 @@ body {
 	padding-left: 1em;
 }
 
+/* Matrix */
+.matrix-container {
+	max-width: 1024px;
+	margin: 2rem auto;
+	padding: 1rem;
+}
+
+.matrix-section {
+	margin-bottom: 2rem;
+}
+
+.matrix-header {
+	margin-bottom: 1rem;
+	text-align: left;
+}
+
+.matrix-row {
+	display: flex;
+	gap: 1rem;
+}
+
+.matrix-card {
+	flex: 1 1 0;
+	background: #ffffff;
+	border-radius: 1rem;
+	padding: 1.5rem 1rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	min-width: 0;
+}
+
+.matrix-card:has(.badge1) {
+	border-right: 1px solid var(--acad-blue4);
+	border-bottom: 1px solid var(--acad-blue4);
+	box-shadow: 8px 8px 24px rgba(0, 27, 92, 0.17), 3px 3px 10px rgba(0, 27, 92, 0.1);
+}
+
+.badge1 {
+	background: var(--acad-blue4);
+}
+
+.matrix-card:has(.badge2) {
+	border-right: 1px solid var(--acad-green4);
+	border-bottom: 1px solid var(--acad-green4);
+	box-shadow: 8px 8px 24px rgba(0, 63, 71, 0.2), 3px 3px 10px rgba(0, 63, 71, 0.12);
+}
+
+.badge2 {
+	background: var(--acad-green4);
+}
+
+.matrix-card:has(.badge3) {
+	border-right: 1px solid #fae4db;
+	border-bottom: 1px solid #fae4db;
+	box-shadow: 8px 8px 24px rgba(110, 24, 2, 0.2), 3px 3px 10px rgba(110, 24, 2, 0.18);
+}
+
+.badge3 {
+	background: var(--acad-orange2);
+}
+
+.matrix-card:has(.badge4) {
+	border-right: 1px solid #f4e0c7;
+	border-bottom: 1px solid #f4e0c7;
+	box-shadow: 8px 8px 24px rgba(154, 87, 4, 0.2), 3px 3px 10px rgba(154, 87, 4, 0.22);
+}
+
+.badge4 {
+	background: var(--acad-yellow1);
+}
+
+.matrix-badge {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	padding: 0.25rem 0.75rem 0.35rem;
+	border-radius: 999px;
+}
+
+@media (max-width: 700px) {
+	.matrix-row {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.matrix-header {
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	.matrix-card {
+		align-items: center;
+		text-align: center;
+	}
+}
+
+/* Property & Casualty Ins Role Comparison */
+
+.ins.matrix-card:has(.badge3) {
+	border-right: 1px solid #fae4db;
+	border-bottom: 1px solid #fae4db;
+	box-shadow: 8px 8px 24px rgba(110, 24, 2, 0.2), 3px 3px 10px rgba(110, 24, 2, 0.18);
+}
+
+.ins .badge3 {
+	background: #e87351;
+}
+
+.ins.matrix-card:has(.badge4) {
+	border-right: 1px solid #f4e0c7;
+	border-bottom: 1px solid #f4e0c7;
+	box-shadow: 8px 8px 24px rgba(154, 87, 4, 0.2), 3px 3px 10px rgba(154, 87, 4, 0.22);
+}
+
 /* || IFRAME */
 
 /* Responsive YouTube iframe */
@@ -2589,7 +2704,7 @@ figcaption {
 	flex-direction: column;
 	align-items: center;
 	overflow: hidden;
-	padding: 1.2rem
+	padding: 1.2rem;
 }
 
 .flex-img-card-radius8 {
@@ -2652,6 +2767,79 @@ figcaption {
 @media (max-width: 900px) {
 	.grid-container {
 		grid-template-columns: auto;
+	}
+}
+
+/* GRID CARDS WITH IMAGES - same children as flex above with extended layout */
+/* default 3 column */
+.image-card-grid-wrapper {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 1rem;
+}
+
+.image-card-grid-wrapper .image_card-container_wide {
+	margin: 0 !important;
+}
+
+.image-card-grid-wrapper > div {
+	grid-column: span 2;
+}
+
+/* center a single orphan in a 3 col grid */
+.one-orphan > div:last-child {
+	grid-column-end: 5;
+}
+
+/* center a double orphan in a 3 col grid */
+.two-orphan > div:last-child {
+	grid-column: 4 / span 2;
+}
+
+.two-orphan > div:nth-last-child(2) {
+	grid-column: 2 / span 2;
+}
+
+/* two column version */
+.image-card-grid-wrapper.grid-wrap-2col {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* center an orphan in a 2 col grid */
+.grid-wrap-2col.one-orphan > div:last-child {
+	grid-column: 2 / span 2;
+}
+
+@media (max-width: 800px) {
+	.image-card-grid-wrapper {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	.two-orphan > div:last-child {
+		grid-column: 2 / span 2;
+	}
+
+	.two-orphan > div:nth-last-child(2) {
+		grid-column: 3 / span 2;
+	}
+}
+
+@media (max-width: 580px) {
+	.image-card-grid-wrapper,
+	.image-card-grid-wrapper.grid-wrap-2col {
+		grid-template-columns: 1fr;
+		row-gap: 1rem;
+		column-gap: 0;
+	}
+
+	.image-card-grid-wrapper .image_card-container_wide {
+		margin: 0 !important;
+	}
+
+	.image-card-grid-wrapper > div,
+	.image-card-grid-wrapper > div:last-child {
+		grid-column: span 2 !important;
 	}
 }
 
