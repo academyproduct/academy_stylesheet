@@ -589,20 +589,34 @@ body {
 
 /* Property & Casualty Ins Role Comparison */
 
+.ins.matrix-card:has(.badge1) {
+	border-right: 1px solid #d0f4fe;
+	border-bottom: 1px solid #d0f4fe;
+	box-shadow: 8px 8px 24px hsla(193, 74%, 27%, 0.2), 3px 3px 10px rgba(0, 27, 92, 0.1);
+}
+
+.ins .badge1 {
+	background: #64bfd8;
+}
+
+.ins.matrix-card:has(.badge2) {
+	border-right: 1px solid #f3ffa6;
+	border-bottom: 1px solid #f3ffa6;
+	box-shadow: 8px 8px 24px hsla(68, 85%, 23%, 0.2), 3px 3px 10px hsla(68, 85%, 23%, 0.2);
+}
+
+.ins .badge2 {
+	background: #a7bd17;
+}
+
 .ins.matrix-card:has(.badge3) {
-	border-right: 1px solid #fae4db;
-	border-bottom: 1px solid #fae4db;
-	box-shadow: 8px 8px 24px rgba(110, 24, 2, 0.2), 3px 3px 10px rgba(110, 24, 2, 0.18);
+	border-right: 1px solid #ffe3da;
+	border-bottom: 1px solid #ffe3da;
+	box-shadow: 8px 8px 24px hsla(13, 78%, 32%, 0.2), 3px 3px 10px hsla(13, 78%, 32%, 0.2);
 }
 
 .ins .badge3 {
-	background: #e87351;
-}
-
-.ins.matrix-card:has(.badge4) {
-	border-right: 1px solid #f4e0c7;
-	border-bottom: 1px solid #f4e0c7;
-	box-shadow: 8px 8px 24px rgba(154, 87, 4, 0.2), 3px 3px 10px rgba(154, 87, 4, 0.22);
+	background: #e87352;
 }
 
 /* || IFRAME */
