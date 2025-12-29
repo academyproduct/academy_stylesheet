@@ -2770,6 +2770,79 @@ figcaption {
 	}
 }
 
+/* GRID CARDS WITH IMAGES - same children as flex above with extended layout */
+/* default 3 column */
+.image-card-grid-wrapper {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 1rem;
+}
+
+.image-card-grid-wrapper .image_card-container_wide {
+	margin: 0 !important;
+}
+
+.image-card-grid-wrapper > div {
+	grid-column: span 2;
+}
+
+/* center a single orphan in a 3 col grid */
+.one-orphan > div:last-child {
+	grid-column-end: 5;
+}
+
+/* center a double orphan in a 3 col grid */
+.two-orphan > div:last-child {
+	grid-column: 4 / span 2;
+}
+
+.two-orphan > div:nth-last-child(2) {
+	grid-column: 2 / span 2;
+}
+
+/* two column version */
+.image-card-grid-wrapper.grid-wrap-2col {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* center an orphan in a 2 col grid */
+.grid-wrap-2col.one-orphan > div:last-child {
+	grid-column: 2 / span 2;
+}
+
+@media (max-width: 800px) {
+	.image-card-grid-wrapper {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	.two-orphan > div:last-child {
+		grid-column: 2 / span 2;
+	}
+
+	.two-orphan > div:nth-last-child(2) {
+		grid-column: 3 / span 2;
+	}
+}
+
+@media (max-width: 580px) {
+	.image-card-grid-wrapper,
+	.image-card-grid-wrapper.grid-wrap-2col {
+		grid-template-columns: 1fr;
+		row-gap: 1rem;
+		column-gap: 0;
+	}
+
+	.image-card-grid-wrapper .image_card-container_wide {
+		margin: 0 !important;
+	}
+
+	.image-card-grid-wrapper > div,
+	.image-card-grid-wrapper > div:last-child {
+		grid-column: span 2 !important;
+	}
+}
+
 /* || BOOSTER SECTION */
 
 .service_booster {
