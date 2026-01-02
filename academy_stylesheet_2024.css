@@ -2792,6 +2792,27 @@ figcaption {
 	gap: 1rem;
 }
 
+  .image_card-container_wide.image-card-hov {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .image-card-hov .image-card-hov-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 2;
+  }
+
+  .image-card-hov:hover .image-card-hov-cover {
+    opacity: 0;
+  }
+
 .image-card-grid-wrapper .image_card-container_wide {
 	margin: 0 !important;
 }
