@@ -620,25 +620,15 @@ body {
 }
 
 .ins.matrix-card:has(.badge4) {
-	border-right: 1px solid #ffe3da;
-	border-bottom: 1px solid #ffe3da;
-	box-shadow: 8px 8px 24px hsla(13, 78%, 32%, 0.2), 3px 3px 10px hsla(13, 78%, 32%, 0.2);
-}
-
-.ins .badge3 {
-	background: #e87352;
-}
-
-.ins.matrix-card:has(.badge4) {
-	border-right: 1px solid #f4e0c7;
-	border-bottom: 1px solid #f4e0c7;
-	box-shadow: 8px 8px 24px rgba(115, 0, 24, 0.18), 3px 3px 10px rgba(115, 0, 24, 0.15);
-}
+   border-right: 1px solid #ffc1d2;
+   border-bottom: 1px solid #ffc1d2;
+   box-shadow: 8px 8px 24px rgba(115, 0, 24, 0.2), 3px 3px 10px rgba(115, 0, 24, 0.2);
+ }
 
 .ins .badge4 {
-	background: #953953;
-	color: white;
-}
+   background: #953953;
+   color: white;
+} 
 
 /* || IFRAME */
 
