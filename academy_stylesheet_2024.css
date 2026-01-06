@@ -620,15 +620,15 @@ body {
 }
 
 .ins.matrix-card:has(.badge4) {
-        border-right: 1px solid #ffc1d2;
-        border-bottom: 1px solid #ffc1d2;
-        box-shadow: 8px 8px 24px rgba(115, 0, 24, 0.2), 3px 3px 10px rgba(115, 0, 24, 0.2);
-      }
+   border-right: 1px solid #ffc1d2;
+   border-bottom: 1px solid #ffc1d2;
+   box-shadow: 8px 8px 24px rgba(115, 0, 24, 0.2), 3px 3px 10px rgba(115, 0, 24, 0.2);
+ }
 
-      .ins .badge4 {
-        background: #953953;
-        color: white;
-      } 
+.ins .badge4 {
+   background: #953953;
+   color: white;
+} 
 
 /* || IFRAME */
 
