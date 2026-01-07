@@ -2889,6 +2889,24 @@ figcaption {
 	}
 }
 
+
+
+.card-show-hide {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5em;
+  }
+
+  .card-show-hide > button {
+    color: white;
+    background-color: #163f6c;
+    padding: 8px 24px;
+    border-radius: 20px;
+    border-color: #42757C;
+  }
+
+
+
 /* || BOOSTER SECTION */
 
 .service_booster {
