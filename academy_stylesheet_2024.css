@@ -2898,14 +2898,17 @@ figcaption {
   }
 
   .card-show-hide > button {
-    color: white;
-    background-color: #163f6c;
+    color: #163f6c;
+    background-color: #d6e8f2;
     padding: 8px 24px;
     border-radius: 20px;
-    border-color: #42757C;
+	border: solid 1px;
+    border-color: #163f6c;
   }
 
-
+  .card-show-hide > button:hover {
+	color: white;
+  }
 
 /* || BOOSTER SECTION */
 
