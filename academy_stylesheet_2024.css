@@ -2820,7 +2820,8 @@ figcaption {
 	z-index: 2;
 }
 
-.image-card-hov:hover .image-card-hov-cover {
+.image-card-hov:hover .image-card-hov-cover,
+.image-card-hov:focus-within .image-card-hov-cover {
 	opacity: 0;
 }
 
