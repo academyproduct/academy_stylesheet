@@ -2902,12 +2902,20 @@ figcaption {
     background-color: #d6e8f2;
     padding: 8px 24px;
     border-radius: 20px;
-	border: solid 1px;
-    border-color: #163f6c;
+	border: solid 1px #163f6c;
+	background-image: none;
+	box-shadow: none;
   }
 
   .card-show-hide > button:hover {
 	color: white;
+	border: solid 1px;
+	box-shadow: none;
+  }
+
+  .card-show-hide > button:focus {
+	box-shadow: none;
+	border: solid 1px #163f6c;
   }
 
 /* || BOOSTER SECTION */
