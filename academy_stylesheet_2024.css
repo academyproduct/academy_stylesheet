@@ -515,7 +515,7 @@ body {
 	flex: 1 1 0;
 	background: #ffffff;
 	border-radius: 1rem;
-	padding: 1.5rem 1rem;
+	padding: 2rem;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 	display: flex;
 	flex-direction: column;
@@ -526,7 +526,9 @@ body {
 .matrix-card:has(.badge1) {
 	border-right: 1px solid var(--acad-blue4);
 	border-bottom: 1px solid var(--acad-blue4);
-	box-shadow: 8px 8px 24px rgba(0, 27, 92, 0.17), 3px 3px 10px rgba(0, 27, 92, 0.1);
+	box-shadow:
+		8px 8px 24px rgba(0, 27, 92, 0.17),
+		3px 3px 10px rgba(0, 27, 92, 0.1);
 }
 
 .badge1 {
@@ -536,7 +538,9 @@ body {
 .matrix-card:has(.badge2) {
 	border-right: 1px solid var(--acad-green4);
 	border-bottom: 1px solid var(--acad-green4);
-	box-shadow: 8px 8px 24px rgba(0, 63, 71, 0.2), 3px 3px 10px rgba(0, 63, 71, 0.12);
+	box-shadow:
+		8px 8px 24px rgba(0, 63, 71, 0.2),
+		3px 3px 10px rgba(0, 63, 71, 0.12);
 }
 
 .badge2 {
@@ -546,7 +550,9 @@ body {
 .matrix-card:has(.badge3) {
 	border-right: 1px solid #fae4db;
 	border-bottom: 1px solid #fae4db;
-	box-shadow: 8px 8px 24px rgba(110, 24, 2, 0.2), 3px 3px 10px rgba(110, 24, 2, 0.18);
+	box-shadow:
+		8px 8px 24px rgba(110, 24, 2, 0.2),
+		3px 3px 10px rgba(110, 24, 2, 0.18);
 }
 
 .badge3 {
@@ -556,7 +562,9 @@ body {
 .matrix-card:has(.badge4) {
 	border-right: 1px solid #f4e0c7;
 	border-bottom: 1px solid #f4e0c7;
-	box-shadow: 8px 8px 24px rgba(154, 87, 4, 0.2), 3px 3px 10px rgba(154, 87, 4, 0.22);
+	box-shadow:
+		8px 8px 24px rgba(154, 87, 4, 0.2),
+		3px 3px 10px rgba(154, 87, 4, 0.22);
 }
 
 .badge4 {
@@ -566,8 +574,9 @@ body {
 .matrix-badge {
 	display: inline-block;
 	margin-bottom: 0.5rem;
-	padding: 0.25rem 0.75rem 0.35rem;
+	padding: 0.75rem 1.5rem;
 	border-radius: 999px;
+	text-align: center;
 }
 
 @media (max-width: 700px) {
@@ -592,7 +601,9 @@ body {
 .ins.matrix-card:has(.badge1) {
 	border-right: 1px solid #d0f4fe;
 	border-bottom: 1px solid #d0f4fe;
-	box-shadow: 8px 8px 24px hsla(193, 74%, 27%, 0.2), 3px 3px 10px rgba(0, 27, 92, 0.1);
+	box-shadow:
+		8px 8px 24px hsla(193, 74%, 27%, 0.2),
+		3px 3px 10px rgba(0, 27, 92, 0.1);
 }
 
 .ins .badge1 {
@@ -602,7 +613,9 @@ body {
 .ins.matrix-card:has(.badge2) {
 	border-right: 1px solid #f3ffa6;
 	border-bottom: 1px solid #f3ffa6;
-	box-shadow: 8px 8px 24px hsla(68, 85%, 23%, 0.2), 3px 3px 10px hsla(68, 85%, 23%, 0.2);
+	box-shadow:
+		8px 8px 24px hsla(68, 85%, 23%, 0.2),
+		3px 3px 10px hsla(68, 85%, 23%, 0.2);
 }
 
 .ins .badge2 {
@@ -610,25 +623,29 @@ body {
 }
 
 .ins.matrix-card:has(.badge3) {
-	border-right: 1px solid #ffe3da;
-	border-bottom: 1px solid #ffe3da;
-	box-shadow: 8px 8px 24px hsla(13, 78%, 32%, 0.2), 3px 3px 10px hsla(13, 78%, 32%, 0.2);
+	border-right: 1px solid #ffc1d2;
+	border-bottom: 1px solid #ffc1d2;
+	box-shadow:
+		8px 8px 24px rgba(115, 0, 24, 0.2),
+		3px 3px 10px rgba(115, 0, 24, 0.2);
 }
 
 .ins .badge3 {
-	background: #e87352;
+	background: #953953;
+	color: white;
 }
 
 .ins.matrix-card:has(.badge4) {
-   border-right: 1px solid #ffc1d2;
-   border-bottom: 1px solid #ffc1d2;
-   box-shadow: 8px 8px 24px rgba(115, 0, 24, 0.2), 3px 3px 10px rgba(115, 0, 24, 0.2);
- }
+	border-right: 1px solid #ffe3da;
+	border-bottom: 1px solid #ffe3da;
+	box-shadow:
+		8px 8px 24px hsla(13, 78%, 32%, 0.2),
+		3px 3px 10px hsla(13, 78%, 32%, 0.2);
+}
 
 .ins .badge4 {
-   background: #953953;
-   color: white;
-} 
+	background: #e87352;
+}
 
 /* || IFRAME */
 
@@ -2890,34 +2907,32 @@ figcaption {
 	}
 }
 
-
-
 .card-show-hide {
-    display: flex;
-    justify-content: center;
-    padding-top: 0.5em;
-  }
+	display: flex;
+	justify-content: center;
+	padding-top: 0.5em;
+}
 
-  .card-show-hide > button {
-    color: #163f6c;
-    background-color: #d6e8f2;
-    padding: 8px 24px;
-    border-radius: 20px;
+.card-show-hide > button {
+	color: #163f6c;
+	background-color: #d6e8f2;
+	padding: 8px 24px;
+	border-radius: 20px;
 	border: solid 1px #163f6c;
 	background-image: none;
 	box-shadow: none;
-  }
+}
 
-  .card-show-hide > button:hover {
+.card-show-hide > button:hover {
 	color: white;
 	border: solid 1px;
 	box-shadow: none;
-  }
+}
 
-  .card-show-hide > button:focus {
+.card-show-hide > button:focus {
 	box-shadow: none;
 	border: solid 1px #163f6c;
-  }
+}
 
 /* || BOOSTER SECTION */
 
@@ -2953,7 +2968,9 @@ figcaption {
 	max-height: none;
 	overflow: visible;
 	opacity: 1;
-	transition: max-height 0.4s ease, opacity 0.3s ease;
+	transition:
+		max-height 0.4s ease,
+		opacity 0.3s ease;
 }
 
 .service_booster.is-collapsed .service_booster-content {
@@ -3695,7 +3712,9 @@ button.toolTip-button:hover {
 
 .accordion-summary {
 	/* existing styles... */
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 /* || VIDEO BLOCKS */
@@ -3727,7 +3746,9 @@ button.toolTip-button:hover {
 	padding-right: 2rem;
 	/* space for arrow */
 	font-weight: bold;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 /* Remove default marker */
