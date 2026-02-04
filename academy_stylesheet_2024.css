@@ -49,6 +49,7 @@ Section Contents:
   Diverging Bar Chart
   Objectives
   Graph Interactive
+  Horizontal Accordion
 
   Course Specific Contents:
   Orientation,
@@ -4890,3 +4891,80 @@ button.toolTip-button:hover {
 	cursor: not-allowed;
 	pointer-events: none; /* blocks mouse clicks */
 }
+
+/* || HORIZONTAL ACCORDION */
+/* Container for the whole component */
+  .custom-tab-asset {
+    background-color: #ffffff;
+    width: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Navigation Wrapper for the sliding line */
+  .oex-nav-wrapper {
+    position: relative;
+    width: 100%;
+    /*border-bottom: 2px solid #e0e0e0;  The background track */
+  }
+
+  .oex-tab-nav {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Clean Figma-style Tab Buttons */
+  .oex-tablink {
+    background: none;
+    flex: 1;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #313131;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    /* Overriding potential OEX button styles */
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border: none !important;
+    position: relative;
+    z-index: 2;
+  }
+
+  .oex-tablink:hover {
+    color: white !important;
+    /* color: #004481 !important; */
+  }
+
+  /* THE GENTLE ANIMATED INDICATOR */
+  .tab-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #004481;
+    z-index: 3;
+    /* The "Gentle" Spring physics from image */
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Content Styles */
+  .oex-tabcontent {
+    display: none;
+    padding: 30px 10px;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Video/Audio Section Styles */
+  .noteAlert.video-sections { width: 100%; }
