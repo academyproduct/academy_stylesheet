@@ -219,6 +219,31 @@ body {
 	margin-bottom: 3rem !important;
 }
 
+/* || top margins */
+.topMargin0 {
+	margin-top: 0 !important;
+}
+
+.topMargin8 {
+	margin-top: 0.5rem !important;
+}
+
+.topMargin16 {
+	margin-top: 1rem !important;
+}
+
+.topMargin24 {
+	margin-top: 1.5em !important;
+}
+
+.topMargin32 {
+	margin-top: 2rem !important;
+}
+
+.topMargin48 {
+	margin-top: 3rem !important;
+}
+
 /* || ALERTS SECTION */
 
 /* Note Alert */
