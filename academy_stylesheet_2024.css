@@ -51,6 +51,7 @@ Section Contents:
   Graph Interactive,
   Horizontal Accordion,
   Flight Path,
+  Carousel,
 
   Course Specific Contents:
   Orientation,
@@ -5417,3 +5418,205 @@ button.toolTip-button:hover {
 			gap: 12px;
 		}
 	}
+
+
+/* || CAROUSEL SECTION */
+
+.carousel-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	border: solid 1px #163f6c;
+}
+
+.carousel-header-section {
+	min-height: 50px;
+	max-height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 0 12px;
+	border-bottom: solid 1px #163f6c;
+	background-color: #fafafa;
+}
+
+.carousel-pagination {
+	color: #163f6c;
+	font-weight: bold;
+}
+
+.carousel-header-group {
+	display: flex;
+	gap: 1em;
+	flex-direction: row;
+	align-items: center;
+	min-width: 120px;
+	justify-content: flex-end;
+}
+
+.carousel-menu-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	border: none;
+	background: none;
+	box-shadow: none;
+	color: #163f6c;
+	text-shadow: none;
+	font-size: inherit;
+	padding: 0px 0px;
+}
+
+.carousel-pagination-buttons {
+	display: inline-flex;
+	gap: 4px;
+}
+
+#current-item-title {
+	color: #163f6c;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.carousel-menu-button:hover {
+	cursor: pointer;
+	background-color: #6699cf;
+	color: white;
+	box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.5) inset;
+}
+
+.pagination-button {
+	padding: 8px;
+	background-color: #163f6c;
+	display: inline-flex;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+	align-content: center;
+	color: white;
+	flex-wrap: wrap;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+	user-select: none;
+}
+
+.pagination-button:hover {
+	cursor: pointer;
+	background-color: #6699cf;
+	color: white;
+	box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.5) inset;
+}
+
+.item-container {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 2em;
+	overflow-y: auto;
+	min-height: 0;
+}
+
+.carousel-item {
+	width: 100%;
+}
+
+.master-carousel-container {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	overflow: hidden;
+	align-items: flex-start;
+}
+
+.carousel-navigation {
+	width: 30%;
+	background-color: #fafafa;
+	overflow-y: auto;
+	display: none;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-left: 4px;
+}
+
+@media (max-width: 768px) {
+	.master-carousel-container {
+		flex-direction: column;
+	}
+
+	.carousel-navigation {
+		height: 100% !important;
+		width: 100%;
+	}
+}
+
+.carousel-navigation.is-visible {
+	display: block;
+}
+
+.carousel-navigation>ul {
+	list-style: none !important;
+	padding-left: 0 !important;
+	margin: 0 !important;
+}
+
+.carousel-navigation>ul>li {
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
+	background-color: white;
+}
+
+.carousel-navigation li {
+	margin: 0;
+	margin-bottom: 4px !important;
+}
+
+.carousel-navigation li>a {
+	display: block;
+	padding: 12px 16px;
+	text-decoration: none;
+	color: #163f6c !important;
+	border-radius: 4px;
+}
+
+.carousel-navigation li>a.active {
+	font-weight: bold;
+}
+
+.carousel-navigation .nav-parent {
+	padding: 12px 12px;
+	cursor: pointer;
+	user-select: none;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: #163f6c;
+}
+
+.carousel-navigation .nav-parent::before {
+	content: "\f054";
+	/* Font Awesome chevron-right icon */
+	font-family: "FontAwesome";
+	transition: transform 0.3s ease;
+}
+
+/* Rotate the chevron when expanded */
+.carousel-navigation .nav-parent.expanded::before {
+	transform: rotate(90deg);
+}
+
+.carousel-navigation .nav-parent.expanded {
+	background-color: #163f6c;
+	color: white;
+}
+
+.carousel-navigation .nav-children {
+	list-style: none !important;
+	display: none;
+	margin: 0 0 !important;
+}
+
+.carousel-navigation .nav-children.expanded {
+	display: block;
+}
