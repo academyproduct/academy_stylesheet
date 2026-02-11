@@ -5423,6 +5423,11 @@ button.toolTip-button:hover {
 
 /* || CAROUSEL SECTION */
 
+.carousel-bg-decoration {
+   background-size: cover;
+    padding: 20px;
+  }
+
 .carousel-container {
 	width: 100%;
 	display: flex;
@@ -5517,6 +5522,7 @@ button.toolTip-button:hover {
 	padding: 2em;
 	overflow-y: auto;
 	min-height: 0;
+	background-color: white;
 }
 
 .carousel-item {
