@@ -53,6 +53,7 @@ Section Contents:
   Flight Path,
   Carousel,
   Likert Scale,
+  Sensitive MAterial Box,
 
   Course Specific Contents:
   Orientation,
@@ -5803,4 +5804,53 @@ button.toolTip-button:hover {
   .vert-bar-step-description {
     top: 14px;
     position: relative;
+  }
+
+/* ============================= SENSITIVE MATERIAL BOX ===================================== */
+
+#sensitive-box-unique {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 100px; 
+    background: #f4f4f4;
+    border: 2px dashed #d1d1d1;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  /* blurring magic */
+  #sensitive-box-unique .blur-content {
+    transition: all 0.3s ease;
+  }
+
+  /* The Blurred State Class */
+  #sensitive-box-unique.is-blurred .blur-content {
+    filter: blur(10px);
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* 3. Warning Label */
+  #sensitive-box-unique .blur-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+
+  /* show label only when blurred */
+  #sensitive-box-unique.is-blurred .blur-label {
+    display: block;
   }
