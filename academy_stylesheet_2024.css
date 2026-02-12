@@ -5840,7 +5840,7 @@ button.toolTip-button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #333;
+    background: #163f6c;
     color: #fff;
     padding: 10px 15px;
     border-radius: 4px;
@@ -5848,6 +5848,7 @@ button.toolTip-button:hover {
     z-index: 10;
     pointer-events: none;
     display: none;
+	box-shadow: none !important;
   }
 
   /* show label only when blurred */
