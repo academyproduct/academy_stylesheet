@@ -1900,7 +1900,7 @@ ol.fill-list {
 	margin: 1rem 1.25rem 1.5rem;
 }
 
-/* || Icon Styles */
+/*  ====================  Icon Styles  ====================  */
 
 .icon_72px {
 	height: 72px;
@@ -2269,7 +2269,7 @@ ol.fill-list {
 	border-radius: 8px;
 }
 
-/* || IMAGE SECTION */
+/*  ====================  IMAGE SECTION  ====================  */
 
 /* Image float left or right */
 
@@ -2362,7 +2362,7 @@ figcaption {
 	}
 }
 
-/* || BOX STYLING */
+/*  ====================  BOX STYLING  ==================== */
 
 /* This is used as a box with icon to the left*/
 .blockBox {
@@ -2411,7 +2411,7 @@ figcaption {
 	}
 }
 
-/* || LOTTIE IMAGE STYLING */
+/* ==================== LOTTIE IMAGE STYLING  ====================  */
 
 .helpCheckHead_sm {
 	min-width: 300px;
@@ -2429,7 +2429,7 @@ figcaption {
 	margin: 0 0 0.25em 0;
 }
 
-/* || TUTORIAL LOBBY WRAPPER SECTION */
+/*  ====================  TUTORIAL LOBBY WRAPPER SECTION  ====================  */
 
 /* Tutor and Lobby callouts */
 
@@ -2504,7 +2504,7 @@ figcaption {
 	}
 }
 
-/* || CARD SECTION */
+/*  ====================  CARD SECTION  ====================  */
 /* A lot of these are old, there is a new image_card below */
 .cards {
 	display: flex;
@@ -3125,7 +3125,7 @@ figcaption {
 	border: solid 1px #163f6c;
 }
 
-/* || BOOSTER SECTION */
+/*  ====================  BOOSTER SECTION  ====================  */
 
 .service_booster {
 	padding: 2.5rem 4rem 1rem 4rem;
@@ -3242,7 +3242,7 @@ figcaption {
 	}
 }
 
-/* || LINK SECTION */
+/*  ====================  LINK SECTION  ====================  */
 
 .linkname {
 	display: inline-block;
@@ -3271,7 +3271,7 @@ figcaption {
 	width: 100%;
 }
 
-/* || REFLECTION QUESTION SECTION */
+/*  ====================  REFLECTION QUESTION SECTION  ====================  */
 
 #Q1-explanation,
 #Q2-explanation,
@@ -3300,7 +3300,7 @@ figcaption {
 	align-items: flex-end;
 }
 
-/* || MODAL SECTION */
+/*  ====================  MODAL SECTION  ====================  */
 /* The Modal (background) */
 .modal {
 	display: none;
@@ -3410,7 +3410,7 @@ figcaption {
 	}
 }
 
-/* || CONFETTI SECTION */
+/*  ====================  CONFETTI SECTION  ====================  */
 #confetti-container {
 	position: fixed;
 	top: 0;
@@ -3421,7 +3421,7 @@ figcaption {
 	z-index: 999999;
 }
 
-/* || FOOTER SECTION */
+/*  ====================  FOOTER SECTION  ====================  */
 
 /* Use Up Next footers */
 
@@ -3479,7 +3479,7 @@ figcaption {
 	}
 }
 
-/* || SLIDER SECTION */
+/*  ====================  SLIDER SECTION  ====================  */
 
 /* Testimonial Slider */
 .testimonial-section {
@@ -3688,7 +3688,7 @@ figcaption {
 	height: auto;
 }
 
-/* || TOOLTIP SECTION */
+/*  ====================  TOOLTIP SECTION  ====================  */
 /* Tooltip container */
 .custom-tooltip {
 	position: relative;
@@ -3784,7 +3784,7 @@ button.toolTip-button:hover {
 	bottom: 125%;
 }
 
-/* || INTERVENTION SECTION */
+/*  ====================  INTERVENTION SECTION  ====================  */
 
 /* Mind Wandering Int */
 .mindwander_reminder_box {
@@ -3793,7 +3793,7 @@ button.toolTip-button:hover {
 	padding: 1.5em 1.5em 1em 1.5em;
 }
 
-/* || ORIENTATION */
+/*  ==================== ORIENTATION  ====================  */
 .choose_path {
 	padding: 1em;
 	text-align: center;
@@ -3807,7 +3807,7 @@ button.toolTip-button:hover {
 	padding: 1em;
 }
 
-/* || NOTE SECTION */
+/*  ====================  NOTE SECTION  ====================  */
 
 .note-section {
 	padding: 2.5rem 4rem 1rem 4rem;
@@ -3839,7 +3839,7 @@ button.toolTip-button:hover {
 	}
 }
 
-/* || ACCORDION SECTION */
+/*  ====================  ACCORDION SECTION  ====================  */
 
 .accordion-details {
 	margin: 10px;
@@ -3908,7 +3908,7 @@ button.toolTip-button:hover {
 		color 0.3s ease;
 }
 
-/* || VIDEO BLOCKS */
+/*  ====================  VIDEO BLOCKS  ====================  */
 
 .noteAlert.video-sections :is(h1, h2, h3, h4, h5, h6) {
 	text-align: center;
@@ -3916,7 +3916,7 @@ button.toolTip-button:hover {
 	margin-right: auto;
 }
 
-/* || ACADEMY ACCORDION */
+/*  ====================  ACADEMY ACCORDION  ==================== */
 
 .accordion-academy details {
 	margin: 10px 0px;
@@ -3991,7 +3991,7 @@ button.toolTip-button:hover {
 	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* || KEYTERMS TOOLTIP */
+/*  ====================  KEYTERMS TOOLTIP  ==================== */
 
 /* Trigger */
 .keyterms-tooltip {
@@ -4176,7 +4176,7 @@ button.toolTip-button:hover {
 	}
 }
 
-/* || COMPARE CARDS */
+/*  ====================  COMPARE CARDS  ==================== */
 
 /* Compare Cards 2 columns */
 .duo-card-wrapper {
@@ -4305,7 +4305,7 @@ button.toolTip-button:hover {
 	}
 }
 
-/* || VERTICAL TIMELINE */
+/*  ====================  VERTICAL TIMELINE  ====================  */
 
 /* -----------------------------
      Palette
@@ -4410,7 +4410,7 @@ button.toolTip-button:hover {
 	font-size: 0.9em;
 }
 
-/* || BAR CHART */
+/*  ====================  BAR CHART  ====================  */
 
 /* Screen-reader helper: visually hide, keep readable by AT */
 .barChart-academy .sr-only {
@@ -4509,7 +4509,7 @@ button.toolTip-button:hover {
 	}
 }
 
-/* || DIVERGING BAR CHART */
+/*  ====================  DIVERGING BAR CHART  ====================  */
 
 /* Screen-reader helper: visually hidden but accessible */
 .divergingChart .sr-only {
@@ -4661,7 +4661,7 @@ button.toolTip-button:hover {
 	} /* slightly smaller text inside bars */
 }
 
-/* || OBJECTIVES */
+/*  ====================  OBJECTIVES  ====================  */
 
 /* --- Objectives (Style 2) with image on the right --- */
 .objectives-style2 {
@@ -4737,7 +4737,7 @@ button.toolTip-button:hover {
 	}
 }
 
-/* || GRAPH INTERACTIVE */
+/*  ====================  GRAPH INTERACTIVE  ====================  */
 
 /* Theme palette (override per-instance if needed) */
 .wguGraphMultiple {
@@ -5466,7 +5466,7 @@ button.toolTip-button:hover {
 	}
 
 
-/* || CAROUSEL SECTION */
+/*  ====================  CAROUSEL SECTION  ====================  */
 
 .carousel-bg-decoration {
    background-size: cover;
@@ -5674,7 +5674,7 @@ button.toolTip-button:hover {
 }
 
 
-/* || LIKERT SCALE */
+/*  ====================  LIKERT SCALE  ====================  */
 .likert-scale-container {
     display: flex;
     flex-direction: column;
@@ -5813,7 +5813,7 @@ button.toolTip-button:hover {
     text-align: right; 
   }
 
-  /* || VERTICAL COUNTING BAR */
+  /*  ====================  VERTICAL COUNTING BAR  ====================  */
 
   .vert-bar-step {
     display: flex;
@@ -5850,7 +5850,7 @@ button.toolTip-button:hover {
     position: relative;
   }
 
-/* ============================= SENSITIVE MATERIAL BOX ===================================== */
+/*  ====================  SENSITIVE MATERIAL BOX  ====================  */
 
 #sensitive-box-unique {
     position: relative;
