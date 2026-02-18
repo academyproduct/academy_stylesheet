@@ -60,7 +60,7 @@ Section Contents:
   Orientation,
 */
 
-/* || GENERAL SECTION */
+/* ==================== GENERAL SECTION ====================  */
 
 /* These updates are largely prepped to transition to the OEX Olive */
 /*h2,
@@ -126,7 +126,7 @@ h6.styleFix {
 }
 */
 
-/* ==================== Color Variables ==================== */
+/* ==================== COLOR VARIABLES ==================== */
 body {
 	/* & blues */
 	--acad-blue1: #0e1934;
@@ -193,7 +193,7 @@ body {
 	box-shadow: 8px 8px 24px rgba(66, 107, 28, 0.2), 3px 3px 10px rgba(66, 107, 28, 0.1);
 }
 
-/* ==================== Text Styling ==================== */
+/* ==================== TEXT STYLING ==================== */
 .textUnderline {
 	box-shadow: inset 0 -6px 0 #e1f4ed;
 }
