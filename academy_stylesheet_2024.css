@@ -9,6 +9,7 @@ Spacing rule is 3 returns between || sections. 1 return between a comment to sep
 Section Contents:
   General,
   Colors,
+	Shadows,
   Text Styling,
   Spacing,
   Alerts,
@@ -142,6 +143,49 @@ body {
 	--acad-gray1: #737783;
 	--acad-gray2: #b8b8bb;
 	--acad-gray3: #efefef;
+}
+
+/* Box Shadow Classes */
+.shadow-blue {
+	border-right: 1px solid var(--acad-blue4);
+	border-bottom: 1px solid var(--acad-blue4);
+	box-shadow: 8px 8px 24px rgba(0, 27, 92, 0.17), 3px 3px 10px rgba(0, 27, 92, 0.1);
+}
+
+.shadow-green {
+	border-right: 1px solid var(--acad-green4);
+	border-bottom: 1px solid var(--acad-green4);
+	box-shadow: 8px 8px 24px rgba(0, 63, 71, 0.2), 3px 3px 10px rgba(0, 63, 71, 0.12);
+}
+
+.shadow-orange {
+	border-right: 1px solid #fae4db;
+	border-bottom: 1px solid #fae4db;
+	box-shadow: 8px 8px 24px rgba(110, 24, 2, 0.2), 3px 3px 10px rgba(110, 24, 2, 0.18);
+}
+
+.shadow-yellow {
+	border-right: 1px solid #f4e0c7;
+	border-bottom: 1px solid #f4e0c7;
+	box-shadow: 8px 8px 24px rgba(154, 87, 4, 0.2), 3px 3px 10px rgba(154, 87, 4, 0.22);
+}
+
+.shadow-midnight {
+	border-right: 1px solid #bfd2e4;
+	border-bottom: 1px solid #bfd2e4;
+	box-shadow: 8px 8px 24px rgba(0, 40, 85, 0.2), 3px 3px 10px rgba(0, 40, 85, 0.1);
+}
+
+.shadow-med-blue {
+	border-right: 1px solid #c7e1ff;
+	border-bottom: 1px solid  #c7e1ff;
+	box-shadow: 8px 8px 24px rgba(1, 105, 223, 0.2), 3px 3px 10px rgba(0, 90, 193, 0.1);
+}
+
+.shadow-lime-green {
+	border-right: 1px solid #d6f8b6;
+	border-bottom: 1px solid  #d6f8b6;
+	box-shadow: 8px 8px 24px rgba(66, 107, 28, 0.2), 3px 3px 10px rgba(66, 107, 28, 0.1);
 }
 
 /* || Text Styling */
