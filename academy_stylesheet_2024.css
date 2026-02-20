@@ -773,18 +773,30 @@ body {
 	}
 }
 
-iframe.responsive-7taps2 {
-    width: 100%; /* ensures it scales with its container width */
-    height: auto; /* allows the aspect-ratio to control height */
-    aspect-ratio: 32 / 29; /* maintains a 16:9 ratio (width / height) */
+.responsive-7taps2 iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 32 / 29;
+}
+
+@media (max-width: 650px) {
+    .responsive-7taps2 iframe {
+        aspect-ratio: 9 / 16;
+    }
+}
+
+/* iframe.responsive-7taps2 {
+    width: 100%;
+    height: auto; 
+    aspect-ratio: 32 / 29; 
   }
 
   @media (max-width: 650px) {
     iframe.responsive-7taps2 {
-      aspect-ratio: 9 / 16; /* vertical 9:16 ratio (width / height) for mobile */
+      aspect-ratio: 9 / 16; 
     }
   }
-
+*/
 /* iFrame loader */
 
 #loadImg {
