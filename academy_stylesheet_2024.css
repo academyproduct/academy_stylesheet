@@ -746,7 +746,7 @@ body {
 	left: 0;
 }
 
-/* Responsive 7taps iframe */
+/* OLD Responsive 7taps iframe
 .responsive-7taps {
 	width: 100%;
 	max-width: 100%;
@@ -771,16 +771,16 @@ body {
 	#responsive_height.responsive-7taps {
 		height: 40em;
 	}
-}
+}  */
 
-.responsive-7taps2 iframe {
+.responsive-7taps iframe {
     width: 100%;
     height: auto;
     aspect-ratio: 32 / 29;
 }
 
 @media (max-width: 650px) {
-    .responsive-7taps2 iframe {
+    .responsive-7taps iframe {
         aspect-ratio: 9 / 16;
     }
 }
