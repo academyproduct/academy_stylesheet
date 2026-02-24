@@ -5066,6 +5066,142 @@ button.toolTip-button:hover {
   /* Video/Audio Section Styles */
   .noteAlert.video-sections { width: 100%; }
 
+/* NEW TAB/ACCORDION CONTENT*/
+
+/* Container for the whole component */
+	.custom-tab-asset-v2 {
+		background-color: #ffffff;
+		width: 100%;
+		overflow: visible;
+		font-family: Arial, sans-serif;
+	}
+
+	/* Navigation Wrapper for the sliding line */
+	.oex2-nav-wrapper {
+		position: relative;
+		width: 100%;
+		overflow: visible;
+		/*border-bottom: 2px solid #e0e0e0;  The background track */
+	}
+
+	.oex2-tab-nav {
+		display: flex;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* Clean Figma-style Tab Buttons */
+	.oex2-tablink {
+		background: none;
+		flex: 1;
+		border: 3px solid transparent !important;
+		border-bottom: 0 !important;
+		border-radius: 8px 8px 0 0 !important;
+		box-sizing: border-box;
+		outline: none;
+		cursor: pointer;
+		padding: 20px 5px;
+		font-size: 14px;
+		font-weight: 700;
+		color: #0070f0 !important;
+		background-color: #eef6f9 !important;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		transition:
+			color 0.25s ease,
+			background-color 0.25s ease;
+		transform: scale(1);
+		/* Overriding potential OEX button styles */
+		box-shadow:
+			0 -2px 6px rgba(0, 0, 0, 0.12),
+			3px 0 8px rgba(0, 0, 0, 0.1) !important;
+		text-shadow: none !important;
+		position: relative;
+		z-index: 1;
+	}
+
+	.oex2-tablink:not(.active):hover {
+		border-top: 3px solid #0070f0 !important;
+		border-right: 3px solid #0070f0 !important;
+		border-left: 3px solid #0070f0 !important;
+		border-bottom: 0 !important;
+		background: #eef6f9 !important;
+		background-color: #eef6f9 !important;
+		background-image: none !important;
+		color: #0070f0 !important;
+		box-shadow:
+			0 -2px 6px rgba(0, 0, 0, 0.12),
+			3px 0 8px rgba(0, 0, 0, 0.1) !important;
+		text-shadow: none !important;
+	}
+
+	.oex2-tablink:not(.active):active,
+	.oex2-tablink:not(.active):focus {
+		background: #eef6f9 !important;
+		background-color: #eef6f9 !important;
+		background-image: none !important;
+		color: #0070f0 !important;
+		box-shadow:
+			0 -2px 6px rgba(0, 0, 0, 0.12),
+			3px 0 8px rgba(0, 0, 0, 0.1) !important;
+		text-shadow: none !important;
+	}
+
+	.oex2-tablink.active,
+	.oex2-tablink.active:hover,
+	.oex2-tablink.active:active,
+	.oex2-tablink.active:focus {
+		background: #0070f0 !important;
+		background-color: #0070f0 !important;
+		background-image: none !important;
+		color: #ffffff !important;
+		box-shadow:
+			0 -2px 6px rgba(0, 0, 0, 0.12),
+			3px 0 8px rgba(0, 0, 0, 0.1) !important;
+		text-shadow: none !important;
+		z-index: 20;
+		transform: scale(1);
+	}
+
+	/* THE GENTLE ANIMATED INDICATOR */
+	.tab-indicator-v2 {
+		display: none !important;
+	}
+
+	/* Content Styles */
+	.oex2-tabcontent-frame {
+		border: 3px solid #0070f0;
+		border-radius: 0 0 16px 16px;
+		background-color: #ffffff;
+		box-shadow: 3px 0 8px rgba(0, 0, 0, 0.1);
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+
+	.oex2-tabcontent {
+		display: none;
+		padding: 30px 10px;
+		box-sizing: border-box;
+		animation: fadeInV2 0.4s ease;
+	}
+
+	@keyframes fadeInV2 {
+		from {
+			opacity: 0;
+			transform: none;
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	/* Video/Audio Section Styles */
+	.noteAlert.video-sections {
+		width: 100%;
+	}
+
 /* ==================== FLIGHT PATH ==================== */
 
 /* FlightPath Assessment - Scoped styles to avoid conflicts with Open EdX */
