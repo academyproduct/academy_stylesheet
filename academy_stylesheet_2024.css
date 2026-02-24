@@ -5181,7 +5181,7 @@ button.toolTip-button:hover {
 
 	.oex2-tabcontent {
 		display: none;
-		padding: 30px 10px;
+		padding: 30px 20px;
 		box-sizing: border-box;
 		animation: fadeInV2 0.4s ease;
 	}
