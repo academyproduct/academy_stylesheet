@@ -1,0 +1,21 @@
+@use '../00-tokens' as *;
+
+/*
+ * Header and banner styles migrated from archive-academy_stylesheet_2024.css.
+ */
+
+.header {
+  border-top: 4px solid $acad-secondary-100;
+  background-color: $acad-primary-0;
+  padding: 1rem 2.5rem 1.5rem;
+  margin-bottom: 0;
+}
+
+.header > span:first-child {
+  margin-right: 0.5rem;
+}
+
+.allBanners {
+  margin-bottom: 1em;
+  width: 100%;
+}

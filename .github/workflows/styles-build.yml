@@ -1,0 +1,40 @@
+name: Styles Build
+
+on:
+  pull_request:
+    paths:
+      - 'src/styles/**'
+      - 'package.json'
+      - '.stylelintrc.json'
+      - '.stylelintignore'
+      - '.github/workflows/styles-build.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/styles/**'
+      - 'package.json'
+      - '.stylelintrc.json'
+      - '.stylelintignore'
+      - '.github/workflows/styles-build.yml'
+
+jobs:
+  validate-styles:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint styles
+        run: npm run lint:styles
+
+      - name: Build CSS
+        run: npm run build:css

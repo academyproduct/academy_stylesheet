@@ -1,0 +1,18 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "no-descending-specificity": null,
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      { "severity": "warning" }
+    ],
+    "selector-id-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      { "severity": "warning" }
+    ],
+    "custom-property-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      { "severity": "warning" }
+    ]
+  }
+}

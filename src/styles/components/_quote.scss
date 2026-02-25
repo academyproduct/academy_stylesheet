@@ -1,0 +1,135 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || QUOTE SECTION */
+
+/* Bubble Blockquote */
+
+.bubble blockquote {
+	margin: 10px 10px 0;
+	background: $acad-grayscale-0;
+	padding: 50px 30px;
+	position: relative;
+	border: none;
+	text-align: center;
+
+	/* color: $acad-secondary-800 !important; */
+}
+
+.bubble blockquote::before,
+.bubble blockquote::after {
+	content: "\201C";
+	position: absolute;
+	font-size: 5rem;
+	padding: 10px;
+	line-height: 1;
+	color: $acad-legacy-blue-008aff;
+	opacity: 0.4;
+}
+
+.bubble blockquote::before {
+	top: 0;
+	left: 10px;
+}
+
+.bubble blockquote::after {
+	content: "\201D";
+	right: 10px;
+	bottom: -20px;
+}
+
+.bubble div {
+	width: 0;
+	height: 0;
+	border-left: 0 solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid $acad-grayscale-0;
+	margin: 0 0 0 30px;
+	margin-bottom: 10px;
+}
+
+.bubble cite {
+	display: block;
+	margin-top: 0.75rem;
+}
+
+@media screen and (width <= 600px) {
+	.bubble blockquote {
+		padding: 20px 15px;
+	}
+
+	.bubble blockquote::before {
+		top: 0;
+		left: -10px;
+	}
+}
+
+/* QUESTION CHECKBOX */
+
+/* The container */
+.question {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 1em;
+	user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.question input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: $acad-legacy-neutral-eee;
+}
+
+/* On mouse-over, add a grey background color */
+.question:hover input ~ .checkmark {
+	background-color: $acad-grayscale-100;
+}
+
+/* When the checkbox is checked, add a blue background */
+.question input:checked ~ .checkmark {
+	background-color: $acad-green2;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark::after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.question input:checked ~ .checkmark::after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.question .checkmark::after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid $acad-grayscale-0;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+}
+

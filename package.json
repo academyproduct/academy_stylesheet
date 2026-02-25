@@ -1,0 +1,17 @@
+{
+  "name": "academy_stylesheet",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SCSS modernization pipeline for academy stylesheet",
+  "scripts": {
+    "build:css": "sass src/styles/main.scss academy_stylesheet_2024.css --no-source-map",
+    "watch:css": "sass --watch src/styles/main.scss:academy_stylesheet_2024.css --no-source-map",
+    "lint:styles": "stylelint \"src/styles/**/*.scss\"",
+    "lint:styles:fix": "stylelint \"src/styles/**/*.scss\" --fix"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2",
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard-scss": "^16.0.0"
+  }
+}

@@ -1,0 +1,123 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || MODAL SECTION */
+
+/* The Modal (background) */
+.modal {
+	display: none;
+
+	/* Hidden by default */
+	position: fixed;
+
+	/* Stay in place */
+	z-index: 100000;
+
+	/* Sit on top */
+	padding-top: 40px;
+
+	/* Location of the box */
+	left: 0;
+	top: 0;
+	opacity: 1;
+	filter: alpha(opacity=100);
+	width: 100%;
+
+	/* Full width */
+	height: 100%;
+
+	/* Full height */
+	background-color: $acad-primary-1000;
+
+	/* Fallback color */
+	background-color: rgba($acad-primary-1000, 0.5);
+
+	/* Black w/ opacity */
+	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: $acad-legacy-neutral-fefefe;
+	border-top: 1px solid $acad-legacy-border-dee2e6;
+	margin: auto;
+	padding: 15px;
+	border: 1px solid $acad-legacy-neutral-888;
+	height: 90vh;
+	max-width: 1300px;
+}
+
+.modal-header {
+	display: block;
+	border-bottom: 1px solid $acad-legacy-border-dee2e6;
+	height: 45px;
+	margin-bottom: 10px;
+}
+
+.modal-header h2 {
+	text-align: center;
+	margin-bottom: 10px;
+	vertical-align: top;
+	line-height: 0.5em !important;
+}
+
+.modal-header h2 span span {
+	text-align: right;
+	justify-content: center;
+	vertical-align: top;
+}
+
+.modal-footer {
+	border-radius: 0 0 2px 2px;
+	border-top: 1px solid rgba($acad-primary-1000, 0.1);
+	background-color: $acad-legacy-neutral-fafafa;
+	padding: 4px 6px;
+	height: 56px;
+	width: 100%;
+}
+
+/* The Close Button */
+.close {
+	color: $acad-blue3;
+	float: right;
+	text-align: right;
+	font-size: 36px;
+	font-weight: normal;
+	vertical-align: top;
+	margin-top: 0;
+	line-height: 0.5em !important;
+}
+
+.close:hover,
+.close:focus {
+	color: $acad-primary-1000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+@media (width <= 767px) {
+	.modal {
+		padding: 0 !important;
+		padding-top: 50px;
+
+		/* Location of the box */
+	}
+
+	.modal-content {
+		max-width: 100%;
+		width: 100vw;
+		margin: 0;
+		inset: 0;
+		padding: 15px 5px 8px;
+		height: 100vh;
+		display: flex;
+		position: relative;
+		z-index: 100000;
+	}
+}
+

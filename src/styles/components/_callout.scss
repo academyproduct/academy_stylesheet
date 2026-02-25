@@ -1,0 +1,141 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || CALLOUT SECTION */
+
+/* Callout note */
+
+.calloutNote {
+	background-color: $acad-legacy-neutral-f9f9f9;
+	border-left: 8px solid $acad-blue2;
+	border-radius: 0 20px 20px 0;
+	padding: 10px;
+}
+
+/* leftStrokeCallout is used for up next blocks */
+
+.leftStrokeCallout {
+	border-left: 8px solid $acad-legacy-navy-003057;
+	margin-top: 30px;
+	padding: 30px 80px;
+
+	@media (width <= 600px) {
+		padding: 30px;
+	}
+}
+
+/* Version that allows to adjust the padding */
+
+.leftStrokeCallout-alt {
+	border-left: 0.5em solid $acad-legacy-navy-003057;
+	padding: 2em 3em;
+	margin-bottom: 1.5em;
+}
+
+.leftStrokeCallout-alt.xsmall-padding {
+	border-left: 0.5em solid $acad-legacy-navy-003057;
+	padding: 1em;
+	margin-bottom: 1.5em;
+}
+
+.leftStrokeCallout-alt.small-padding {
+	border-left: 0.5em solid $acad-legacy-navy-003057;
+	padding: 1.5em 2em;
+	margin-bottom: 1.5em;
+}
+
+.leftStrokeCallout-alt.medium-padding {
+	border-left: 0.5em solid $acad-legacy-navy-003057;
+	padding: 2em 3em;
+	margin-bottom: 1.5em;
+}
+
+.leftStrokeCallout-alt.large-padding {
+	border-left: 0.5em solid $acad-legacy-navy-003057;
+	padding: 4em 5em;
+	margin-bottom: 1.5em;
+}
+
+.leftStrokeCallout-alt p:last-child {
+	margin: 0 !important;
+}
+
+/* Callout Box */
+
+.callout-box {
+	border: 1px solid $acad-blue3;
+	border-radius: 4px;
+	max-width: 835px;
+	margin: 0 auto;
+	padding: 2em 2em 1.5em;
+}
+
+.callout-box h3 {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.callout-box p {
+	background-color: $acad-grayscale-0;
+	margin-bottom: 0.5em !important;
+}
+
+.callout-box.borderOrange {
+	border-color: $acad-legacy-red-b35238;
+}
+
+.callout-box.borderOrange h3 {
+	color: $acad-legacy-red-b35238;
+}
+
+.callout-box-center {
+	border: 1px solid $acad-blue3;
+	border-radius: 4px;
+	margin: 0 auto;
+	padding: 1em;
+	text-align: center;
+}
+
+/* Used for key terms */
+.callout-box2 {
+	border: 1px solid $acad-blue3;
+	border-left: 8px solid $acad-blue2;
+	padding: 2rem;
+	margin-bottom: 2em;
+	border-radius: 4px;
+}
+
+/* single term rule */
+.callout-rule {
+	height: 3px;
+	width: 60%;
+	background-color: $acad-blue3;
+	margin: 0 auto 0.5em;
+}
+
+.callout-rule + p {
+	text-align: center;
+}
+
+/* Callout Card */
+
+.calloutCard {
+	margin: 15px auto;
+	border-radius: 4px;
+	box-shadow: 0 10px 12px rgba($acad-primary-1000, 0.1);
+	border-bottom: 3px solid $acad-legacy-navy-003057;
+	padding: 0.5em 1em 1.5em;
+}
+
+/* Simple light blue text box */
+.blue-box {
+	width: 100%;
+	background-color: $acad-legacy-overlay-blue-soft;
+	padding: 2rem;
+	border-radius: 8px;
+}
+

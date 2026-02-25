@@ -1,0 +1,65 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || FOOTER SECTION */
+
+/* Use Up Next footers */
+
+.up-next {
+	position: relative;
+	background-color: $acad-legacy-neutral-fefefe;
+	border: 1px solid $acad-legacy-neutral-e4e1e1;
+	border-radius: 3px;
+	padding: 10px 10px 0 20px;
+	display: flex;
+	align-items: center;
+}
+
+.up-next::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 15%;
+	height: 4px;
+	background-color: $acad-blue3;
+}
+
+.up-next h2 {
+	margin-right: 10px;
+	color: $acad-secondary-800 !important;
+	text-transform: uppercase !important;
+	white-space: nowrap;
+}
+
+.up-next p {
+	margin: 0;
+}
+
+.up-next .check {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	padding-right: 80px;
+	transform: translate(50%, -50%);
+}
+
+/* Media query for mobile */
+@media (width <= 480px) {
+	.up-next .check {
+		right: calc(0% + 1px);
+		top: 3px;
+	}
+
+	.up-next h2,
+	.up-next p {
+		white-space: normal;
+		display: block;
+		padding-top: 15px;
+	}
+}
+

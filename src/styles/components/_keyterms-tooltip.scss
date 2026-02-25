@@ -1,0 +1,189 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || KEYTERMS TOOLTIP */
+
+/* Trigger */
+.keyterms-tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted $acad-grayscale-1000;
+	background-color: $acad-green4;
+	cursor: help;
+	font-weight: bold;
+	isolation: isolate; /* contain stacking within the trigger */
+	z-index: 1;
+
+	/* Consistent spacing between trigger and tooltip in all directions */
+	--kt-gap: 10px; /* adjust once to tune gaps everywhere */
+	--kt-arrow: 5px; /* arrow triangle size (for reference) */
+}
+
+/* Lift above neighbors while active */
+.keyterms-tooltip:hover,
+.keyterms-tooltip:focus-within {
+	z-index: 2147483647; /* sit above surrounding text/content */
+}
+
+/* Hover background (keep your current color) */
+.keyterms-tooltip:hover {
+	background-color: $acad-legacy-green-ace8cf;
+}
+
+/* Tooltip panel (desktop defaults) */
+.keyterms-tooltip .tooltiptext {
+	visibility: hidden;
+	width: 260px; /* fixed width on desktop */
+	max-width: 260px;
+	background-color: $acad-grayscale-1000;
+	color: $acad-grayscale-0;
+	font-weight: normal;
+	text-align: left;
+	border-radius: 6px;
+	padding: 8px 10px;
+	position: absolute;
+	z-index: 2147483646; /* just beneath the active host */
+	line-height: 1.4;
+	box-sizing: border-box;
+	box-shadow: 0 6px 18px rgba($acad-primary-1000, 0.25);
+
+	/* Default to TOP placement with consistent gap */
+	left: 50%;
+	transform: translateX(-50%);
+	top: auto;
+	bottom: calc(100% + var(--kt-gap));
+}
+
+/* Vertical arrow (top/bottom) */
+.keyterms-tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	margin-left: calc(-1 * var(--kt-arrow));
+	border-width: var(--kt-arrow);
+	border-style: solid;
+
+	/* Default (top placement): arrow points down from tooltip bottom */
+	top: 100%;
+	border-color: $acad-grayscale-1000 transparent transparent transparent;
+}
+
+/* Horizontal arrow (left/right) off by default */
+.keyterms-tooltip .tooltiptext::before {
+	content: "";
+	position: absolute;
+	border-width: 0; /* off unless left/right */
+	border-style: solid;
+}
+
+/* Show on hover/focus */
+.keyterms-tooltip:hover .tooltiptext,
+.keyterms-tooltip:focus-within .tooltiptext {
+	visibility: visible;
+}
+
+/* Keyboard focus affordance */
+.keyterms-tooltip[tabindex] {
+	outline: none;
+}
+
+.keyterms-tooltip:focus {
+	outline: 2px dashed $acad-legacy-blue-4387ee;
+	outline-offset: 2px;
+}
+
+/* ====== Orientation Overrides ====== */
+
+/* TOP: tooltip above term, arrow down */
+.keyterms-tooltip.tt-top .tooltiptext {
+	inset: auto auto calc(100% + var(--kt-gap)) 50%;
+	transform: translateX(-50%);
+}
+
+.keyterms-tooltip.tt-top .tooltiptext::after {
+	top: 100%;
+	bottom: auto;
+	left: 50%;
+	margin-left: calc(-1 * var(--kt-arrow));
+	border-width: var(--kt-arrow);
+	border-color: $acad-grayscale-1000 transparent transparent transparent; /* down arrow */
+}
+
+.keyterms-tooltip.tt-top .tooltiptext::before {
+	border-width: 0;
+}
+
+/* BOTTOM: tooltip below term, arrow up */
+.keyterms-tooltip.tt-bottom .tooltiptext {
+	inset: calc(100% + var(--kt-gap)) auto auto 50%;
+	transform: translateX(-50%);
+}
+
+.keyterms-tooltip.tt-bottom .tooltiptext::after {
+	bottom: 100%;
+	top: auto;
+	left: 50%;
+	margin-left: calc(-1 * var(--kt-arrow));
+	border-width: var(--kt-arrow);
+	border-color: transparent transparent $acad-grayscale-1000; /* up arrow */
+}
+
+.keyterms-tooltip.tt-bottom .tooltiptext::before {
+	border-width: 0;
+}
+
+/* LEFT: tooltip to the left (arrow ► on tooltip’s right edge) */
+.keyterms-tooltip.tt-left .tooltiptext {
+	inset: 50% calc(100% + var(--kt-gap)) auto auto;
+	transform: translateY(-50%);
+}
+
+/* hide vertical arrow; show horizontal right-pointing arrow */
+.keyterms-tooltip.tt-left .tooltiptext::after {
+	border-width: 0;
+}
+
+.keyterms-tooltip.tt-left .tooltiptext::before {
+	top: 50%;
+	right: calc(-1 * var(--kt-arrow) * 2);
+	left: auto;
+	transform: translateY(-50%);
+	border-width: var(--kt-arrow);
+	border-color: transparent transparent transparent $acad-grayscale-1000; /* ► */
+}
+
+/* RIGHT: tooltip to the right (arrow ◄ on tooltip’s left edge) */
+.keyterms-tooltip.tt-right .tooltiptext {
+	inset: 50% auto auto calc(100% + var(--kt-gap));
+	transform: translateY(-50%);
+}
+
+/* hide vertical arrow; show horizontal left-pointing arrow */
+.keyterms-tooltip.tt-right .tooltiptext::after {
+	border-width: 0;
+}
+
+.keyterms-tooltip.tt-right .tooltiptext::before {
+	top: 50%;
+	left: calc(-1 * var(--kt-arrow) * 2);
+	right: auto;
+	transform: translateY(-50%);
+	border-width: var(--kt-arrow);
+	border-color: transparent $acad-grayscale-1000 transparent transparent; /* ◄ */
+}
+
+/* ====== Mobile overrides (≤ 768px): responsive width & nicer wrapping ====== */
+@media (width <= 768px) {
+	.keyterms-tooltip .tooltiptext {
+		width: auto; /* allow responsive sizing */
+		min-width: min(220px, calc(100vw - 2 * var(--kt-gap)));
+		max-width: min(360px, calc(100vw - 2 * var(--kt-gap)));
+		overflow-wrap: break-word; /* break only when needed */
+		word-break: normal;
+		hyphens: auto;
+	}
+}

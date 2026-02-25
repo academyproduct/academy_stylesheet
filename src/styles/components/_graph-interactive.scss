@@ -1,0 +1,254 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || GRAPH INTERACTIVE */
+
+/* Theme palette (override per-instance if needed) */
+.wguGraphMultiple {
+	--wgg-primary: #{$acad-legacy-green-78c0a7};
+	--wgg-secondary: #{$acad-logo-academy-logo-02};
+	--wgg-surface: #{$acad-legacy-neutral-f5f8fa};
+	--wgg-subtle: #{$acad-legacy-blue-d2e4ee};
+	--wgg-bar-0: var(--wgg-primary);
+	--wgg-bar-1: var(--wgg-secondary);
+	--wgg-line-0: var(--wgg-primary);
+	--wgg-line-1: var(--wgg-secondary);
+}
+
+/* Contain styles to widget */
+.wguGraphMultiple * {
+	box-sizing: border-box;
+}
+
+/* Two-column layout: controls (left) + chart (right) */
+.wguGraphMultiple .wgg-app {
+	width: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
+	display: grid;
+	gap: 16px;
+	grid-template-columns: 360px 1fr;
+}
+
+/* Stack on small screens */
+@media (width <= 900px) {
+	.wguGraphMultiple .wgg-app {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Container that includes the graphs */
+.wguGraphMultiple .wgg-card {
+	background: var(--wgg-surface);
+	border: 1px solid var(--wgg-subtle);
+	border-radius: 12px;
+	padding: 16px;
+}
+
+.wguGraphMultiple .wgg-row {
+	display: grid;
+	gap: 8px;
+	align-items: end;
+}
+
+.wguGraphMultiple .wgg-row-3 {
+	grid-template-columns: 1fr 1fr auto;
+}
+
+.wguGraphMultiple .wgg-row-2 {
+	grid-template-columns: 1fr 1fr;
+}
+
+.wguGraphMultiple .wgg-row-1 {
+	grid-template-columns: 1fr;
+}
+
+.wguGraphMultiple .wgg-row + .wgg-row {
+	margin-top: 8px;
+}
+
+/* Simple grid helpers for rows */
+.wguGraphMultiple input,
+.wguGraphMultiple select {
+	width: 100%;
+	background: $acad-grayscale-0;
+	border: 1px solid var(--wgg-subtle);
+	border-radius: 8px;
+	padding: 10px 12px;
+}
+
+.wguGraphMultiple input:focus,
+.wguGraphMultiple select:focus {
+	outline: 2px solid var(--wgg-secondary);
+	outline-offset: 1px;
+}
+
+/* Button styles (divs acting as buttons) */
+.wguGraphMultiple .wgg-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--wgg-primary);
+	border: 1px solid var(--wgg-primary);
+	border-radius: 8px;
+	padding: 10px 12px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.wguGraphMultiple .wgg-btn.wgg-outline {
+	background: transparent;
+	border: 1px solid var(--wgg-primary);
+}
+
+/* Tool button row */
+.wguGraphMultiple .wgg-tools {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	margin-top: 8px;
+}
+
+/* Data table */
+.wguGraphMultiple .wgg-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 8px;
+}
+
+.wguGraphMultiple .wgg-table th,
+.wguGraphMultiple .wgg-table td {
+	padding: 8px 6px;
+	border-bottom: 1px dashed var(--wgg-subtle);
+	text-align: left;
+}
+
+.wguGraphMultiple .wgg-table td:last-child {
+	text-align: right;
+}
+
+/* Heading chips and hint */
+.wguGraphMultiple .wgg-chip {
+	padding: 8px 20px;
+	border-radius: 12px;
+	border: 1px solid var(--wgg-subtle);
+	background: $acad-grayscale-0;
+}
+
+.wguGraphMultiple .wgg-note,
+.wguGraphMultiple .wgg-hint {
+	opacity: 0.8;
+	padding: 8px 0;
+}
+
+/* Chart container (SVG will stretch inside) */
+.wguGraphMultiple .wgg-chart {
+	position: relative;
+	inline-size: 100%;
+	block-size: min(70vh, 700px);
+	background: $acad-grayscale-0;
+	border: 1px solid var(--wgg-subtle);
+	border-radius: 12px;
+}
+
+.wguGraphMultiple svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: visible;
+}
+
+/* Grid line styling */
+.wguGraphMultiple .wgg-grid line {
+	stroke: var(--wgg-subtle);
+	stroke-width: 1;
+}
+
+/* Series styles */
+.wguGraphMultiple .wgg-line-0 {
+	fill: none;
+	stroke: var(--wgg-line-0);
+	stroke-width: 3;
+}
+
+.wguGraphMultiple .wgg-line-1 {
+	fill: none;
+	stroke: var(--wgg-line-1);
+	stroke-width: 3;
+}
+
+.wguGraphMultiple .wgg-point-0 {
+	stroke: $acad-grayscale-0;
+	stroke-width: 2;
+	fill: var(--wgg-line-0);
+}
+
+.wguGraphMultiple .wgg-point-1 {
+	stroke: $acad-grayscale-0;
+	stroke-width: 2;
+	fill: var(--wgg-line-1);
+}
+
+.wguGraphMultiple .wgg-bar-0 {
+	fill: var(--wgg-bar-0);
+	stroke: var(--wgg-bar-0);
+}
+
+.wguGraphMultiple .wgg-bar-1 {
+	fill: var(--wgg-bar-1);
+	stroke: var(--wgg-bar-1);
+}
+
+/* Tooltip bubble */
+.wguGraphMultiple .wgg-tip {
+	position: absolute;
+	pointer-events: none;
+	background: $acad-grayscale-0;
+	border: 1px solid var(--wgg-subtle);
+	padding: 6px 8px;
+	border-radius: 8px;
+	transform: translate(-50%, -120%);
+	white-space: nowrap;
+	opacity: 0;
+}
+
+/* Legend row (mini legend) */
+.wguGraphMultiple .wgg-legend {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: -4px 0 8px;
+}
+
+.wguGraphMultiple .wgg-key {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.wguGraphMultiple .wgg-swatch {
+	inline-size: 14px;
+	block-size: 14px;
+	border-radius: 3px;
+	border: 1px solid var(--wgg-subtle);
+}
+
+.wguGraphMultiple .wgg-swatch-0 {
+	background: var(--wgg-line-0);
+}
+
+.wguGraphMultiple .wgg-swatch-1 {
+	background: var(--wgg-line-1);
+}
+
+/* Disabled button state */
+.wguGraphMultiple .wgg-btn.is-disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none; /* blocks mouse clicks */
+}
