@@ -4,8 +4,8 @@
   "private": true,
   "description": "SCSS modernization pipeline for academy stylesheet",
   "scripts": {
-    "build:css": "sass src/styles/main.scss academy_stylesheet_2024.css --no-source-map",
-    "watch:css": "sass --watch src/styles/main.scss:academy_stylesheet_2024.css --no-source-map",
+    "build:css": "mkdir -p dist && sass src/styles/main.scss dist/academy_stylesheet_2026.css --no-source-map",
+    "watch:css": "mkdir -p dist && sass --watch src/styles/main.scss:dist/academy_stylesheet_2026.css --no-source-map",
     "lint:styles": "stylelint \"src/styles/**/*.scss\"",
     "lint:styles:fix": "stylelint \"src/styles/**/*.scss\" --fix"
   },

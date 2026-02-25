@@ -31,10 +31,32 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Lint styles
-        run: npm run lint:styles
+        run: |
+          set +e
+          npm run lint:styles -- --formatter verbose 2>&1 | tee stylelint-report.txt
+          LINT_EXIT=${PIPESTATUS[0]}
+
+          {
+            echo "## Stylelint Report"
+            echo ""
+            echo "Exit code: ${LINT_EXIT}"
+            echo ""
+            echo '```text'
+            tail -n 400 stylelint-report.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          exit $LINT_EXIT
+
+      - name: Upload stylelint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stylelint-report
+          path: stylelint-report.txt
 
       - name: Build CSS
         run: npm run build:css
