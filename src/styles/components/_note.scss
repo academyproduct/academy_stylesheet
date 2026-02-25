@@ -1,0 +1,39 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || NOTE SECTION */
+
+.note-section {
+	padding: 2.5rem 4rem 1rem;
+	background-color: $acad-legacy-neutral-fafafa;
+	border-radius: 16px;
+	margin: 0 0 1.5em;
+}
+
+.note-section_flex {
+	display: flex;
+	gap: 1.5em;
+	margin: 0 0 1em;
+	justify-content: left;
+	align-items: start;
+}
+
+.note-section_flex img {
+	margin: 0;
+	height: 60px;
+}
+
+@media only screen and (width <= 550px) {
+	.note-section_flex {
+		display: block;
+	}
+
+	.note-section_flex img {
+		margin: 0 0 1em;
+	}
+}
+

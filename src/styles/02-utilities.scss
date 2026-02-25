@@ -1,0 +1,75 @@
+@use '00-tokens' as *;
+
+/*
+ * Utilities migrated from archive-academy_stylesheet_2024.css.
+ */
+
+.textUnderline {
+  box-shadow: inset 0 -6px 0 $acad-green4;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.marginCenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.zeroMargin {
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* Use this for monospace code examples. */
+.codeText {
+  font-family: monospace !important;
+  background: $acad-background-primary;
+  border-radius: 4px;
+  padding-top: 3px;
+}
+
+/* Circle letter, used in version control. */
+.circleLetter {
+  width: 30px;
+  height: 30px;
+  background-color: $acad-logo-wgu-logo;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: $acad-grayscale-0;
+  margin-right: 10px;
+}
+
+.mediaBannerIcon {
+  margin-right: 0.75rem;
+}
+
+.botMargin0 {
+  margin-bottom: 0 !important;
+}
+
+.botMargin8 {
+  margin-bottom: 0.5rem !important;
+}
+
+.botMargin16 {
+  margin-bottom: 1rem !important;
+}
+
+.botMargin24 {
+  margin-bottom: 1.5em !important;
+}
+
+.botMargin32 {
+  margin-bottom: 2rem !important;
+}
+
+.botMargin48 {
+  margin-bottom: 3rem !important;
+}

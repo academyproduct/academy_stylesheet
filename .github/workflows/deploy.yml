@@ -19,9 +19,16 @@ jobs:
         with:
           aws-region: us-east-2
           role-to-assume: arn:aws:iam::587375966843:role/GithubActionsDeployRole
+
+      - name: Build CSS
+        run: npm ci && npm run build:css
       
       - name: Upload CSS to S3
         run: |
           aws s3 cp ./academy_stylesheet_2024.css s3://academyproduct/OEX/CSS/academy_stylesheet_2024.css \
+          --cache-control "public, max-age=300" \
+          --content-type "text/css"
+
+          aws s3 cp ./dist/academy_stylesheet_2026.css s3://academyproduct/OEX/CSS/academy_stylesheet_2026.css \
           --cache-control "public, max-age=300" \
           --content-type "text/css"

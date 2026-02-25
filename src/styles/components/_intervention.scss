@@ -1,0 +1,16 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || INTERVENTION SECTION */
+
+/* Mind Wandering Int */
+.mindwander_reminder_box {
+	border: 3px solid $acad-legacy-blue-6699ce;
+	border-radius: 4px;
+	padding: 1.5em 1.5em 1em;
+}
+

@@ -1,0 +1,103 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || INTERACTIVE TABLE SECTION */
+
+/* === 6-col Table with clickable checkboxes: + √ - === */
+
+/* Table layout */
+#message-eval-grid {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#message-eval-grid th,
+#message-eval-grid td {
+	padding: 0.5rem;
+	border: 1px solid $acad-grayscale-100;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#message-eval-grid th,
+#message-eval-grid td {
+	width: 11%;
+}
+
+#message-eval-grid th:first-child,
+#message-eval-grid td:first-child {
+	width: 45%;
+}
+
+#message-eval-grid .row-label {
+	text-align: left;
+}
+
+/* Evaluation button — base styles */
+#message-eval-grid .eval-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	margin: 0 auto;
+	font-size: 1.25rem;
+	font-weight: bold;
+	line-height: 1;
+	color: $acad-legacy-slate-1f2933;
+	background-color: $acad-legacy-neutral-f5f5f5;
+	border: 1px solid $acad-legacy-neutral-666;
+	border-radius: 2px;
+	cursor: pointer;
+	background-image: none;
+	box-shadow: none;
+	filter: none;
+}
+
+/* Focus state (keyboard users) */
+#message-eval-grid .eval-btn:focus {
+	outline: 2px solid $acad-legacy-blue-005fcc;
+	outline-offset: 2px;
+}
+
+/* State colors — base */
+#message-eval-grid .eval-btn[data-state="1"] {
+	background-color: $acad-legacy-green-d4f4dd;
+	color: $acad-legacy-green-1f7a3f;
+}
+
+#message-eval-grid .eval-btn[data-state="2"] {
+	background-color: $acad-legacy-blue-dbeafe;
+	color: $acad-legacy-indigo-1e40af;
+}
+
+#message-eval-grid .eval-btn[data-state="3"] {
+	background-color: $acad-legacy-red-fde2e2;
+	color: $acad-legacy-red-991b1b;
+}
+
+/* Hover & focus states (slightly darker than base color) */
+#message-eval-grid .eval-btn[data-state="0"]:hover,
+#message-eval-grid .eval-btn[data-state="0"]:focus {
+	background-color: $acad-legacy-border-e0e0e0;
+}
+
+#message-eval-grid .eval-btn[data-state="1"]:hover,
+#message-eval-grid .eval-btn[data-state="1"]:focus {
+	background-color: $acad-legacy-green-c3ecd0;
+}
+
+#message-eval-grid .eval-btn[data-state="2"]:hover,
+#message-eval-grid .eval-btn[data-state="2"]:focus {
+	background-color: $acad-legacy-blue-c7dcfa;
+}
+
+#message-eval-grid .eval-btn[data-state="3"]:hover,
+#message-eval-grid .eval-btn[data-state="3"]:focus {
+	background-color: $acad-legacy-red-f7caca;
+}
+

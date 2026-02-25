@@ -1,0 +1,25 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": [true, { "severity": "warning" }],
+    "property-no-deprecated": [true, { "severity": "warning" }],
+    "selector-type-no-unknown": [true, { "severity": "warning" }],
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      { "severity": "warning" }
+    ],
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      { "severity": "warning" }
+    ],
+    "selector-id-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      { "severity": "warning" }
+    ],
+    "custom-property-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      { "severity": "warning" }
+    ]
+  }
+}

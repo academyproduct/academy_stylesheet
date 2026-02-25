@@ -1,0 +1,107 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || TOOLTIP SECTION */
+
+/* Tooltip container */
+.custom-tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted $acad-legacy-neutral-555;
+	cursor: help;
+}
+
+/* Tooltip text (initially hidden) */
+.custom-tooltip .tooltip-text {
+	visibility: hidden;
+	width: 220px;
+	background-color: $acad-grayscale-1000;
+	color: $acad-grayscale-0;
+	text-align: left;
+	border-radius: 6px;
+	padding: 8px;
+	position: absolute;
+	z-index: 10;
+	top: 120%;
+
+	/* BELOW the word */
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	pointer-events: none;
+}
+
+/* Tooltip shown on hover */
+.custom-tooltip.show .tooltip-text {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* Tooltip PURE HTML AND CSS */
+
+/* Set proper positioning of definition */
+.toolTip {
+	position: relative;
+	display: inline-block;
+}
+
+/* Tooltip Word to Define */
+.toolTip-button {
+	border: solid;
+	border-width: 1px;
+	border-color: $acad-legacy-border-ced5d6;
+	font: inherit;
+	font-weight: bold;
+	padding: 0 0.5em;
+	border-radius: 6px;
+}
+
+/* Tooltip button hover */
+button.toolTip-button:hover {
+	color: $acad-grayscale-0;
+	background-image: linear-gradient($acad-blue1, $acad-blue2);
+	box-shadow: 0 0 0 0 $acad-legacy-neutral-fefefe;
+}
+
+/* Tooltip Text / Definition */
+.toolTip-text {
+	visibility: hidden;
+	min-width: 200px;
+	max-width: 90vw;
+
+	/* Prevent overflow on smaller screens */
+	background-color: $acad-primary-1000;
+	color: $acad-grayscale-0;
+	text-align: center;
+	border-radius: 6px;
+	padding: 8px;
+	position: absolute;
+	z-index: 1;
+	top: 125%;
+
+	/* default: below the button */
+	left: 0%;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
+	box-sizing: border-box;
+	overflow-wrap: break-word;
+}
+
+.toolTip:hover .toolTip-text,
+.toolTip:focus-within .toolTip-text {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* Optional: Flip the tooltip above the text with a modifier */
+.toolTip.flip .toolTip-text {
+	top: auto;
+	bottom: 125%;
+}
+

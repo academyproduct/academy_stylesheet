@@ -1,0 +1,78 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || ACCORDION SECTION */
+
+.accordion-details {
+	margin: 10px;
+	border: 1px solid $acad-blue3;
+	overflow: hidden;
+}
+
+/* Padding for children inside details */
+.accordion-details > * {
+	padding: 1rem;
+}
+
+.accordion-summary {
+	background: $acad-grayscale-0;
+	color: $acad-blue1;
+	cursor: pointer;
+	position: relative;
+	padding-right: 2rem;
+
+	/* space for arrow */
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+/* Remove default marker */
+.accordion-summary::marker {
+	content: "";
+}
+
+/* Arrow icon */
+.accordion-summary::after {
+	content: "\276F";
+
+	/* Unicode arrow symbol */
+	position: absolute;
+	right: 2rem;
+	top: 50%;
+	transform: translateY(-50%) rotate(0deg);
+	transition: transform 0.3s ease;
+	font-size: 1rem;
+	color: $acad-blue2;
+}
+
+/* Rotate arrow when open */
+.accordion-details[open] .accordion-summary::after {
+	transform: translateY(-50%) rotate(90deg);
+}
+
+.accordion-details > div {
+	background: $acad-grayscale-0;
+	color: $acad-grayscale-1000;
+	border-top: none;
+}
+
+.accordion-summary:hover {
+	background-color: $acad-blue2;
+	color: $acad-grayscale-0;
+}
+
+.accordion-summary:hover::after {
+	color: $acad-grayscale-0;
+}
+
+.accordion-summary {
+	/* existing styles... */
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+

@@ -1,0 +1,320 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || LIST SECTION */
+
+/* Unordered bullet list */
+
+.bulletList-block > p,
+.bulletList-block > div {
+	margin-left: 2.5rem;
+}
+
+/* nested list */
+.bulletList-block > ul {
+	list-style-type: circle !important;
+	margin-left: 25px !important;
+}
+
+.bulletList-block > ol {
+	margin-left: 25px !important;
+}
+
+#bulletBlue.bulletList-block > li::marker {
+	color: $acad-secondary-800;
+}
+
+/* Numbered Lists */
+
+.numb-list {
+	list-style: none !important;
+	counter-reset: item;
+	margin: 0 0 40px;
+	padding: 0;
+	max-width: 90%;
+}
+
+.numb-list li {
+	margin-bottom: 10px;
+	padding-left: 20px;
+	position: relative;
+}
+
+.numb-list li::before {
+	content: counter(item);
+	counter-increment: item;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: $acad-legacy-navy-003057;
+	color: $acad-grayscale-0;
+	text-align: center;
+	margin-right: 10px;
+	line-height: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.numb-list .arrow::before {
+	content: "";
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: $acad-gray2;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	margin-top: -10px;
+	border: 1px solid $acad-grayscale-0;
+}
+
+.numb-list li span {
+	display: block;
+	margin-left: 50px;
+}
+
+/* Competency List */
+.competencyList {
+	/* list-style-type: none !important;
+	padding: 0 !important; */
+}
+
+.competencyList > li {
+	padding-bottom: 1.5rem;
+	border-bottom: 2px solid $acad-green1;
+	margin-bottom: 2rem !important;
+}
+
+.competencyList > li > span {
+	font-weight: bold;
+	margin-right: 0.5rem;
+}
+
+#singleComp.competencyList > li {
+	border-bottom: none;
+	margin-bottom: 1rem !important;
+}
+
+/* Use for banner lists */
+
+.bannerList-block {
+	list-style-type: none !important;
+	margin: 15px auto;
+	padding: 1.5em 2em !important;
+	display: block;
+	border-left: 4px solid $acad-green1;
+	background: $acad-legacy-neutral-f4f8fa;
+}
+
+/* Checkmarks list using font awesome checks */
+
+.checkList-block {
+	list-style-type: none !important;
+}
+
+.checkList-block > li {
+	padding-left: 0.5rem !important;
+}
+
+.checkList-block > li > span {
+	color: $acad-green3;
+	margin-right: 0.5rem !important;
+}
+
+.checkList {
+	list-style-type: none !important;
+	padding: 0 0 0 2em !important;
+}
+
+.checkList li::before {
+	font-family: FontAwesome;
+	content: "\f00c";
+	margin: 0 5px 0 -25px;
+	color: $acad-green3;
+}
+
+/* Use for border top-bottom lists */
+
+.scrollList-block {
+	max-width: 835px;
+	margin: 15px auto;
+	padding: 0.75em 2em 1.5em;
+	border-top: solid 1px $acad-blue3;
+	border-bottom: solid 1px $acad-blue3;
+	background: $acad-legacy-neutral-f4f8fa;
+}
+
+/* Use for Rounded Blue Pill Lists */
+
+ol.fill-list {
+	padding: 0 0 0 40px;
+	max-width: 750px;
+	position: relative;
+	display: block;
+	margin: 0 auto !important;
+}
+
+.fill-list::before {
+	content: "";
+	width: 0.5rem;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 8%;
+	background: $acad-legacy-neutral-f4f8fa;
+	z-index: -1;
+}
+
+.fill-list2 {
+	padding: 0.5rem 1.5rem 1rem;
+	border-radius: 1.5rem;
+	background: $acad-legacy-neutral-f4f8fa;
+}
+
+.fill-list2 + .fill-list2 {
+	margin-top: 1rem;
+}
+
+::marker {
+	font-weight: 600;
+	color: $acad-secondary-800;
+}
+
+.fill-list #fill-list-alt,
+.fill-list #fill-list-alt::before {
+	background: $acad-legacy-green-f0f9f6;
+}
+
+/* Learning Objective List */
+.learnObjList {
+	list-style-type: none !important;
+	padding: 0 !important;
+}
+
+.learnObjList > li {
+	padding: 0.75rem 1.5rem 1rem;
+	border-radius: 10rem;
+	background: $acad-legacy-neutral-f4f8fa;
+	margin-bottom: 1rem !important;
+}
+
+.card-icon_list-flex,
+.card-image_list-flex {
+	display: flex;
+	width: 100%;
+	margin: 0.5em 0;
+	justify-content: left;
+	align-items: center;
+}
+
+.icon_list-img_wrapper,
+.image_list-img_wrapper {
+	height: 150px;
+	min-width: 150px;
+	max-width: 150px;
+	margin: 0 1em 0 0;
+	border-radius: 4px;
+	overflow: hidden;
+	box-shadow: 2px 2px 8px $acad-legacy-overlay-navy-0e193424;
+}
+
+#circle.icon_list-img_wrapper,
+#circle.image_list-img_wrapper {
+	border-radius: 500px;
+}
+
+.icon_list-img_wrapper img,
+.image_list-img_wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.icon_list-content_wrapper,
+.image_list-content_wrapper {
+	padding: 0.5em;
+}
+
+.icon_list-content_wrapper p,
+.image_list-content_wrapper p {
+	margin-bottom: 0 !important;
+}
+
+.icon_list-rule,
+.image_list-rule {
+	height: 1px;
+	width: 98%;
+	margin: 2em auto;
+	background-color: $acad-blue4;
+}
+
+@media only screen and (width <= 650px) {
+	.card-icon_list-flex,
+	.card-image_list-flex {
+		display: block;
+	}
+
+	.icon_list-img_wrapper,
+	.image_list-img_wrapper {
+		margin: 0 auto 0.625em;
+	}
+}
+
+/* Alternative and Adjustable card image flex box: */
+
+.card-image_adjustable {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5em;
+}
+
+@media only screen and (width <= 767px) {
+	.card-image_adjustable {
+		flex-direction: column !important;
+		gap: 0;
+	}
+}
+
+.card-card-image_adjustable-img.square img {
+	aspect-ratio: 1/1;
+}
+
+.card-image_adj-img {
+	flex: 1;
+	margin: 1em;
+	align-content: center;
+}
+
+.card-image_adj-img img {
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.card-image_adj-content {
+	align-content: center;
+	flex: 3;
+}
+
+.card-image_adjustable.xsmall .card-image_adj-content {
+	flex: 4;
+}
+
+.card-image_adjustable.small .card-image_adj-content {
+	flex: 3;
+}
+
+.card-image_adjustable.medium .card-image_adj-content {
+	flex: 2;
+}
+
+.card-image_adjustable.large .card-image_adj-content {
+	flex: 1;
+}
+
