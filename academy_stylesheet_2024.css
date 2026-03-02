@@ -3088,6 +3088,10 @@ figcaption {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 
+	.image-card-grid-wrapper.mobile-reveal-cards .image-card-hov .image-card-hov-cover {
+		display: none;
+	}
+
 	.two-orphan > div:last-child {
 		grid-column: 2 / span 2;
 	}
