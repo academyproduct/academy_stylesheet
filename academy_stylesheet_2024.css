@@ -4221,6 +4221,8 @@ button.toolTip-button:hover {
 	padding: 2rem;
 	border-radius: 8px;
 	box-shadow: 0 0 16px rgba(0, 0, 0, 0.04);
+	min-width: 0;
+	border: 1px solid #d7e2ea;
 }
 
 .duo-card-div p {
@@ -4249,6 +4251,7 @@ button.toolTip-button:hover {
 
 	.duo-card-div {
 		max-width: 80%;
+		width: 100%;
 	}
 }
 
