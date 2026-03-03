@@ -2995,6 +2995,16 @@ figcaption {
 	width: 100%;
 }
 
+.textCard.width-75 {
+	width: 75%;
+}
+
+@media (max-width: 756px) {
+	.textCard.width-75 {
+		width: 100%;
+	}
+}
+
 .grid-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
