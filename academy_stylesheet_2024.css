@@ -2992,18 +2992,19 @@ figcaption {
 	border-radius: 4px;
 	box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
 	padding: 0.5em 1em 0.5em 1em;
+	width: 100%;
 }
 
 .grid-container {
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: 1fr 1fr 1fr;
 	gap: 1em;
 }
 
 /* Media Queries */
 @media (max-width: 900px) {
 	.grid-container {
-		grid-template-columns: auto;
+		grid-template-columns: 1fr;
 	}
 }
 
