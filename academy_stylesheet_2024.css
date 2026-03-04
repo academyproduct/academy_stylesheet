@@ -126,6 +126,17 @@ h6.styleFix {
 }
 */
 
+.width-75 {
+	width: 75%;
+}
+
+@media (max-width: 756px) {
+	.width-75 {
+		width: 100%;
+	}
+}
+
+
 /* ==================== COLOR VARIABLES ==================== */
 body {
 	/* & blues */
@@ -2995,16 +3006,6 @@ figcaption {
 	width: 100%;
 }
 
-.textCard.width-75 {
-	width: 75%;
-}
-
-@media (max-width: 756px) {
-	.textCard.width-75 {
-		width: 100%;
-	}
-}
-
 .grid-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -5659,8 +5660,8 @@ button.toolTip-button:hover {
 }
 
 .carousel-header-section {
-	min-height: 50px;
-	max-height: 50px;
+	min-height: 60px;
+	max-height: 60px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -5728,8 +5729,14 @@ button.toolTip-button:hover {
 	align-content: center;
 	color: white;
 	flex-wrap: wrap;
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+	/* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15); */
 	user-select: none;
+}
+
+@media screen and (max-width: 768px) {
+	.pagination-button {
+		width: 30px;
+	}
 }
 
 .pagination-button:hover {
@@ -5737,6 +5744,29 @@ button.toolTip-button:hover {
 	background-color: #6699cf;
 	color: white;
 	box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.5) inset;
+}
+
+.pagination-button.bg-image {
+	padding: 8px;
+    background-color: white;
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-content: center;
+    color: #163f6c;
+    flex-wrap: wrap;
+    user-select: none;
+    border: solid #163f6c 1px;
+    border-radius: 4px;
+	box-shadow: none;
+}
+
+.pagination-button.bg-image:hover {
+	cursor: pointer;
+    background-color: #163f6c;
+    color: white;
+    box-shadow: none;
 }
 
 .item-container {
