@@ -127,12 +127,12 @@ h6.styleFix {
 */
 
 .width-75 {
-	width: 75%;
+	width: 75% !important;
 }
 
 @media (max-width: 756px) {
 	.width-75 {
-		width: 100%;
+		width: 100% !important;
 	}
 }
 
