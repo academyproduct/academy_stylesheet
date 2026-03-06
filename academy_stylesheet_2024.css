@@ -6011,6 +6011,21 @@ div.likert-scale-item:not(:last-child)::after {
   text-align: right;
 }
 
+.likert-scale-result-container {
+	background: #f0f0f0;
+	height: 12px;
+	border-radius: 20px;
+	overflow: hidden;
+	max-width: 500px;
+	width: 100%;
+}
+
+.likert-scale-result-bar {
+	height: 100%;
+	background-color: rgb(0, 112, 240);
+	width: 0;
+}
+
   /*  ====================  VERTICAL COUNTING BAR  ====================  */
 
   .vert-bar-step {
