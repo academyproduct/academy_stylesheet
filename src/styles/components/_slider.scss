@@ -1,0 +1,222 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || SLIDER SECTION */
+
+/* Testimonial Slider */
+.testimonial-section {
+	max-width: 1200px;
+	margin: auto;
+	overflow: hidden;
+
+	/* Hide the overflow content */
+	border-radius: 10px;
+	background-color: $acad-legacy-neutral-f9f9f9;
+
+	/* Add a background color for contrast */
+	padding: 10px;
+	box-shadow: 0 4px 10px rgba($acad-primary-1000, 0.1);
+}
+
+.testimonial-slider {
+	display: flex;
+	width: 300%;
+
+	/* Triple the width for sliding effect */
+	animation: slide 100s infinite;
+
+	/* Adjusted duration for smooth sliding */
+}
+
+.testimonial {
+	flex: 1;
+	padding: 10px 20px;
+	line-height: 1.5;
+	box-sizing: border-box;
+
+	/* Ensure padding is included in width calculation */
+	font-size: 0.9em;
+	color: $acad-grayscale-1000;
+	text-align: center;
+
+	/* Center align the text */
+	margin: 10px;
+}
+
+.testimonial p {
+	margin-top: 10px;
+
+	/* Space between icon and text */
+}
+
+.testimonial-icon {
+	color: $acad-legacy-blue-d2e4ee;
+
+	/* Style applied only to the icons */
+}
+
+@keyframes slide {
+	0%,
+	10% {
+		transform: translateX(0);
+	}
+
+	/* Set 1 */
+	20%,
+	30% {
+		transform: translateX(-33.33%);
+	}
+
+	/* Set 2 */
+	40%,
+	50% {
+		transform: translateX(-66.66%);
+	}
+
+	/* Set 3 */
+	60%,
+	70% {
+		transform: translateX(-33.33%);
+	}
+
+	/* Set 2 again */
+	80%,
+	100% {
+		transform: translateX(0);
+	}
+
+	/* Set 1 again */
+}
+
+/* Image Slider */
+.image_slider-container {
+	margin: auto;
+	width: 80%;
+	position: relative;
+}
+
+.image_slider-wrapper {
+	width: 100%;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+	background: $acad-grayscale-0;
+}
+
+.slider-radio {
+	position: absolute;
+	bottom: 10px;
+	z-index: 100;
+	appearance: none;
+	display: inline-block;
+	background-color: $acad-legacy-overlay-black-00000033;
+	height: 16px;
+	width: 16px;
+	border: 3px solid $acad-legacy-neutral-f1f1f1;
+	border-radius: 16px;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 0 1px 4px $acad-legacy-overlay-black-00000088;
+}
+
+.slider-radio:hover {
+	background-color: $acad-legacy-overlay-f7f7f780;
+}
+
+.slider-radio:checked {
+	background-color: $acad-legacy-neutral-f1f1f1;
+}
+
+.slider-radio:nth-of-type(1) {
+	left: 50%;
+	margin-left: -36px;
+}
+
+.slider-radio:nth-of-type(2) {
+	left: 50%;
+	margin-left: -12px;
+}
+
+.slider-radio:nth-of-type(3) {
+	left: 50%;
+	margin-left: 12px;
+}
+
+.slider-radio:nth-of-type(4) {
+	left: 50%;
+	margin-left: 36px;
+}
+
+.image_slider-image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0;
+	transition: all 1.2s ease-out;
+}
+
+.image-1 {
+	opacity: 1;
+}
+
+#slider1:checked ~ .image_slider-wrapper .image-1,
+#slider2:checked ~ .image_slider-wrapper .image-2,
+#slider3:checked ~ .image_slider-wrapper .image-3,
+#slider4:checked ~ .image_slider-wrapper .image-4 {
+	opacity: 1;
+}
+
+.image_slider-arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 100;
+	color: $acad-legacy-neutral-f1f1f1;
+	text-shadow: 0 1px 4px $acad-primary-1000;
+	font-size: 5rem;
+	font-weight: 700;
+	line-height: 40px;
+	text-align: center;
+	height: 40px;
+	width: 40px;
+	margin-top: -20px;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.5s linear;
+}
+
+.image_slider-container:hover .image_slider-arrow {
+	opacity: 1;
+}
+
+.image_slider-arrow.prev::before {
+	content: "\003c";
+}
+
+.image_slider-arrow.next::before {
+	content: "\003e";
+}
+
+.image_slider-arrow.prev {
+	left: 10px;
+}
+
+.image_slider-arrow.next {
+	right: 10px;
+}
+
+.image_slider-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.image_slider-content img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+

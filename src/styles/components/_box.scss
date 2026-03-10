@@ -1,0 +1,56 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || BOX STYLING */
+
+/* This is used as a box with icon to the left */
+.blockBox {
+	height: 100px;
+	display: flex;
+	margin: 0.5em 0 1em;
+}
+
+.blockBox_icon {
+	width: 15%;
+	margin: 0;
+	text-align: center;
+	color: $acad-grayscale-0;
+	background: $acad-blue1;
+	align-content: center;
+}
+
+.blockBox_text {
+	width: 85%;
+	padding: 0.5rem 2.5rem;
+	margin: 0;
+	text-align: center;
+	background-color: $acad-legacy-neutral-f4f8fa;
+	align-content: center;
+}
+
+.blockBox_text#left {
+	text-align: left;
+}
+
+/* Activity Box */
+.activity-box {
+	box-shadow: 2px 2px 8px $acad-legacy-overlay-navy-0e193424;
+	margin: 1rem 0 2rem;
+}
+
+.activity-box-iframe {
+	padding: 2rem;
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (width <= 800px) {
+	.activity-box img {
+		height: 20px;
+		width: auto;
+	}
+}
+

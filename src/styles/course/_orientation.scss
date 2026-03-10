@@ -1,0 +1,20 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || ORIENTATION */
+.choose_path {
+	padding: 1em;
+	text-align: center;
+}
+
+.choose_path:last-child {
+	border-left: 3px solid $acad-blue4;
+}
+
+.choose_path > div {
+	padding: 1em;
+}

@@ -1,0 +1,28 @@
+@use '../00-tokens' as *;
+
+/*
+ * Alert component styles migrated from archive-academy_stylesheet_2024.css.
+ */
+
+.noteAlert {
+  padding: 1.5em;
+  background-color: $acad-secondary-0;
+  vertical-align: middle;
+  border: 1px solid $acad-primary-100;
+  border-radius: 2px;
+  margin: 0 0 1.75rem;
+}
+
+.noteAlert > span:first-child {
+  margin-right: 0.5rem;
+}
+
+.alert3 {
+  padding: 16px;
+  background-color: $acad-secondary-0;
+  color: $acad-primary-400;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1em;
+  border: 1px solid $acad-misc-blue-01;
+}

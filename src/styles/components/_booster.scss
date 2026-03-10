@@ -1,0 +1,126 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || BOOSTER SECTION */
+
+.service_booster {
+	padding: 2.5rem 4rem 1rem;
+	background-color: $acad-legacy-overlay-blue-008aff05;
+	border: 6px solid $acad-legacy-blue-008aff;
+	border-radius: 16px;
+	margin: 0 0 1.5em;
+	position: relative;
+}
+
+.service_booster-header {
+	display: flex;
+	gap: 1.5em;
+	margin: 0 0 1em;
+	justify-content: space-between;
+	align-items: start;
+	cursor: pointer;
+}
+
+.service_booster-header-left {
+	display: flex;
+	gap: 1.5em;
+	align-items: center;
+}
+
+.service_booster-left img {
+	margin: 0;
+}
+
+.service_booster-content {
+	max-height: none;
+	overflow: visible;
+	opacity: 1;
+	transition:
+		max-height 0.4s ease,
+		opacity 0.3s ease;
+}
+
+.service_booster.is-collapsed .service_booster-content {
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.caret {
+	width: 12px;
+	height: 12px;
+	border: solid $acad-legacy-blue-6699ce;
+	border-width: 0 4px 4px 0;
+	display: inline-block;
+	transform: rotate(45deg);
+
+	/* points down when open */
+	transition: transform 0.3s ease;
+	margin-left: auto;
+	margin-top: 4px;
+}
+
+.service_booster.is-collapsed .caret {
+	transform: rotate(135deg);
+
+	/* points right when collapsed */
+}
+
+@media only screen and (width <= 550px) {
+	.service_booster {
+		padding: 1.5rem 1rem;
+	}
+
+	.service_booster-header,
+	.service_booster-header-left {
+		display: block;
+	}
+
+	.service_booster-header-left {
+		text-align: center;
+	}
+
+	.service_booster-header-left > img {
+		margin: 0 0 1em;
+	}
+
+	.caret {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+/* OLD BOOSTERS BELOW */
+.card-booster {
+	padding: 2.5rem 4rem 1rem;
+	background-color: $acad-legacy-neutral-fafafa;
+	border-radius: 16px;
+	margin: 0 0 1.5em;
+}
+
+.card-booster_flex {
+	display: flex;
+	gap: 1.5em;
+	margin: 0 0 1em;
+	justify-content: left;
+	align-items: start;
+}
+
+.card-booster_flex img {
+	margin: 0;
+}
+
+@media only screen and (width <= 550px) {
+	.card-booster_flex {
+		display: block;
+	}
+
+	.card-booster_flex img {
+		margin: 0 0 1em;
+	}
+}
+

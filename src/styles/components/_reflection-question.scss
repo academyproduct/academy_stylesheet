@@ -1,0 +1,36 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || REFLECTION QUESTION SECTION */
+
+#Q1-explanation,
+#Q2-explanation,
+#Q3-explanation {
+	padding: 25px;
+	text-align: left;
+	background-color: ffffff;
+	margin-top: 15px;
+}
+
+.explanation-btn {
+	display: block;
+	background: $acad-legacy-neutral-f4f8fa;
+	float: right;
+	padding: 5px 10px;
+}
+
+/* Alternative Reflection Section */
+
+.reflection-image-space {
+	margin-right: 0.25em;
+}
+
+.reflection-header-down-align {
+	display: flex;
+	align-items: flex-end;
+}
+

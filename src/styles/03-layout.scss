@@ -1,0 +1,94 @@
+/*
+ * Layout primitives migrated from archive-academy_stylesheet_2024.css.
+ */
+
+/* General containers */
+.flex_wrapper {
+  display: flex;
+}
+
+.standard-flex_wrapper {
+  display: flex;
+  margin: 0 0 0.5em;
+}
+
+.flex_wrapper-center {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive 2-column layout */
+* {
+  box-sizing: border-box;
+}
+
+.column_flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col_50 {
+  max-width: 47%;
+}
+
+@media (width <= 500px) {
+  .column_flex {
+    display: block;
+  }
+
+  .col_50 {
+    max-width: 100%;
+  }
+}
+
+.column2 {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.row2::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@media screen and (width <= 600px) {
+  .column2 {
+    width: 100%;
+  }
+}
+
+/* New flex elements instead of row2 above */
+.col-flex_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col-2up {
+  width: 48%;
+}
+
+.col_2up-no_space {
+  width: 50%;
+}
+
+.col-2up figure,
+.col-3up figure,
+.col-4up figure {
+  margin-bottom: 1em;
+}
+
+@media screen and (width <= 700px) {
+  .col-2up {
+    width: 100%;
+  }
+}
+
+/* Document in flex grid */
+.flex-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}

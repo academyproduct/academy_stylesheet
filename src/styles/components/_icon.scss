@@ -1,0 +1,250 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || Icon Styles */
+
+.icon_72px {
+	height: 72px;
+}
+
+.icon_48px {
+	height: 48px;
+}
+
+.icon_24px {
+	height: 24px;
+}
+
+.icon_16px {
+	height: 16px;
+}
+
+.AIicon {
+	max-width: 250px;
+	min-width: 75px;
+	width: 30%;
+	margin: 0 auto 1em 0;
+}
+
+.icon_list-flex {
+	display: flex;
+	gap: 1em;
+	border-bottom: solid 2px var(--acad-blue3);
+	margin: 0 0 1.5em;
+}
+
+.icon_list-flex > img:first-child {
+	width: 72px;
+	height: 72px;
+}
+
+/* IconText card */
+
+/* Icon + Text flexible box */
+.card-iconText {
+	display: flex;
+	align-items: flex-start;
+	gap: 1.25em;
+	margin: 0 auto 1.5em;
+	padding: 1em;
+	overflow: hidden;
+}
+
+/* Reverse order option */
+.card-iconText.flex_reverse {
+	flex-direction: row-reverse;
+}
+
+/* Icon wrapper: works for img or iframe */
+.card-iconText-icon_wrapper {
+	flex: 0 0 30%;
+
+	/* default basis (overridden by size modifiers) */
+	max-width: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/* Give it a real height by locking aspect ratio */
+	aspect-ratio: 1 / 1;
+
+	/* square by default; change if you prefer 4/3, 16/9, etc. */
+	background: transparent;
+}
+
+/* Make media fill the wrapper */
+.card-iconText-icon_wrapper img,
+.card-iconText-icon_wrapper iframe {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: contain;
+
+	/* use 'cover' if you want full bleed/cropping */
+	border: none;
+}
+
+/* Text content fills the rest */
+.card-iconText-content_wrapper {
+	flex: 1 1 0;
+	min-width: 200px;
+}
+
+/* ----- Icon Size Options (width percentage of card) ----- */
+.card-iconText.size-5 .card-iconText-icon_wrapper {
+	flex-basis: 5%;
+	max-width: 5%;
+}
+
+.card-iconText.size-15 .card-iconText-icon_wrapper {
+	flex-basis: 15%;
+	max-width: 15%;
+}
+
+.card-iconText.size-25 .card-iconText-icon_wrapper {
+	flex-basis: 25%;
+	max-width: 25%;
+}
+
+.card-iconText.size-40 .card-iconText-icon_wrapper {
+	flex-basis: 40%;
+	max-width: 40%;
+}
+
+.card-iconText.size-50 .card-iconText-icon_wrapper {
+	flex-basis: 50%;
+	max-width: 50%;
+}
+
+.card-iconText.size-5 .card-iconText-content_wrapper {
+	flex-basis: 95%;
+	max-width: 95%;
+}
+
+.card-iconText.size-15 .card-iconText-content_wrapper {
+	flex-basis: 85%;
+	max-width: 85%;
+}
+
+.card-iconText.size-25 .card-iconText-content_wrapper {
+	flex-basis: 75%;
+	max-width: 75%;
+}
+
+.card-iconText.size-40 .card-iconText-content_wrapper {
+	flex-basis: 60%;
+	max-width: 60%;
+}
+
+.card-iconText.size-50 .card-iconText-content_wrapper {
+	flex-basis: 50%;
+	max-width: 50%;
+}
+
+/* ----- Utility Classes ----- */
+
+/* Center the icon vertically */
+.card-iconText.icon-vertCenter .card-iconText-icon_wrapper {
+	align-self: center;
+}
+
+/* Center the text vertically */
+.card-iconText.text-vertCenter .card-iconText-content_wrapper {
+	align-self: center;
+}
+
+/* Add a shadow-box to the container */
+.card-iconText.shadow-box {
+	border: 1px solid $acad-legacy-neutral-f4f8fa;
+	border-radius: 6px;
+	box-shadow: 0 8px 16px $acad-legacy-overlay-navy-0e193415;
+}
+
+/* ----- Responsive ----- */
+@media only screen and (width <= 600px) {
+	.card-iconText,
+	.card-iconText.flex_reverse {
+		flex-direction: column;
+		align-items: center;
+		text-align: left;
+		margin: 0 auto;
+
+		/* or center if you prefer */
+	}
+
+	.card-iconText-icon_wrapper {
+		width: 25%;
+		min-width: 150px;
+
+		/* sets width on mobile */
+		max-width: 100%;
+		aspect-ratio: 1 / 1;
+
+		/* keeps the square */
+		margin-bottom: 0;
+		flex-basis: auto;
+	}
+
+	.card-iconText-content_wrapper {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+/* Timeline bullet style */
+
+.timeline ul,
+.timeline li {
+	list-style: none;
+	padding: 0;
+}
+
+.timeline {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 1rem;
+	padding: 1rem 0;
+}
+
+.sessions {
+	margin-top: 2rem;
+	border-radius: 12px;
+	position: relative;
+}
+
+.timeline li {
+	padding-bottom: 1.5rem;
+	border-left: 1px solid $acad-blue3;
+	position: relative;
+	padding-left: 20px;
+	margin-left: 5px;
+
+	&:last-child {
+		border: 0;
+		padding-bottom: 0;
+	}
+
+	&::before {
+		content: "";
+		width: 15px;
+		height: 15px;
+		background: $acad-grayscale-0;
+		border: 1px solid $acad-blue3;
+		box-shadow: 3px 3px 0 $acad-blue4;
+		border-radius: 50%;
+		position: absolute;
+		left: -10px;
+		top: 0;
+	}
+}
+
+.date {
+	color: $acad-green1;
+	font-weight: 600;
+}
+

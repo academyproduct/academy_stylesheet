@@ -1,0 +1,82 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || TUTORIAL LOBBY WRAPPER SECTION */
+
+/* Tutor and Lobby callouts */
+
+.iconwrapper {
+	display: flex;
+	list-style-type: none !important;
+	justify-content: center;
+	align-items: center;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.iconwrapper .icon {
+	position: relative;
+	background: $acad-grayscale-0;
+	border-radius: 3%;
+	padding: 15px;
+	margin: 10px;
+	width: 75px;
+	height: 75px;
+	color: $acad-secondary-800;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	cursor: pointer;
+	transition: all 0.1s cubic-bezier(0.25, -0.25, 0.25, 0.45);
+}
+
+.iconwrapper .tutor:hover,
+.iconwrapper .tutor:hover .tooltip,
+.iconwrapper .tutor:hover .tooltip::before {
+	border-top: 3px solid $acad-blue3;
+}
+
+.iconwrapper .lobby:hover,
+.iconwrapper .lobby:hover .tooltip,
+.iconwrapper .lobby:hover .tooltip::before {
+	border-top: 3px solid $acad-blue3;
+}
+
+.iconwrapper .label {
+	margin-top: 2px;
+	color: $acad-blue2;
+	text-align: center;
+}
+
+.iconwrapper > a {
+	outline: none !important;
+}
+
+.tutormessage {
+	flex: 0 0 70%;
+}
+
+@media only screen and (width <= 600px) {
+	.iconwrapper {
+		flex-wrap: wrap;
+	}
+
+	.iconwrapper .icon {
+		flex: 1 1 25%;
+		margin: 5px;
+	}
+
+	.tutormessage {
+		display: flex;
+		margin: auto;
+		width: 100%;
+		flex: 1 1 100%;
+		margin-top: 10px;
+	}
+}
+

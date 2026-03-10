@@ -21,13 +21,14 @@ Each time you make updates run this sequence into VS terminal (exclude '<', '>')
 
 ## Edit CSS
 > Make sure you are in a working branch: `git checkout -b <branch-name>`
-- Add any updates into the css file.
+- Add updates in `src/styles/**/*.scss`.
+- Build generated output with `npm run build:css` (writes `dist/academy_stylesheet_2026.css`).
 
 &nbsp;
 
 ## Save and Commit Changes
 **After saving, run this sequence into terminal:**\
-`git add academy_stylesheet_2024.css`\
+`git add src/styles package.json package-lock.json .stylelintrc.json .stylelintignore .github/workflows`\
 `git commit -m "<summarize-your-changes-here>"`\
 `git push origin <branch-name>`
 

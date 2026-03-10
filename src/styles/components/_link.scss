@@ -1,0 +1,36 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || LINK SECTION */
+
+.linkname {
+	display: inline-block;
+	text-decoration: none;
+	color: $acad-grayscale-0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	position: relative;
+	transition: all 0.2s ease;
+	padding: 5px;
+}
+
+.linkname::after {
+	content: "";
+	position: absolute;
+	height: 2px;
+	background-color: $acad-legacy-cyan-6bcbde;
+	width: 0;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+.linkname:hover::after {
+	width: 100%;
+}
+

@@ -1,0 +1,32 @@
+@use '00-tokens' as *;
+
+/*
+ * Base layer migrated from archive-academy_stylesheet_2024.css.
+ */
+
+body {
+  /* blues */
+  --acad-blue1: #{$acad-blue1};
+  --acad-blue2: #{$acad-blue2};
+  --acad-blue3: #{$acad-blue3};
+  --acad-blue4: #{$acad-blue4};
+
+  /* greens */
+  --acad-green1: #{$acad-green1};
+  --acad-green2: #{$acad-green2};
+  --acad-green3: #{$acad-green3};
+  --acad-green4: #{$acad-green4};
+
+  /* oranges */
+  --acad-orange1: #{$acad-orange1};
+  --acad-orange2: #{$acad-orange2};
+
+  /* yellows */
+  --acad-yellow1: #{$acad-yellow1};
+  --acad-yellow2: #{$acad-yellow2};
+
+  /* grays */
+  --acad-gray1: #{$acad-gray1};
+  --acad-gray2: #{$acad-gray2};
+  --acad-gray3: #{$acad-gray3};
+}

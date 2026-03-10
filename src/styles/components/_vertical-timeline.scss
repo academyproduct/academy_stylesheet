@@ -1,0 +1,114 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || VERTICAL TIMELINE */
+
+/* -----------------------------
+     Palette
+     ----------------------------- */
+.simpleVertical-timeline-wrap {
+	--svt-bg: #{$acad-legacy-neutral-f5f8fa}; /* Lightest background for cards */
+	--svt-line: #{$acad-legacy-blue-c9d6e3}; /* Line color */
+	--svt-border: #{$acad-legacy-blue-d6e1ec}; /* Border color for cards */
+	--svt-blue: #{$acad-logo-academy-logo-02}; /* Accent blue for circle borders */
+
+	max-width: 820px;
+	margin: 24px auto;
+	padding: 0 16px;
+}
+
+.simpleVertical-timeline-title {
+	margin: 0 0 4px;
+}
+
+.simpleVertical-timeline-kicker {
+	margin: 0 0 16px;
+}
+
+/* -----------------------------
+     Table reset (remove borders/spacings)
+     ----------------------------- */
+.simpleVertical-timeline-table {
+	width: 100%;
+	border-collapse: collapse !important;
+	border-spacing: 0 !important;
+	border: none !important;
+}
+
+.simpleVertical-timeline-table tr,
+.simpleVertical-timeline-table td,
+.simpleVertical-timeline-table th {
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+/* -----------------------------
+     Columns
+     ----------------------------- */
+.simpleVertical-timeline-year {
+	width: 100px;
+	vertical-align: top;
+	padding-top: 1em;
+	font-weight: bold; /* bold years */
+}
+
+.simpleVertical-timeline-line {
+	width: 40px;
+	position: relative;
+	vertical-align: top;
+}
+
+/* Vertical line */
+.simpleVertical-timeline-line::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 2px;
+	background: var(--svt-line);
+}
+
+/* Circle dot */
+.simpleVertical-timeline-line::after {
+	content: "";
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: $acad-grayscale-0;
+	border: 2px solid var(--svt-blue); /* blue border */
+}
+
+/* -----------------------------
+     Cards
+     ----------------------------- */
+.simpleVertical-timeline-card {
+	background: var(--svt-bg);
+	border: 1px solid var(--svt-border);
+	border-radius: 10px;
+	padding: 12px 14px;
+}
+
+.simpleVertical-timeline-card-title {
+	margin: 0 0 6px;
+	font-weight: bold; /* bold titles */
+}
+
+.simpleVertical-timeline-card-text {
+	margin: 0;
+}
+
+.simpleVertical-timeline-note {
+	margin-top: 6px;
+	font-size: 0.9em;
+}

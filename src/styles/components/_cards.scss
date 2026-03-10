@@ -1,0 +1,629 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || CARD SECTION */
+
+/* A lot of these are old, there is a new image_card below */
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+	padding-left: 0 !important;
+}
+
+.cards__item2 {
+	flex-basis: 100%;
+	margin: 0 auto 20px;
+}
+
+.card {
+	background-color: $acad-grayscale-0;
+	border-radius: 4px;
+	box-shadow: 0 10px 12px rgba($acad-primary-1000, 0.1);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	padding-left: 0 !important;
+}
+
+.card__image {
+	max-height: 200px;
+	overflow: hidden;
+}
+
+.card__image img {
+	height: 100%;
+	width: 100%;
+	transform: translate(0, -25%);
+}
+
+.card__content {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+
+.card__title {
+	margin-bottom: 15px;
+}
+
+.card__text {
+	flex-grow: 1;
+	line-height: 1.5;
+}
+
+/* stacked cards Project Management */
+
+/* Stacked Cards */
+.stack__card {
+	color: $acad-primary-1000;
+	border: solid 1px $acad-legacy-overlay-gray-soft;
+	background-color: $acad-grayscale-0;
+	box-shadow: 0 20px 40px -14px rgba($acad-primary-1000, 0.25);
+	margin-bottom: 35px;
+}
+
+.stack__card figure {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+}
+
+.stack__card figure img {
+	width: 100%;
+
+	/* Fit image within parent container  */
+	object-fit: cover;
+}
+
+.stack__card figcaption {
+	position: absolute;
+	margin: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	color: $acad-grayscale-0;
+	background: rgba($acad-primary-1000, 0.4);
+	padding: 0.5em;
+	box-sizing: border-box;
+}
+
+.stack__card .stack__card__content {
+	padding: 1.5rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.stack__card__title {
+	font-size: 1.25rem;
+	font-weight: 300;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin: 0.25rem 0 0.5rem;
+}
+
+.stack__card__right .stack__card__content {
+	-ms-flex-order: -1;
+	order: -1;
+}
+
+.stack__card__content p {
+	font-size: 0.9em;
+	line-height: 1.25em;
+}
+
+/* Reset width to 100% for small screens */
+.span__30,
+.span__33,
+.span__40,
+.span__50,
+.span__60,
+.span__70 {
+	width: 100%;
+}
+
+@media (width >= 960px) {
+	.stack__card {
+		display: table;
+		display: -webkit-box;
+		display: flexbox;
+		display: flex;
+	}
+
+	.stack__card figure {
+		position: relative;
+		vertical-align: middle;
+		text-align: center;
+		max-height: 100%;
+	}
+
+	.stack__card__content p {
+		font-size: 1.25em;
+		line-height: 1.5em;
+	}
+
+	/* Set width for large screens */
+
+	.span__30 {
+		min-width: 30%;
+	}
+
+	.span__40 {
+		min-width: 40%;
+	}
+
+	.span__50 {
+		min-width: 50%;
+	}
+
+	.span__60 {
+		min-width: 60%;
+	}
+
+	.span__70 {
+		min-width: 70%;
+	}
+
+	.stack__card figure img {
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+
+	.mh-500 {
+		max-height: 500px;
+	}
+}
+
+.card-container {
+	width: calc(100% - 1em);
+	max-width: 1080px;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 200px;
+}
+
+/* used for ai tutor.com intervention english */
+.card-3up {
+	display: flex;
+	justify-content: center;
+	padding: 1em 1em 0.25em;
+	background-color: $acad-legacy-neutral-fafafa;
+	gap: 1.5em;
+	border-radius: 16px;
+}
+
+.card-3up > div {
+	padding: 0 0.5em;
+}
+
+.card-3up > div > div {
+	text-align: center;
+}
+
+.card-3up > div > img {
+	width: 72px;
+}
+
+#icon.card-3up > div,
+#icon.card-3up > div > h5 {
+	text-align: center;
+}
+
+#icon.card-3up > div > img {
+	height: 48px;
+	margin: 0 0 0.5em;
+}
+
+#icon.card-3up > div > p {
+	text-align: left;
+}
+
+@media only screen and (width <= 550px) {
+	.card-3up {
+		display: block;
+	}
+
+	.card-3up > div {
+		width: 100%;
+		margin: 0 auto 1em;
+	}
+}
+
+/* new image_card */
+.image_card-flex_wrapper {
+	display: flex;
+	width: fit-content;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	justify-content: left;
+}
+
+.image_card-container {
+	flex: 1 1 250px;
+	min-width: 260px;
+	max-width: 260px;
+	margin: 0 0.625em 1.625em;
+	box-shadow: 2px 2px 16px $acad-legacy-neutral-f4f8fa;
+	border: 1px solid $acad-blue4;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.image_card-container_wide {
+	flex: 1 1 250px;
+	margin: 0 0.625em 1.625em;
+	box-shadow: 2px 2px 16px $acad-legacy-neutral-f4f8fa;
+	border: 1px solid $acad-blue4;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.image_card-container#full_width {
+	flex: none;
+	min-width: none;
+	max-width: 100%;
+	margin: 0 0 1.625em;
+}
+
+.image_card-image_wrap {
+	height: 250px;
+	width: 100%;
+	margin: 0 0 1em;
+	overflow: hidden;
+}
+
+.image_card-image_wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* icon mode for image_card */
+#icon.image_card-image_wrap {
+	height: 128px;
+	padding: 0.5em;
+}
+
+#icon.image_card-image_wrap img {
+	object-fit: contain;
+}
+
+.image_card-content_wrap {
+	padding: 0.3em 0.6em;
+}
+
+@media screen and (width <= 650px) {
+	.image_card-container {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+}
+
+/* circle card */
+.circle_card-flex_wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.circle_card-card_container {
+	max-width: 200px;
+	margin: 0 0.625em 0.625em;
+}
+
+.circle_card-image_wrapper {
+	height: 200px;
+	overflow: hidden;
+	object-fit: cover;
+	border-radius: 50%;
+	margin: 0 0 1em;
+}
+
+#contain.circle_card-image_wrapper {
+	object-fit: contain;
+}
+
+.circle_card-image_wrapper img {
+	width: 100%;
+	height: 100%;
+}
+
+.circle_card-content_wrapper {
+	text-align: center;
+}
+
+@media only screen and (width <= 650px) {
+	.circle_card-flex_wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* Responsive Circle Cards + Adjustable */
+
+.adj-3-circ-img-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	flex-direction: row;
+}
+
+.adj-3-circ-img-container > div {
+	width: 25%;
+	height: auto;
+}
+
+.adj-3-circ-img img {
+	border-radius: 50%;
+}
+
+.adj-3-circ-img.small {
+	width: 15%;
+}
+
+.adj-3-circ-img.medium {
+	width: 25%;
+}
+
+.adj-3-circ-img.large {
+	width: 30%;
+}
+
+@media screen and (width <= 767px) {
+	.adj-3-circ-img-container {
+		flex-direction: column;
+	}
+
+	.adj-3-circ-img.small {
+		width: 25%;
+	}
+
+	.adj-3-circ-img.medium {
+		width: 40%;
+	}
+
+	.adj-3-circ-img.large {
+		width: 50%;
+	}
+
+	.adj-3-circ-img.mobile-display-none {
+		display: none;
+	}
+}
+
+/* Flex Cards with Images */
+.flex-img-card-container {
+	/* no wrap = cards resizing until breakpoint */
+	display: flex;
+	flex-direction: row;
+	gap: 1.5%; /* percent gap looks more fluid & reduces shrink of cards */
+	margin: 0 auto 2rem;
+	width: 100%;
+}
+
+.flex-img-card {
+	border-radius: 4px;
+	box-shadow: 0 10px 12px rgba($acad-primary-1000, 0.1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+	padding: 1.2rem;
+}
+
+.flex-img-card-radius8 {
+	/* border & shadow set to match the variable height image card */
+	border-radius: 8px;
+	box-shadow: 0 8px 16px $acad-legacy-overlay-navy-0e193415;
+	border: 1px solid $acad-legacy-overlay-navy-0e193415;
+	display: flex;
+
+	/* does not align center */
+	flex-direction: column;
+	overflow: hidden;
+}
+
+/* putting content in two divs = simpler control over layout in card */
+.flex-img-card-image {
+	width: 100%;
+	margin: 0;
+}
+
+.flex-img-card-image img {
+	width: 100%;
+	height: auto;
+}
+
+.flex-img-card-text {
+	padding: 20px;
+}
+
+.flex-img-card h1,
+.flex-img-card h2,
+.flex-img-card h3,
+.flex-img-card h4,
+.flex-img-card h5 {
+	margin: 1em auto 0 !important;
+}
+
+@media (width <= 800px) {
+	.flex-img-card-container {
+		/* forces cards into a col */
+		flex-wrap: wrap;
+		width: 100%;
+		gap: 1rem;
+	}
+}
+
+.textCard {
+	margin: 1em auto;
+	border-radius: 4px;
+	box-shadow: 0 10px 12px rgba($acad-primary-1000, 0.1);
+	padding: 0.5em 1em;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 1em;
+}
+
+/* Media Queries */
+@media (width <= 900px) {
+	.grid-container {
+		grid-template-columns: auto;
+	}
+}
+
+/* GRID CARDS WITH IMAGES - same children as flex above with extended layout */
+
+/* default 3 column */
+.image-card-grid-wrapper {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 1rem;
+}
+
+.image_card-container_wide.image-card-hov {
+	position: relative;
+	cursor: pointer;
+}
+
+.image-card-hov .image-card-hov-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	transition: opacity 0.4s ease-in-out;
+	z-index: 2;
+}
+
+.image-card-hov:hover .image-card-hov-cover,
+.image-card-hov:focus-within .image-card-hov-cover {
+	opacity: 0;
+}
+
+.image-card-grid-wrapper .image_card-container_wide {
+	margin: 0 !important;
+}
+
+.image-card-grid-wrapper > div {
+	grid-column: span 2;
+}
+
+/* center a single orphan in a 3 col grid */
+.one-orphan > div:last-child {
+	grid-column-end: 5;
+}
+
+/* center a double orphan in a 3 col grid */
+.two-orphan > div:last-child {
+	grid-column: 4 / span 2;
+}
+
+.two-orphan > div:nth-last-child(2) {
+	grid-column: 2 / span 2;
+}
+
+/* two column version */
+.image-card-grid-wrapper.grid-wrap-2col {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* center an orphan in a 2 col grid */
+.grid-wrap-2col.one-orphan > div:last-child {
+	grid-column: 2 / span 2;
+}
+
+/* four column version */
+.image-card-grid-wrapper.grid-wrap-4col {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+}
+
+@media (width <= 875px) {
+	.image-card-grid-wrapper.grid-wrap-4col {
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 1rem;
+	}
+}
+
+@media (width <= 800px) {
+	.image-card-grid-wrapper {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	.two-orphan > div:last-child {
+		grid-column: 2 / span 2;
+	}
+
+	.two-orphan > div:nth-last-child(2) {
+		grid-column: 3 / span 2;
+	}
+}
+
+@media (width <= 580px) {
+	.image-card-grid-wrapper,
+	.image-card-grid-wrapper.grid-wrap-2col {
+		grid-template-columns: 1fr;
+		gap: 1rem 0;
+	}
+
+	.image-card-grid-wrapper .image_card-container_wide {
+		margin: 0 !important;
+	}
+
+	.image-card-grid-wrapper > div,
+	.image-card-grid-wrapper > div:last-child {
+		grid-column: span 2 !important;
+	}
+}
+
+@media (width <= 450px) {
+	.image-card-grid-wrapper.grid-wrap-4col {
+		grid-template-columns: 1fr;
+		column-gap: 0;
+	}
+}
+
+.card-show-hide {
+	display: flex;
+	justify-content: center;
+	padding-top: 0.5em;
+}
+
+.card-show-hide > button {
+	color: $acad-blue2;
+	background-color: $acad-blue4;
+	padding: 8px 24px;
+	border-radius: 20px;
+	border: solid 1px $acad-blue2;
+	background-image: none;
+	box-shadow: none;
+}
+
+.card-show-hide > button:hover {
+	color: $acad-grayscale-0;
+	border: solid 1px;
+	box-shadow: none;
+}
+
+.card-show-hide > button:focus {
+	box-shadow: none;
+	border: solid 1px $acad-blue2;
+}
+

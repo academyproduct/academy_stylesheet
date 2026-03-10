@@ -1,0 +1,137 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || COMPARE CARDS */
+
+/* Compare Cards 2 columns */
+.duo-card-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	width: 100%;
+	margin: 2rem 0;
+}
+
+.duo-card-div {
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 0 0 16px rgba($acad-primary-1000, 0.04);
+}
+
+.duo-card-div p {
+	margin: 1rem 1rem 0 !important;
+}
+
+#duo-div1 {
+	border: 1px solid $acad-legacy-blue-d7e2ea;
+}
+
+#duo-div1 img {
+	transform: scaleX(-1);
+}
+
+#duo-div2 {
+	border: 1px solid $acad-legacy-blue-d7e2ea;
+}
+
+@media screen and (width <= 750px) {
+	.duo-card-wrapper {
+		display: flex;
+		flex-direction: column;
+		padding: 0 1rem;
+		align-items: center;
+	}
+
+	.duo-card-div {
+		max-width: 80%;
+	}
+}
+
+@media screen and (width <= 575px) {
+	.duo-card-wrapper {
+		padding: 0;
+	}
+
+	.duo-card-div {
+		max-width: 100%;
+	}
+}
+
+/* Compare Cards 3 columns */
+.trio-card-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 2rem;
+	width: 100%;
+	margin: 2rem 0;
+}
+
+.trio-card-div {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start; /* align everything to the left */
+	text-align: left; /* left-align text */
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 0 0 16px rgba($acad-primary-1000, 0.04);
+	border: 1px solid $acad-legacy-blue-d7e2ea;
+}
+
+.trio-card-div img {
+	width: 50%;
+	margin-bottom: 1rem;
+}
+
+.trio-card-div h4 {
+	margin: 0.5rem 0;
+}
+
+.trio-card-div p {
+	margin: 1rem 0 0 !important;
+}
+
+/* Bullet lists */
+.trio-card-div ul {
+	margin: 1rem 0 0;
+	padding-left: 1.25rem; /* normal indentation */
+	list-style-position: outside;
+	width: 100%;
+}
+
+.trio-card-div ul li {
+	text-align: left;
+}
+
+/* Tablet breakpoint: 2 columns */
+@media screen and (width <= 920px) {
+	.trio-card-wrapper {
+		grid-template-columns: 1fr 1fr;
+		padding: 0 1rem;
+	}
+}
+
+/* Mobile breakpoint: 1 column */
+@media screen and (width <= 690px) {
+	.trio-card-wrapper {
+		grid-template-columns: 1fr;
+		padding: 0;
+	}
+
+	.trio-card-div {
+		max-width: 90%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (width <= 575px) {
+	.trio-card-div {
+		max-width: 100%;
+	}
+}
+

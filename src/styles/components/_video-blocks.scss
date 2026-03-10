@@ -1,0 +1,15 @@
+@use '../00-tokens' as *;
+
+/*
+ * Migrated section block(s) from archive-academy_stylesheet_2024.css.
+ * Source remains unchanged until parity verification is complete.
+ */
+
+/* || VIDEO BLOCKS */
+
+.noteAlert.video-sections :is(h1, h2, h3, h4, h5, h6) {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
