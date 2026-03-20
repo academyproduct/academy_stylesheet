@@ -5008,6 +5008,143 @@ button.toolTip-button:hover {
 	pointer-events: none; /* blocks mouse clicks */
 }
 
+/* ==================== NEW HORIZONTAL ACCORDION ==================== */
+
+/* --- NAMESPACED CONTAINER --- */
+  .oex-tabs-container {
+    background-color: #ffffff;
+    width: 100%;
+    overflow: visible;
+    font-family: Arial, sans-serif;
+    margin-bottom: 48px;
+  }
+
+  /* --- DESKTOP TABS --- */
+  .oex-tabs-nav-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .oex-tabs-nav {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .oex-tabs-btn {
+    background: #eef6f9 !important; /* Your light blue */
+    background-image: none !important; /* Overrides OEX Gradient */
+    flex: 1;
+    border: 3px solid transparent !important;
+    border-bottom: 0 !important;
+    border-radius: 8px 8px 0 0 !important;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0070f0 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.25s ease, background-color 0.25s ease;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.12), 3px 0 8px rgba(0, 0, 0, 0.1) !important;
+    position: relative;
+    z-index: 1;
+    text-shadow: none !important;
+  }
+
+  .oex-tabs-btn.active {
+    background: #0070f0 !important; /* Your active blue */
+    background-image: none !important;
+    color: #ffffff !important;
+    z-index: 20;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.12), 3px 0 8px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* --- CONTENT FRAME --- */
+  .oex-tabs-content-frame {
+    border: 3px solid #0070f0;
+    border-radius: 0 0 16px 16px;
+    background-color: #ffffff;
+    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .oex-tabs-pane {
+    display: none;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    animation: oexFadeIn 0.4s ease;
+  }
+
+  /* --- MOBILE ACCORDION HEADERS --- */
+  .oex-tabs-acc-trigger {
+    display: none; /* Hidden on Desktop */
+    width: 100%;
+    padding: 18px 20px;
+    background-color: #eef6f9 !important;
+    background-image: none !important; /* Overrides OEX Gradient */
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color: #0070f0 !important;
+    border: none;
+    border-bottom: 1px solid #cfe4ef;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 1px;
+    outline: none;
+  }
+
+  .oex-tabs-acc-trigger.active {
+    background-color: #0070f0 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border-bottom-color: #0070f0;
+  }
+
+  /* --- RESPONSIVE LOGIC (740px) --- */
+  @media screen and (max-width: 740px) {
+    .oex-tabs-nav-wrapper {
+      display: none; /* Hide top tabs */
+    }
+
+    .oex-tabs-acc-trigger {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .oex-tabs-acc-trigger::after {
+      content: '+';
+      font-size: 18px;
+    }
+
+    .oex-tabs-acc-trigger.active::after {
+      content: '−';
+    }
+
+    .oex-tabs-content-frame {
+      border-radius: 8px;
+      border-top: 3px solid #0070f0;
+    }
+
+    .oex-tabs-pane {
+      padding: 20px 15px;
+    }
+  }
+
+  @keyframes oexFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
 /* ==================== HORIZONTAL ACCORDION ==================== */
 /* Container for the whole component */
   .custom-tab-asset {
