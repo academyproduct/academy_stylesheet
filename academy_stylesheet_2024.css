@@ -6206,7 +6206,7 @@ div.likert-scale-item:not(:last-child)::after {
     position: relative;
     display: block;
     width: 100%;
-    min-height: 100px; 
+    min-height: auto; 
     background: #f4f4f4;
     border: 2px dashed #d1d1d1;
     padding: 20px;
