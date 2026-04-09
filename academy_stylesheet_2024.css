@@ -1653,6 +1653,36 @@ ol.fill-list {
 	flex: 1;
 }
 
+/* List with small image on left and text on right in grid */
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  
+  @media screen and (max-width: 425px) {
+    .grid-2-cols {
+     grid-template-columns: 1fr; 
+    }
+  }
+
+  .grid-2-cols .flex-center-li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .grid-2-cols img {
+    width: var(--size, 60px);
+    height: var(--size, 60px);
+    object-fit: cover;
+  }
+
+  .flex-center-li p {
+    margin-bottom: 0px !important; 
+  }
+
+
 /* ==================== IMAGE SECTION ==================== */
 
 /* used in Bio image lists, this style is otherwise old */
