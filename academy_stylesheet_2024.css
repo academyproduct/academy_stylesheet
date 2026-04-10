@@ -6279,3 +6279,289 @@ div.likert-scale-item:not(:last-child)::after {
   #sensitive-box-unique.is-blurred .blur-label {
     display: block;
   }
+
+
+  /*  ====================  STEP-BY-STEP GUIDE  ====================  */
+
+  .step-by-step-card {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid #c8ced8;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .step-by-step-card *,
+  .step-by-step-card *::before,
+  .step-by-step-card *::after {
+    box-sizing: inherit;
+  }
+
+  .step-by-step-card > .step {
+    display: none;
+  }
+
+  .step-by-step-card > .step.is-active {
+    display: block;
+  }
+
+  .step-by-step-card .step-by-step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 24px 18px;
+    background: #f5f6f8;
+  }
+
+  .step-by-step-card .step-badge {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #98a2b3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #344054;
+    background: #f5f6f8;
+    flex-shrink: 0;
+  }
+
+  .step-by-step-card .content-wrap {
+    border-top: 1px solid #d0d5dd;
+    border-bottom: 1px solid #d0d5dd;
+    height: 450px;
+    overflow: hidden;
+    margin: 12px;
+  }
+
+  .step-by-step-card .image-wrap {
+    border-top: 1px solid #d0d5dd;
+    border-bottom: 1px solid #d0d5dd;
+    height: 450px;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 425px) {
+    .step-by-step-card .content-wrap,
+    .step-by-step-card .image-wrap {
+      display: none; 
+    }
+  }
+
+  .step-by-step-card .image-wrap > img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+  }
+
+  .step-by-step-card .actions {
+    display: flex;
+    gap: 16px;
+    padding: 20px 24px;
+    background: #f5f6f8;
+  }
+
+  .step-by-step-card .stuck-toggle,
+  .step-by-step-card .got-it{
+    flex: 1; 
+  }
+
+  .step-by-step-card .btn {
+    height: 48px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .step-by-step-card .btn-secondary {
+    background: #f8f9fb;
+    color: #101828;
+    border: 1px solid #d0d5dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .step-by-step-card .btn-secondary:hover {
+    background: #eef1f5;
+  }
+
+  /* If you update this remember to update the :hover as well */
+  .step-by-step-card .btn-primary {
+    background-color: var(--acad-green2);;
+    color: #ffffff;
+    border: 1px solid var(--acad-green1);;
+  }
+
+  .step-by-step-card .btn-primary:hover {
+    background: var(--acad-green1);
+  }
+
+  .step-by-step-card .btn-primary:disabled {
+    background-color: #808080;
+    border-color: #808080;
+    cursor: not-allowed;
+  }
+
+  .step-by-step-card .feedback {
+    display: none;
+  }
+
+  .step-by-step-card .feedback-toast {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: rgb(255 255 255 / 95%);
+    color: var(--acad-green1);
+    padding: 14px 18px;
+    border: 3px solid var(--acad-green1);
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    min-width: 250px;
+    text-align: center;
+  }
+
+  .step-by-step-card .feedback-toast p {
+    margin-bottom: 0px;
+  }
+
+  .step-by-step-card .feedback-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .step-by-step-card .chevron {
+    display: inline-block;
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(45deg);
+    margin-top: -2px;
+    transition: transform 0.2s ease;
+  }
+
+  .step-by-step-card .chevron.up {
+    transform: rotate(-135deg);
+  }
+
+  .step-by-step-card .help-panel {
+    display: none;
+    margin: 12px 24px 24px;
+    padding: 18px;
+    border: 2px solid #c8ced8;
+    border-radius: 12px;
+    background: #f5f6f8;
+  }
+
+  .step-by-step-card .help-panel.is-open {
+    display: block;
+  }
+
+  .step-by-step-card .help-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .step-by-step-card .help-item {
+    display: block;
+    text-decoration: none;
+    background: #f8f9fb;
+    border: 1px solid #cfd5df;
+    border-radius: 8px;
+    padding: 14px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .step-by-step-card .help-item:hover {
+    background: #eef2ff;
+    border-color: #9ab0ff;
+  }
+
+  .step-by-step-card .help-item-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #101828;
+    margin-bottom: 6px;
+  }
+
+  .step-by-step-card .help-item-type {
+    display: block;
+    font-size: 13px;
+    color: #667085;
+  }
+
+  @media (max-width: 425px) {
+    .step-by-step-card .actions {
+      flex-direction: column-reverse;
+    }
+
+    .step-by-step-card .step-by-step-header {
+      padding: 20px 18px 16px;
+    }
+
+    .step-by-step-card .help-panel {
+      margin: 0 18px 18px;
+    }
+  }
+
+  .step-progress-dropdown {
+    padding: 16px 24px 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 425px) {
+    .step-progress-dropdown {
+      padding: 16px 0px 24px;
+    }
+  }
+
+  .step-select {
+    width: 100%;
+    max-width: 400px;
+    height: 44px;
+    border-radius: 8px;
+    border: 1px solid #d0d5dd;
+    padding: 0 12px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .step-by-step-card .completion-panel {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 32px;
+  }
+
+  .step-by-step-card .completion-panel.is-visible {
+    display: flex;
+  }
+
+  .step-by-step-card .completion-panel .close-completion {
+    margin-top: 20px;
+    max-width: 200px;
+  }
+
+  @media screen and (min-width: 425px) {
+    .step-progress-mobile-note {
+      display: none;
+    }
+  }
