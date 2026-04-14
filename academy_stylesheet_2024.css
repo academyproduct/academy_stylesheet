@@ -6333,7 +6333,7 @@ div.likert-scale-item:not(:last-child)::after {
     border-bottom: 1px solid #d0d5dd;
     height: 450px;
     overflow: hidden;
-    margin: 12px;
+    padding: 12px;
   }
 
   .step-by-step-card .image-wrap {
