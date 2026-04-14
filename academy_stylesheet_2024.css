@@ -6339,8 +6339,8 @@ div.likert-scale-item:not(:last-child)::after {
   .step-by-step-card .image-wrap {
     border-top: 1px solid #d0d5dd;
     border-bottom: 1px solid #d0d5dd;
-    height: 450px;
     overflow: hidden;
+	aspect-ratio: 16 / 9;
   }
 
   @media screen and (max-width: 425px) {
