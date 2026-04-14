@@ -5849,7 +5849,7 @@ button.toolTip-button:hover {
 	flex-direction: row;
 	align-items: center;
 	min-width: 120px;
-	justify-content: flex-end;
+	justify-content: flex-start;
 }
 
 .carousel-menu-button {
