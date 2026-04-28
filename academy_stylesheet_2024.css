@@ -6990,7 +6990,7 @@ div.likert-scale-item:not(:last-child)::after {
   .acad-flashcards .fc-front-content {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
-    font-size: 24px;
+    /*font-size: 24px;*/
     color: #ffffff;
     text-align: center;
     line-height: normal;
