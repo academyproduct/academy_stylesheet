@@ -6899,329 +6899,311 @@ div.likert-scale-item:not(:last-child)::after {
 /* ==================== FLASHCARDS ====================  */
 
   .acad-flashcards {
-    position: relative;
-    width: 100%;
-    max-width: 470px;
-    margin: 0 auto;
-  }
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  margin: 0 auto;
+}
 
-  .acad-flashcards .fc-stack {
-    position: relative;
-    width: 470px;
-    height: 370px;
-    max-width: 100%;
-  }
+.acad-flashcards .fc-stack {
+  position: relative;
+  width: 470px;
+  height: 370px;
+  max-width: 100%;
+}
 
-  /* Card stack layers — only 3 cards visible max */
-  .acad-flashcards .fc-card {
-    position: absolute;
-    width: 450px;
-    height: 350px;
-    perspective: 1000px;
-    cursor: pointer;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-  }
+/* Card stack layers — only 3 cards visible max */
+.acad-flashcards .fc-card {
+  position: absolute;
+  width: 450px;
+  height: 350px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
 
-  /* Front card: top-left */
-  .acad-flashcards .fc-card[data-pos="front"] {
-    top: 0;
-    left: 0;
-    z-index: 3;
-    opacity: 1;
-  }
+/* Front card: top-left */
+.acad-flashcards .fc-card[data-pos="front"] {
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 1;
+}
 
-  /* Second card: offset down-right behind front */
-  .acad-flashcards .fc-card[data-pos="middle"] {
-    top: 10px;
-    left: 10px;
-    z-index: 2;
-    opacity: 1;
-  }
+/* Second card: offset down-right behind front */
+.acad-flashcards .fc-card[data-pos="middle"] {
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  opacity: 1;
+}
 
-  /* Third card: offset further down-right */
-  .acad-flashcards .fc-card[data-pos="back"] {
-    top: 20px;
-    left: 20px;
-    z-index: 1;
-    opacity: 1;
-  }
+/* Third card: offset further down-right */
+.acad-flashcards .fc-card[data-pos="back"] {
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  opacity: 1;
+}
 
-  /* All remaining cards: hidden */
-  .acad-flashcards .fc-card[data-pos="hidden"] {
-    top: 20px;
-    left: 20px;
-    z-index: 0;
-    opacity: 0;
-    pointer-events: none;
-  }
+/* All remaining cards: hidden */
+.acad-flashcards .fc-card[data-pos="hidden"] {
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+}
 
-  /* Flip mechanics */
+/* Flip mechanics */
+.acad-flashcards .fc-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.acad-flashcards .fc-card.is-flipped .fc-inner {
+  transform: rotateY(180deg);
+}
+
+.acad-flashcards .fc-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.acad-flashcards .fc-front,
+.acad-flashcards .fc-back {
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+.acad-flashcards .fc-back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+}
+
+.acad-flashcards .fc-front-content,
+.acad-flashcards .fc-back-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center !important;
+  width: 100%;
+}
+
+/* Override OEX platform defaults within card content */
+.acad-flashcards .fc-front-content *,
+.acad-flashcards .fc-back-content * {
+  text-align: center !important;
+}
+
+.acad-flashcards .fc-front-content img,
+.acad-flashcards .fc-back-content img {
+  object-fit: contain !important;
+  margin-bottom: 0 !important;
+}
+
+/* Card color themes — set via data-theme (front) and data-back-theme (back) */
+.acad-flashcards .fc-card[data-theme="dark"] .fc-front  { background: #002855; }
+.acad-flashcards .fc-card[data-theme="blue"] .fc-front  { background: #0070f0; }
+.acad-flashcards .fc-card[data-theme="light"] .fc-front { background: #46b1ef; }
+.acad-flashcards .fc-card[data-theme="white"] .fc-front { background: #ffffff; }
+.acad-flashcards .fc-card[data-theme="white"] .fc-front-content { color: #002855; }
+
+/* Back-side themes — default is white with dark text */
+.acad-flashcards .fc-card[data-back-theme="dark"] .fc-back  { background: #002855; }
+.acad-flashcards .fc-card[data-back-theme="blue"] .fc-back  { background: #0070f0; }
+.acad-flashcards .fc-card[data-back-theme="light"] .fc-back { background: #46b1ef; }
+.acad-flashcards .fc-card[data-back-theme="white"] .fc-back { background: #ffffff; }
+
+/* Light text for dark/blue/light back themes */
+.acad-flashcards .fc-card[data-back-theme="dark"] .fc-back-content p,
+.acad-flashcards .fc-card[data-back-theme="blue"] .fc-back-content p,
+.acad-flashcards .fc-card[data-back-theme="light"] .fc-back-content p { color: #ffffff; }
+
+/* Controls */
+.acad-flashcards .fc-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.acad-flashcards .fc-counter {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #939393;
+  text-transform: uppercase;
+  letter-spacing: 0.96px;
+  text-align: center;
+}
+
+.acad-flashcards .fc-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Navigation arrows */
+.acad-flashcards .fc-nav-btn,
+.acad-flashcards .fc-nav-btn:hover,
+.acad-flashcards .fc-nav-btn:active,
+.acad-flashcards .fc-nav-btn:focus {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #0070f0;
+  background: #ffffff;
+  background-image: none !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  padding: 0;
+}
+
+.acad-flashcards .fc-nav-btn:hover {
+  background-color: #e8f0fe;
+}
+
+.acad-flashcards .fc-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.acad-flashcards .fc-nav-btn:focus-visible {
+  outline: 2px solid #0070f0;
+  outline-offset: 2px;
+}
+
+.acad-flashcards .fc-nav-btn svg {
+  width: 10px;
+  height: 16px;
+  fill: none;
+  stroke: #0070f0;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.acad-flashcards .fc-nav-btn.fc-prev svg {
+  transform: scaleX(-1);
+}
+
+/* Turn button */
+.acad-flashcards .fc-turn-btn,
+.acad-flashcards .fc-turn-btn:hover,
+.acad-flashcards .fc-turn-btn:active,
+.acad-flashcards .fc-turn-btn:focus {
+  width: 160px;
+  height: 40px;
+  border-radius: 50px;
+  background: #0070f0;
+  background-image: none !important;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.acad-flashcards .fc-turn-btn:hover {
+  background-color: #005ecb;
+}
+
+.acad-flashcards .fc-turn-btn:active {
+  transform: scale(0.97);
+}
+
+.acad-flashcards .fc-turn-btn:focus-visible {
+  outline: 2px solid #002855;
+  outline-offset: 2px;
+}
+
+.acad-flashcards .fc-turn-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.acad-flashcards .fc-turn-btn span {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  line-height: 1;
+}
+
+/* Hide the raw content definitions — JS moves them into the stack */
+.acad-flashcards .fc-card-data {
+  display: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .acad-flashcards .fc-card,
   .acad-flashcards .fc-inner {
-    position: relative;
+    transition: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .acad-flashcards .fc-stack {
     width: 100%;
-    height: 100%;
-    transition: transform 0.6s ease;
-    transform-style: preserve-3d;
+    height: 0;
+    padding-bottom: 78%;
   }
 
-  .acad-flashcards .fc-card.is-flipped .fc-inner {
-    transform: rotateY(180deg);
-  }
-
-  .acad-flashcards .fc-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .acad-flashcards .fc-front {
-    padding: 20px;
+  .acad-flashcards .fc-card {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
   }
 
   .acad-flashcards .fc-front-content {
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    /*font-size: 24px;*/
-    color: #ffffff;
-    text-align: center;
-    line-height: normal;
-    max-width: 339px;
-  }
-
-  .acad-flashcards .fc-front-content img {
-    max-width: 100%;
-    max-height: 280px;
-    object-fit: contain;
-  }
-
-  .acad-flashcards .fc-back {
-    background: #ffffff;
-    transform: rotateY(180deg);
-    padding: 30px 40px;
-  }
-
-  .acad-flashcards .fc-back-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    font-size: 20px;
   }
 
   .acad-flashcards .fc-back-content img {
-    width: 132px;
-    height: 132px;
-    object-fit: cover;
-    margin-bottom: 24px;
+    width: 96px;
+    height: 96px;
   }
 
   .acad-flashcards .fc-back-content p {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #002855;
-    text-align: center;
-    line-height: normal;
-    max-width: 339px;
-    margin: 0;
+    font-size: 14px;
   }
 
-  /* Card color themes — set via data-theme (front) and data-back-theme (back) */
-  .acad-flashcards .fc-card[data-theme="dark"] .fc-front  { background: #002855; }
-  .acad-flashcards .fc-card[data-theme="blue"] .fc-front  { background: #0070f0; }
-  .acad-flashcards .fc-card[data-theme="light"] .fc-front { background: #46b1ef; }
-  .acad-flashcards .fc-card[data-theme="white"] .fc-front { background: #ffffff; }
-  .acad-flashcards .fc-card[data-theme="white"] .fc-front-content { color: #002855; }
-
-  /* Back-side themes — default is white with dark text */
-  .acad-flashcards .fc-card[data-back-theme="dark"] .fc-back  { background: #002855; }
-  .acad-flashcards .fc-card[data-back-theme="blue"] .fc-back  { background: #0070f0; }
-  .acad-flashcards .fc-card[data-back-theme="light"] .fc-back { background: #46b1ef; }
-  .acad-flashcards .fc-card[data-back-theme="white"] .fc-back { background: #ffffff; }
-
-  /* Light text for dark/blue/light back themes */
-  .acad-flashcards .fc-card[data-back-theme="dark"] .fc-back-content p,
-  .acad-flashcards .fc-card[data-back-theme="blue"] .fc-back-content p,
-  .acad-flashcards .fc-card[data-back-theme="light"] .fc-back-content p { color: #ffffff; }
-
-  /* Controls */
-  .acad-flashcards .fc-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 16px;
-  }
-
-  .acad-flashcards .fc-counter {
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #939393;
-    text-transform: uppercase;
-    letter-spacing: 0.96px;
-    text-align: center;
-  }
-
-  .acad-flashcards .fc-controls-row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  /* Navigation arrows */
-  .acad-flashcards .fc-nav-btn,
-  .acad-flashcards .fc-nav-btn:hover,
-  .acad-flashcards .fc-nav-btn:active,
-  .acad-flashcards .fc-nav-btn:focus {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: 2px solid #0070f0;
-    background: #ffffff;
-    background-image: none !important;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-    transition: background-color 0.2s ease, transform 0.15s ease;
-    padding: 0;
-  }
-
-  .acad-flashcards .fc-nav-btn:hover {
-    background-color: #e8f0fe;
-  }
-
-  .acad-flashcards .fc-nav-btn:active {
-    transform: scale(0.95);
-  }
-
-  .acad-flashcards .fc-nav-btn:focus-visible {
-    outline: 2px solid #0070f0;
-    outline-offset: 2px;
-  }
-
-  .acad-flashcards .fc-nav-btn svg {
-    width: 10px;
-    height: 16px;
-    fill: none;
-    stroke: #0070f0;
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .acad-flashcards .fc-nav-btn.fc-prev svg {
-    transform: scaleX(-1);
-  }
-
-  /* Turn button */
-  .acad-flashcards .fc-turn-btn,
-  .acad-flashcards .fc-turn-btn:hover,
-  .acad-flashcards .fc-turn-btn:active,
-  .acad-flashcards .fc-turn-btn:focus {
-    width: 160px;
-    height: 40px;
-    border-radius: 50px;
-    background: #0070f0;
-    background-image: none !important;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    transition: background-color 0.2s ease, transform 0.15s ease;
-  }
-
-  .acad-flashcards .fc-turn-btn:hover {
-    background-color: #005ecb;
-  }
-
-  .acad-flashcards .fc-turn-btn:active {
-    transform: scale(0.97);
-  }
-
-  .acad-flashcards .fc-turn-btn:focus-visible {
-    outline: 2px solid #002855;
-    outline-offset: 2px;
-  }
-
-  .acad-flashcards .fc-turn-btn svg {
-    width: 16px;
-    height: 16px;
-    fill: none;
-    stroke: #ffffff;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+  .acad-flashcards .fc-turn-btn {
+    width: 140px;
+    height: 36px;
   }
 
   .acad-flashcards .fc-turn-btn span {
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    line-height: 1;
+    font-size: 16px;
   }
-
-  /* Hide the raw content definitions — JS moves them into the stack */
-  .acad-flashcards .fc-card-data {
-    display: none;
-  }
-
-  /* Reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .acad-flashcards .fc-card,
-    .acad-flashcards .fc-inner {
-      transition: none;
-    }
-  }
-
-  /* Responsive */
-  @media (max-width: 480px) {
-    .acad-flashcards .fc-stack {
-      width: 100%;
-      height: 0;
-      padding-bottom: 78%;
-    }
-
-    .acad-flashcards .fc-card {
-      width: calc(100% - 20px);
-      height: calc(100% - 20px);
-    }
-
-    .acad-flashcards .fc-front-content {
-      font-size: 20px;
-    }
-
-    .acad-flashcards .fc-back-content img {
-      width: 96px;
-      height: 96px;
-    }
-
-    .acad-flashcards .fc-back-content p {
-      font-size: 14px;
-    }
-
-    .acad-flashcards .fc-turn-btn {
-      width: 140px;
-      height: 36px;
-    }
-
-    .acad-flashcards .fc-turn-btn span {
-      font-size: 16px;
-    }
-  }
+}
