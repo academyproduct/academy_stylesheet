@@ -56,7 +56,8 @@ Section Contents:
   Likert Scale,
   Sensitive Material Box,
   Carousel Cards,
-  Flashcards
+  Flashcards,
+  Matching
 
   Course Specific Contents:
   Orientation,
@@ -7205,5 +7206,234 @@ div.likert-scale-item:not(:last-child)::after {
 
   .acad-flashcards .fc-turn-btn span {
     font-size: 16px;
+  }
+}
+
+/* ==================== MATCHING ====================  */
+
+.acad-matching {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.acad-matching .mt-intro {
+  margin-bottom: 1.5rem;
+}
+
+/* Match items list */
+.acad-matching .mt-items {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.acad-matching .mt-items li {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.acad-matching .mt-items li::before,
+.acad-matching .mt-items li::marker {
+  content: none !important;
+  display: none !important;
+}
+
+/* Each match row */
+.acad-matching .mt-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  border: 2px solid var(--acad-gray3, #efefef);
+  border-radius: 10px;
+  padding: 16px;
+  background: #ffffff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.acad-matching .mt-row.is-correct {
+  border-color: var(--acad-green2, #5d9d93);
+  background-color: #eef7f5;
+}
+
+.acad-matching .mt-row.is-incorrect {
+  border-color: var(--acad-orange1, #ce6042);
+  background-color: #fdf0ed;
+}
+
+/* Item (left side) */
+.acad-matching .mt-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.acad-matching .mt-item-number {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--acad-blue2, #163f6c);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* Select (right side) */
+.acad-matching .mt-select-wrap {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.acad-matching .mt-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--acad-gray2, #b8b8bb);
+  border-radius: 8px;
+  background: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--acad-blue1, #0e1934);
+  cursor: pointer;
+  appearance: auto;
+}
+
+.acad-matching .mt-select:focus-visible {
+  outline: 2px solid var(--acad-blue3, #6699cf);
+  outline-offset: 2px;
+}
+
+.acad-matching .mt-row.is-correct .mt-select,
+.acad-matching .mt-row.is-incorrect .mt-select {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Per-row feedback */
+.acad-matching .mt-feedback {
+  display: none;
+  font-size: 0.875rem;
+  margin-top: 6px;
+  padding: 4px 0;
+  font-weight: 600;
+}
+
+.acad-matching .mt-feedback.is-visible {
+  display: block;
+}
+
+.acad-matching .mt-feedback.feedback-correct {
+  color: #2a6b5e;
+}
+
+.acad-matching .mt-feedback.feedback-incorrect {
+  color: #8b3a25;
+}
+
+/* Action buttons */
+.acad-matching .mt-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.acad-matching .mt-btn,
+.acad-matching .mt-btn:hover,
+.acad-matching .mt-btn:active,
+.acad-matching .mt-btn:focus {
+  padding: 10px 28px;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  background-image: none !important;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.acad-matching .mt-btn-check,
+.acad-matching .mt-btn-check:active,
+.acad-matching .mt-btn-check:focus {
+  background: var(--acad-blue2, #163f6c);
+  color: #ffffff;
+  border: 2px solid var(--acad-blue2, #163f6c);
+}
+
+.acad-matching .mt-btn-check:hover {
+  background: var(--acad-blue1, #0e1934);
+  border-color: var(--acad-blue1, #0e1934);
+  color: #ffffff;
+}
+
+.acad-matching .mt-btn-reset,
+.acad-matching .mt-btn-reset:active,
+.acad-matching .mt-btn-reset:focus {
+  background: #ffffff;
+  color: var(--acad-blue2, #163f6c);
+  border: 2px solid var(--acad-blue2, #163f6c);
+}
+
+.acad-matching .mt-btn-reset:hover {
+  background: var(--acad-blue2, #163f6c);
+  color: #ffffff;
+}
+
+.acad-matching .mt-btn:focus-visible {
+  outline: 2px solid var(--acad-blue3, #6699cf);
+  outline-offset: 2px;
+}
+
+.acad-matching .mt-btn-reset {
+  display: none;
+}
+
+.acad-matching .mt-btn-reset.is-visible {
+  display: inline-block;
+}
+
+/* Score summary */
+.acad-matching .mt-score {
+  display: none;
+  margin-top: 1rem;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--acad-blue4, #d6e8f2);
+  font-weight: 600;
+  color: var(--acad-blue1, #0e1934);
+}
+
+.acad-matching .mt-score.is-visible {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .acad-matching .mt-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .acad-matching .mt-select-wrap {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .acad-matching .mt-row {
+    transition: none;
   }
 }
