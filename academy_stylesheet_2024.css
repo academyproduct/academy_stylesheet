@@ -6920,7 +6920,7 @@ div.likert-scale-item:not(:last-child)::after {
   height: 350px;
   perspective: 1000px;
   cursor: pointer;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: top 0.4s ease, left 0.4s ease, opacity 0.4s ease, z-index 0s 0.2s;
 }
 
 /* Front card: top-left */
@@ -6954,6 +6954,29 @@ div.likert-scale-item:not(:last-child)::after {
   z-index: 0;
   opacity: 0;
   pointer-events: none;
+}
+
+/* Swipe-out animation: card lifts, rotates, slides right */
+.acad-flashcards .fc-card.is-swiping-out {
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  transform: translateX(110%) rotate(12deg);
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Swipe-in animation (prev): card comes from left */
+.acad-flashcards .fc-card.is-swiping-in {
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  transform: translateX(-110%) rotate(-12deg);
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Reset transform for normal positioned cards */
+.acad-flashcards .fc-card:not(.is-swiping-out):not(.is-swiping-in) {
+  transform: translateX(0) rotate(0deg);
 }
 
 /* Flip mechanics */
